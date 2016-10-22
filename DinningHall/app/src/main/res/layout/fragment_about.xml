@@ -1,0 +1,138 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+
+<LinearLayout
+	android:gravity="center"
+	android:orientation="vertical"
+	android:padding="15dip"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="5dp"
+					android:src="@mipmap/logo2"/>
+	<TextView
+		android:id="@+id/version"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:padding="5dip"
+		android:text="当前版本：" />
+</LinearLayout>
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/white"
+		android:fillViewport="true" >
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_weight="1"
+
+			android:orientation="vertical"
+			android:layout_height="wrap_content">
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:orientation="vertical"
+					android:layout_height="wrap_content">
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:padding="10dp" >
+
+						<TextView
+							android:focusable="true"
+							android:focusableInTouchMode="true"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="5dip"
+							android:text="功能介绍" />
+
+
+							 />
+
+
+					</LinearLayout>
+					<View  android:layout_height="1px"
+						android:layout_width="match_parent"
+						android:background="#ebebeb"  />
+
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:orientation="vertical"
+					android:id="@+id/feedback"
+					android:layout_height="wrap_content">
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:padding="10dp" >
+
+						<TextView
+							android:focusable="true"
+							android:focusableInTouchMode="true"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="5dip"
+							android:text="意见反馈" />
+
+
+
+					</LinearLayout>
+					<View  android:layout_height="1px"
+						android:layout_width="match_parent"
+						android:background="#ebebeb"  />
+
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:orientation="vertical"
+					android:id="@+id/banbenLayout"
+					android:layout_height="wrap_content">
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:padding="10dp" >
+
+						<TextView
+							android:focusable="true"
+							android:focusableInTouchMode="true"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="5dip"
+							android:text="版本更新" />
+
+						<TextView
+							android:id="@+id/banben"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="5dip"
+							android:textColor="@color/red"
+							android:layout_weight="1"
+							android:gravity="center_vertical|right"
+							android:text=""
+							/>
+
+
+					</LinearLayout>
+					<View  android:layout_height="1px"
+						android:layout_width="match_parent"
+						android:background="#ebebeb"  />
+
+				</LinearLayout>
+			</LinearLayout>
+			</ScrollView>
+
+
+
+
+
+	</LinearLayout>
+
+
+
+
