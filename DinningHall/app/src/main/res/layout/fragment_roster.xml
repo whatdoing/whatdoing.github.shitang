@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    >
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="姓名" />
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="性别" />
+
+                <Button
+                    android:id="@+id/sex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请选择"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="年龄" />
+
+                <EditText
+                    android:id="@+id/age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="岗位工种" />
+
+                <Button
+                    android:id="@+id/jobtype"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请选择"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="部门" />
+
+                <Button
+                    android:id="@+id/department"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请选择"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="参加工作时间" />
+
+                <Button
+                    android:id="@+id/takework_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请选择"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="联系号码" />
+
+                <EditText
+                    android:id="@+id/phonenumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="健康证编号" />
+
+                <EditText
+                    android:id="@+id/healthcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="健康证到期期限" />
+
+                <Button
+                    android:id="@+id/maturity_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请选择"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="健康证明单位" />
+
+                <Button
+                    android:id="@+id/healthunit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请选择"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="是否食堂从业人员" />
+
+                <Button
+                    android:id="@+id/iscanteen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请选择"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="食品安全管理员" />
+
+                <EditText
+                    android:id="@+id/safetymanager"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>

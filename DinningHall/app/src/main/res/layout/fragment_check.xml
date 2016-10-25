@@ -1,0 +1,2837 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    >
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="一、许可管理" />
+
+
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="1.食品经营许可证合法有效，经营场所、主体业态、经营项目 等事项与食品经营许可证一致。" />
+
+            <RadioGroup
+                android:id="@+id/license_management1_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+
+
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/license_management1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="二、信息公示" />
+
+
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="2.在经营场所醒目位置公示食品经营许可证。" />
+
+            <RadioGroup
+                android:id="@+id/publicity1_change"
+
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/publicity1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="3.监督检查结果记录表公示的时间、位置等符合要求。" />
+
+            <RadioGroup
+                android:id="@+id/publicity2_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/publicity2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="4.在经营场所醒目位置公示量化等级标识。
+                " />
+
+            <RadioGroup
+                android:id="@+id/publicity3_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/publicity3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="三、制度管理" />
+
+
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="*5.建立从业人员健康管理、食品安全自查、进货查验记录、食品召回 等食品安全管理制度。" />
+
+            <RadioGroup
+                android:id="@+id/administration1_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/administration1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="*6.制定食品安全事故处置方案。" />
+
+            <RadioGroup
+                android:id="@+id/administration2_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/administration2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="四、人员管理" />
+
+
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="*7.主要负责人知晓食品安全责任，有食品安全管理人员。" />
+
+            <RadioGroup
+                android:id="@+id/personnel1_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/personnel1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="*8.从事接触直接入口食品工作的从业人员持有有效的健康证明。" />
+
+            <RadioGroup
+                android:id="@+id/personnel2_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/personnel2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="9.具有从业人员食品安全培训记录。" />
+
+            <RadioGroup
+                android:id="@+id/personnel3_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/personnel3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="10.从业人员穿戴清洁的工作衣帽，双手清洁，保持个人卫生。" />
+
+            <RadioGroup
+                android:id="@+id/personnel4_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/personnel4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="五、环境卫生" />
+
+
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="11.食品经营场所保持清洁、卫生。" />
+
+            <RadioGroup
+                android:id="@+id/environmental_health1_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/environmental_health1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="12.烹饪场所配置排风设备，定期清洁。" />
+
+            <RadioGroup
+                android:id="@+id/environmental_health2_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/environmental_health2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="13.用水符合生活饮用水卫生标准。" />
+
+            <RadioGroup
+                android:id="@+id/environmental_health3_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/environmental_health3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="14.卫生间保持清洁、卫生，定期清理。" />
+
+            <RadioGroup
+                android:id="@+id/environmental_health4_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/environmental_health4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="六、原料控制 （含食品添加剂）" />
+
+
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="*15.查验供货者的许可证和食品出厂检验合格证或其他合格证明， 企业如实记录有关信息并保存相关凭证。" />
+
+            <RadioGroup
+                android:id="@+id/material_control1_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/material_control1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="16.原料外包装标识符合要求，按照外包装标识的条件和要求规范贮存， 并定期检查，及时清理变质或者超过保质期的食品。" />
+
+            <RadioGroup
+                android:id="@+id/material_control2_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/material_control2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="17.食品添加剂由专人负责保管、领用、登记，并有相关记录。" />
+
+            <RadioGroup
+                android:id="@+id/material_control3_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/material_control3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="七、加工制作 过程" />
+
+
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="18.食品原料、半成品与成品在盛放、贮存时相互分开。" />
+
+            <RadioGroup
+                android:id="@+id/processing_production1_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/processing_production1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="19.制作食品的设施设备及加工工具、容器等具有显著标识， 按标识区分使用。" />
+
+            <RadioGroup
+                android:id="@+id/processing_production2_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/processing_production2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="20.专间内由明确的专人进行操作，使用专用的加工工具。" />
+
+            <RadioGroup
+                android:id="@+id/processing_production3_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/processing_production3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="21.食品留样符合规范。" />
+
+            <RadioGroup
+                android:id="@+id/processing_production4_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/processing_production4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="22.中央厨房、集体用餐配送单位配送食品的标识、储存、运输 等符合要求。" />
+
+            <RadioGroup
+                android:id="@+id/processing_production5_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/processing_production5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="23.有毒有害物质不得与食品一同贮存、运输。" />
+
+            <RadioGroup
+                android:id="@+id/processing_production6_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/processing_production6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="八、设施设备 及维护" />
+
+
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="24.专间内配备专用的消毒（含空气消毒）、冷藏、冷冻、空调 等设施，设施运转正常。" />
+
+            <RadioGroup
+                android:id="@+id/equipment_maintenance1_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/equipment_maintenance1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="25.食品处理区配备运转正常的洗手消毒设施。" />
+
+            <RadioGroup
+                android:id="@+id/equipment_maintenance2_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/equipment_maintenance2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="26.食品处理区配备带盖的餐厨废弃物存放容器。" />
+
+            <RadioGroup
+                android:id="@+id/equipment_maintenance3_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/equipment_maintenance3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="*27.食品加工、贮存、陈列等设施设备运转正常，并保持清洁。" />
+
+            <RadioGroup
+                android:id="@+id/equipment_maintenance4_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/equipment_maintenance4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="九、餐饮具 清洗消毒" />
+
+
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="28.集中消毒餐具、饮具的采购符合要求。" />
+
+            <RadioGroup
+                android:id="@+id/tableware_clean1_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/tableware_clean1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="29.具有餐具、饮具的清洗、消毒、保洁设备设施，并运转正常。" />
+
+            <RadioGroup
+                android:id="@+id/tableware_clean2_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/tableware_clean2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="*30.餐具、饮具和盛放直接入口食品的容器用后洗净、消毒，炊具、用具用后洗净，保持清洁。" />
+
+            <RadioGroup
+                android:id="@+id/tableware_clean3_change"
+                android:layout_width="0dp"
+                android:layout_weight="1.1"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="否"
+                />
+            </RadioGroup>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="备注" />
+
+                <EditText
+                    android:id="@+id/tableware_clean3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="检查单位名称：" />
+
+                <EditText
+                    android:id="@+id/inspect_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="许可类别：" />
+
+                <EditText
+                    android:id="@+id/permit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="法定代表人/业主：" />
+
+                <EditText
+                    android:id="@+id/legal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="地址：" />
+
+                <EditText
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="电话：" />
+
+                <EditText
+                    android:id="@+id/legalphone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="检查单位人员签字：" />
+
+                <EditText
+                    android:id="@+id/inspect_people"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="检查时间：" />
+
+                <Button
+                    android:id="@+id/inspect_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>
