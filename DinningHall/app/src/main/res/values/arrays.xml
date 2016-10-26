@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <!-- 餐具清洗消毒记录表-->
+        <string-array
+            name="TablewareDisinfection">
+            <item>tablewarename</item>
+            <item>tablewarecount</item>
+            <item>cleantype</item>
+            <item>start_date</item>
+            <item>end_date</item>
+            <item>clean_condition</item>
+            <item>liable_person</item>
+        </string-array>
+
+        <!-- 搜索条件 -->
+        <string-array
+            name="Tableware">
+            <item>first_date</item>
+            <item>last_date</item>
+            <item>tablewarename</item>
+            <item>tablewarecount</item>
+
+            <item>cleantype</item>
+            <item>clean_condition</item>
+            <item>liable_person</item>
+        </string-array>
+
+
+    <!-- 泔水类废弃物回收处理记录表-->
+        <string-array
+            name="RecyclingProcess">
+            <item>swillnum</item>
+            <item>recyclinguse</item>
+            <item>catering_signature</item>
+            <item>recovery_signature</item>
+
+            <item>recovery_company</item>
+            <item>recovery_address</item>
+            <item>contacts</item>
+            <item>contactsphone</item>
+
+        </string-array>
+
+        <!-- 搜索条件 -->
+        <string-array
+            name="Recycling">
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+
+            <item></item>
+            <item></item>
+
+        </string-array>
+
+
+        <!-- 食品留样记录表-->
+        <string-array
+            name="FoodSamples">
+            <item>number</item>
+            <item>foodname</item>
+            <item>foodcount</item>
+            <item>start_date</item>
+            <item>end_date</item>
+            <item>peoplenum</item>
+            <item>liable_person</item>
+        </string-array>
+
+        <!-- 搜索条件 -->
+        <string-array
+            name="Food">
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+
+            <item></item>
+            <item></item>
+
+        </string-array>
+
+
+
+
+        <!-- 食品添加剂采购、验收、使用、销毁登记表-->
+        <string-array
+            name="AdditiveRegistration">
+            <item>name</item>
+            <item>manufacturer</item>
+            <item>manufacture_date</item>
+            <item>quality</item>
+            <item>supplyunit</item>
+            <item>purchase_date</item>
+            <item>purchasenum</item>
+            <item>userecord</item>
+            <item>destruction_record</item>
+            <item>liable_person</item>
+        </string-array>
+        <!-- 搜索条件 -->
+        <string-array
+            name="Additive">
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+
+            <item></item>
+            <item></item>
+
+        </string-array>
+
+
+
+        <!-- 废弃油脂回收处理记录表-->
+        <string-array
+            name="OilRecovery">
+            <item>oilnum</item>
+            <item>recyclinguse</item>
+            <item>catering_signature</item>
+            <item>recovery_signature</item>
+
+            <item>recovery_company</item>
+            <item>recovery_address</item>
+            <item>contacts</item>
+            <item>contactsphone</item>
+        </string-array>
+        <!-- 搜索条件 -->
+        <string-array
+            name="Oil">
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+
+            <item></item>
+            <item></item>
+
+        </string-array>
+
+
+        <!-- 紫外线消毒记录表-->
+        <string-array
+            name="UltravioletDisinfection">
+            <item>disinfection_area</item>
+            <item>start_date</item>
+            <item>end_date</item>
+            <item>cumulative_time</item>
+
+            <item>liable_person</item>
+            <item>remarks</item>
+
+        </string-array>
+        <!-- 搜索条件 -->
+        <string-array
+            name="Ultraviolet">
+            <item></item>
+            <item></item>
+            <item></item>
+            <item></item>
+
+            <item></item>
+            <item></item>
+
+        </string-array>
+
+
+
+    <!-- 人员管理-->
+    <string-array
+        name="Roster">
+        <item>name</item>
+        <item>sex</item>
+        <item>age</item>
+        <item>jobtype</item>
+        <item>department</item>
+        <item>takework_date</item>
+        <item>phonenumber</item>
+        <item>healthcode</item>
+        <item>maturity_date</item>
+        <item>healthunit</item>
+        <item>iscanteen</item>
+        <item>safetymanager</item>
+    </string-array>
+
+    <!-- 搜索条件 -->
+    <string-array
+        name="Ros">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+
+    <!-- 晨检-->
+    <string-array
+        name="MorningInspection">
+        <item>name</item>
+        <item>healthycode</item>
+        <item>liable_person</item>
+        <item>isdiarrhea</item>
+        <item>istrauma</item>
+        <item>iscold</item>
+        <item>ispurulent</item>
+
+        <item>isotherhealth</item>
+        <item>morningcheck</item>
+    </string-array>
+
+    <!-- 搜索条件 -->
+    <string-array
+        name="Morning">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+
+    <!--餐饮服务单位食品安全综合报告-->
+    <string-array
+        name="SafetyReport">
+        <item>promise</item>
+        <item>safety_system</item>
+        <item>personnel</item>
+        <item>selfdiscipline</item>
+        <item>layout_environment</item>
+        <item>facility</item>
+        <item>purchase</item>
+
+        <item>production</item>
+        <item>tableware_disinfection</item>
+
+
+        <item>room_management</item>
+        <item>transportation</item>
+        <item>specifications</item>
+        <item>emergency</item>
+        <item>rectification</item>
+        <item>other_comments</item>
+        <item>legal</item>
+        <item>reportname</item>
+        <item>report_date</item>
+        <item>contacts</item>
+        <item>contactsphone</item>
+
+    </string-array>
+
+    <!-- 搜索条件 -->
+    <string-array
+        name="Safety">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+
+    <!--餐饮服务单位食品安全自评标准表-->
+    <string-array
+        name="RatingCriteria">
+
+        <item>safety_system</item>
+        <item>personnel</item>
+        <item>selfdiscipline</item>
+        <item>layout_environment</item>
+        <item>facility</item>
+        <item>purchase</item>
+
+        <item>production</item>
+        <item>tableware_disinfection</item>
+
+
+        <item>room_management</item>
+        <item>transportation</item>
+        <item>othertext</item>
+        <item>bonusitems</item>
+        <item>inspection_result</item>
+        <item>earned_score</item>
+        <item>earned_score</item>
+        <item>standardized_score</item>
+        <item>assessment_level</item>
+        <item>inspect_company</item>
+        <item>permit</item>
+
+        <item>address</item>
+        <item>legal</item>
+        <item>legalphone</item>
+        <item>inspect_people</item>
+        <item>inspect_date</item>
+
+
+    </string-array>
+
+    <!-- 搜索条件 -->
+    <string-array
+        name="Rating">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+    <!--餐饮服务单位食品安全自查日志表-->
+    <string-array
+        name="CheckLog">
+        <item>license_management1</item>
+        <item>license_management1_change</item>
+        <item>publicity1</item>
+        <item>publicity2</item>
+        <item>publicity3</item>
+        <item>administration1</item>
+        <item>administration2</item>
+        <item>personnel1</item>
+
+        <item>personnel2</item>
+        <item>personnel3</item>
+        <item>personnel4</item>
+
+        <item>environmental_health1</item>
+        <item>environmental_health2</item>
+        <item>environmental_health3</item>
+        <item>environmental_health4</item>
+        <item>material_control1</item>
+        <item>material_control2</item>
+        <item>material_control3</item>
+        <item>processing_production1</item>
+        <item>processing_production2</item>
+        <item>processing_production3</item>
+        <item>processing_production4</item>
+
+
+        <item>processing_production5</item>
+        <item>processing_production6</item>
+        <item>equipment_maintenance1</item>
+        <item>equipment_maintenance2</item>
+        <item>equipment_maintenance3</item>
+        <item>equipment_maintenance4</item>
+        <item>tableware_clean1</item>
+        <item>tableware_clean2</item>
+        <item>tableware_clean3</item>
+        <item>inspect_company</item>
+        <item>permit</item>
+
+        <item>legal</item>
+        <item>address</item>
+        <item>legalphone</item>
+        <item>inspect_people</item>
+        <item>inspect_date</item>
+
+
+
+        <item>publicity1_change</item>
+        <item>publicity2_change</item>
+        <item>publicity3_change</item>
+        <item>administration1_change</item>
+        <item>administration2_change</item>
+
+        <item>personnel1_change</item>
+        <item>personnel2_change</item>
+        <item>personnel3_change</item>
+        <item>personnel4_change</item>
+        <item>environmental_health1_change</item>
+
+        <item>environmental_health2_change</item>
+        <item>environmental_health3_change</item>
+        <item>environmental_health4_change</item>
+        <item>material_control1_change</item>
+        <item>material_control2_change</item>
+
+        <item>material_control3_change</item>
+        <item>processing_production1_change</item>
+        <item>processing_production2_change</item>
+        <item>processing_production3_change</item>
+        <item>processing_production4_change</item>
+
+        <item>processing_production5_change</item>
+        <item>processing_production6_change</item>
+        <item>equipment_maintenance1_change</item>
+        <item>equipment_maintenance2_change</item>
+        <item>equipment_maintenance3_change</item>
+
+        <item>equipment_maintenance4_change</item>
+        <item>tableware_clean1_change</item>
+
+        <item>tableware_clean2_change</item>
+        <item>tableware_clean3_change</item>
+    </string-array>
+
+    <!-- 搜索条件 -->
+    <string-array
+        name="Check">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+
+    <!-- 整改及复查记录表-->
+    <string-array
+        name="ReviewRecord">
+        <item>rectification_content</item>
+        <item>find_date</item>
+        <item>rectification_opinions</item>
+
+        <item>review_time</item>
+        <item>review_results</item>
+        <item>liable_person</item>
+        <item>period_time</item>
+        <item>liable_date</item>
+
+    </string-array>
+
+    <!-- 搜索条件 -->
+    <string-array
+        name="Review">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+    <!-- 意见反馈-->
+    <string-array
+        name="FeedBack">
+        <item>name</item>
+        <item>sex</item>
+        <item>age</item>
+        <item>jobtype</item>
+        <item>department</item>
+        <item>takework_date</item>
+        <item>phonenumber</item>
+        <item>healthcode</item>
+        <item>maturity_date</item>
+        <item>healthunit</item>
+        <item>iscanteen</item>
+        <item>safetymanager</item>
+    </string-array>
+
+    <!-- 搜索条件 -->
+    <!--<string-array-->
+        <!--name="Feed">-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+
+        <!--<item></item>-->
+        <!--<item></item>-->
+        <!--<item></item>-->
+    <!--</string-array>-->
+
+
+</resources>

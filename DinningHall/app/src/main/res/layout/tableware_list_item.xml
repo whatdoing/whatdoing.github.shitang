@@ -1,0 +1,160 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="2dip"
+            android:layout_width="match_parent">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tablewarename"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginRight="3dip"
+                android:textColor="@color/background"
+                android:text="脸盆"/>
+
+            <TextView
+                android:id="@+id/tablewarecount"
+                android:textColor="@color/background"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginRight="3dip"
+                android:text="19件"/>
+            <TextView
+                android:id="@+id/create_date"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginRight="5dip"
+                android:textColor="@color/background"
+                android:text="1995-02-03"/>
+                <TextView
+                    android:id="@+id/clean_condition"
+                    android:padding="3dip"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:background="@color/zise"
+                    android:text="未保洁"/>
+                <TextView
+                    android:id="@+id/id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:text="TextView" />
+            </LinearLayout>
+
+
+
+</LinearLayout>
+
+    <LinearLayout android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="2dip"
+        android:layout_width="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginRight="5dip"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/allblue"
+                android:text="清洗方式:"/>
+
+            <TextView
+                android:id="@+id/cleantype"
+                android:layout_height="wrap_content"
+                android:textColor="@color/background"
+                android:layout_width="wrap_content"
+                android:text="手工清洗"/>
+        </LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="@color/org"
+            android:text="责任人:"/>
+
+        <TextView
+            android:id="@+id/liable_person"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="@color/background"
+            android:text="刘罗平"/>
+</LinearLayout>
+        </LinearLayout>
+
+    <LinearLayout android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="2dip"
+        android:layout_width="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/red"
+                android:text="消毒起止时间:"/>
+
+            <TextView
+                android:id="@+id/start_date"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/background"
+                android:text="1998-09-15"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:textColor="@color/background"
+
+                android:layout_width="wrap_content"
+                android:text="到"/>
+
+            <TextView
+                android:id="@+id/end_date"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/background"
+                android:text="1998-09-16"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:gravity="right"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/bianji"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:layout_marginRight="5dp"
+            android:background="@mipmap/edit"/>
+        <ImageView
+            android:id="@+id/shanchu"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:background="@mipmap/delete"/>
+    </LinearLayout>
+</LinearLayout>
+</LinearLayout>
