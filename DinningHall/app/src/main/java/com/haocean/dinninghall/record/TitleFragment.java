@@ -11,6 +11,8 @@ import android.widget.LinearLayout;
 
 import com.haocean.dinninghall.R;
 
+import java.util.Map;
+
 
 /**
  * Created by haocean on 2016/7/7.
@@ -48,12 +50,15 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
             }
             break;
             case R.id.function: {
-                Intent intent=new Intent(getActivity(),CreateRecordActivity.class);
-                intent.putExtra("typeRecord",activity.getTypeRecord());
-                startActivity(intent);
+                onCreateButton CreateButton=(onCreateButton)activity;
+                System.out.println("来了吗");
+                CreateButton.CreateRecord();
             }
             break;
         }
 
+    }
+    public interface onCreateButton {
+        void CreateRecord();
     }
 }

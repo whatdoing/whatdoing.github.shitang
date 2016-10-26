@@ -4,11 +4,15 @@ import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.os.Message;
+import android.util.Log;
+import android.view.SubMenu;
 import android.view.Window;
 
 import com.haocean.dinninghall.R;
 import com.haocean.dinninghall.Runnable.RecordRunnable;
 
+import com.haocean.dinninghall.adapter.ListViewAdapter;
 import com.haocean.dinninghall.record.leftOrRightFragment.LeftFragment;
 import com.haocean.dinninghall.record.leftOrRightFragment.RightFragment;
 
@@ -21,7 +25,7 @@ import lib.app.SlidingFragmentActivity;
 /**
  * Created by haocean on 2016/9/26.
  */
-public class RecordListActivity  extends SlidingFragmentActivity implements LeftFragment.onItemListener,RightFragment.onButtonListener {
+public class RecordListActivity  extends SlidingFragmentActivity implements LeftFragment.onItemListener,RightFragment.onButtonListener,TitleFragment.onCreateButton, ListViewAdapter.onEditButton{
     FragmentManager fragmentManager;
     private SlidingMenu _SlidingMenu; // 侧边栏菜单
     private LeftFragment _LeftFragment; // 左侧菜单Fragment
@@ -63,6 +67,9 @@ public class RecordListActivity  extends SlidingFragmentActivity implements Left
      * 初始化侧边栏菜单
      */
     private void initSlidingMenu() {
+
+
+
         titleFragment =new TitleFragment();
         listTitleFragment =new ListTitleFragment();
         bottomListFragment =new BottomListFragment();
@@ -99,6 +106,7 @@ public class RecordListActivity  extends SlidingFragmentActivity implements Left
         Thread dataThread=new Thread(recordRunnable);
         dataThread.start();
     }
+
     public void updataButtomList(String data){
         System.out.println("-----data-----"+data);
         if(data==null){
@@ -108,6 +116,10 @@ public class RecordListActivity  extends SlidingFragmentActivity implements Left
         }else{
             bottomListFragment.updata(data,0);
         }
+    }
+
+    public void dataChanged(){
+        bottomListFragment.dataChanged();
     }
     /*
     * 左侧菜单选择后执行
@@ -126,6 +138,8 @@ public class RecordListActivity  extends SlidingFragmentActivity implements Left
         initRightMenu(_SlidingMenu);
         //titleFragment的一个数据统计
         //buttomListFragment的一个数据列表
+
+
     }
 
     public void LeftSlidingMenuIsShow(){
@@ -159,5 +173,43 @@ public class RecordListActivity  extends SlidingFragmentActivity implements Left
         //缺少一个数据的加载
         //titleFragment的一个数据统计
         //buttomListFragment的一个数据列表
+    }
+
+
+    @Override
+    public void CreateRecord() {
+        System.out.println("从这里进的吗");
+        Intent intent=new Intent(RecordListActivity.this,CreateRecordActivity.class);
+        intent.putExtra("typeRecord",RecordListActivity.this.getTypeRecord());
+        startActivityForResult(intent, 1);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent d) {
+        System.out.println(requestCode);
+        System.out.println("resultCode"+resultCode);
+        System.out.println("怎么会没反应呢？");
+        if(requestCode==1){
+           switch (resultCode)
+           {
+               case 2:
+               case 3:
+                   System.out.println("resultCode"+resultCode);
+                   Datarunnable(data);
+                   break;
+           }
+        }
+        super.onActivityResult(requestCode, resultCode, d);
+
+    }
+
+    @Override
+    public void EditButton(Map<String,String> map) {
+                Intent   intent=new Intent(this,CreateRecordActivity.class);
+
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            intent.putExtra(entry.getKey(),entry.getValue());
+        }
+
+         startActivityForResult(intent, 1);
     }
 }

@@ -21,7 +21,7 @@ import java.io.IOException;
  * Created by Administrator on 2016/10/12 0012.
  */
 public class DeleteRunnable implements Runnable{
-    private static SharedPreferences loginShare;
+    private  SharedPreferences loginShare;
 
 
     private String id,address;

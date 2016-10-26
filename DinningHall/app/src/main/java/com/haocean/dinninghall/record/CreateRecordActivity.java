@@ -34,7 +34,6 @@ public class CreateRecordActivity  extends Activity  implements View.OnClickList
         Intent intent = getIntent();
         typeRecord = intent.getStringExtra("typeRecord");
         tempString=intent.getStringExtra("tempString");
-        System.out.println("---解析tempString--"+tempString);
         id=intent.getStringExtra("id");
 
 
@@ -71,8 +70,6 @@ public class CreateRecordActivity  extends Activity  implements View.OnClickList
         switch (viewId){
             case R.id.submit:
                 Object object=  ValueUtils.setValue(typeRecord,CreateRecordActivity.this);
-
-
                 if(id==null){
                     createRecordRunnable=new CreateRecordRunnable(hand,object);
                     createRecordRunnable.setTypeRecord(typeRecord);
@@ -93,12 +90,14 @@ public class CreateRecordActivity  extends Activity  implements View.OnClickList
             super.handleMessage(msg);
             switch(msg.what){
                 case 0:
-
+                    System.out.println("这里应该也有的吧");
+                    Intent intent = new Intent();
+                    intent.setClass(CreateRecordActivity.this, RecordListActivity.class);
+                    setResult(2, intent);
                     finish();
                     Toast.makeText(CreateRecordActivity.this, "新建成功", Toast.LENGTH_SHORT).show();
                     break;
                 case 1:
-
                     Toast.makeText(CreateRecordActivity.this, "新建失败", Toast.LENGTH_SHORT).show();
                     break;
             }
@@ -111,12 +110,13 @@ public class CreateRecordActivity  extends Activity  implements View.OnClickList
             super.handleMessage(msg);
             switch(msg.what){
                 case 0:
-                    //  myPublicClass.clearBimp();
+                    Intent intent = new Intent();
+                    intent.setClass(CreateRecordActivity.this, RecordListActivity.class);
+                    setResult(3, intent);
                     finish();
                     Toast.makeText(CreateRecordActivity.this, "编辑成功", Toast.LENGTH_SHORT).show();
                     break;
                 case 1:
-                    //   myPublicClass.clearBimp();
                     Toast.makeText(CreateRecordActivity.this, "编辑失败", Toast.LENGTH_SHORT).show();
                     break;
             }

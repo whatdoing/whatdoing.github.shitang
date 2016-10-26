@@ -39,13 +39,7 @@ private    String respond,typeMan;
         listview.setXListViewListener(this);
         return view;
     }
-    private int replaceFragment(Fragment fragment, String stackName) {
-        FragmentManager manager = getActivity().getFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.fragment_title, fragment);
-        transaction.addToBackStack(stackName);
-        return transaction.commit();
-    }
+
 
 
 
