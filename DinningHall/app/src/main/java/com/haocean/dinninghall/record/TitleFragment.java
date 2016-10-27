@@ -42,6 +42,9 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
         int id = view.getId();
         switch (id) {
             case R.id.back: {
+                Intent intent = new Intent();
+                intent.setClass(activity, RecordIndex.class);
+                activity.setResult(2, intent);
                 activity.finish();
             }
              break;

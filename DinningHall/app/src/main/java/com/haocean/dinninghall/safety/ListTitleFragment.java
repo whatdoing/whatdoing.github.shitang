@@ -2,6 +2,8 @@ package com.haocean.dinninghall.safety;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.haocean.dinninghall.R;
+import com.haocean.dinninghall.Runnable.CountRunnable;
 import com.haocean.dinninghall.contexts.RecordList;
 import com.haocean.dinninghall.publicMethod.UserData;
 import com.haocean.dinninghall.record.RecordListActivity;
@@ -66,6 +69,30 @@ public class ListTitleFragment extends Fragment implements View.OnClickListener{
             e.printStackTrace();
         }
     }
+    public void Run(){
+        CountRunnable countRunnable=new CountRunnable(handlist,"countLog");
+        Thread dataThread=new Thread(countRunnable);
+        dataThread.start();
+    }
+    Handler handlist = new Handler(){
+        public void handleMessage(Message msg){
+            super.handleMessage(msg);
+
+            switch(msg.what){
+                case 0:
+                    setCount();
+                    break;
+                case 1:
+//                    Toast.makeText(getActivity(), "系统维护数据无法查询到，请稍后重试！", Toast.LENGTH_SHORT).show();
+                    break;
+                case 2:
+
+//                    Toast.makeText(getActivity(), "无查询数据", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+
+        }
+    };
     @Override
     public void onClick(View view) {
         int id = view.getId();

@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 
 import com.haocean.dinninghall.R;
 import com.haocean.dinninghall.record.CreateRecordActivity;
+import com.haocean.dinninghall.record.RecordIndex;
 import com.haocean.dinninghall.record.RecordListActivity;
 
 
@@ -42,6 +43,9 @@ System.out.println("----TITLE----");
         int id = view.getId();
         switch (id) {
             case R.id.back: {
+                Intent intent = new Intent();
+                intent.setClass(activity, SafetyIndex.class);
+                activity.setResult(2, intent);
                 activity.finish();
             }
              break;
@@ -50,12 +54,19 @@ System.out.println("----TITLE----");
             }
             break;
             case R.id.function: {
-                Intent intent=new Intent(getActivity(),CreateSafetyActivity.class);
-                intent.putExtra("typeRecord",activity.getTypeRecord());
-                startActivity(intent);
+//                Intent intent=new Intent(getActivity(),CreateSafetyActivity.class);
+//                intent.putExtra("typeRecord",activity.getTypeRecord());
+//                startActivity(intent);
+
+                onCreateButton CreateButton=(onCreateButton)activity;
+                System.out.println("来了吗");
+                CreateButton.CreateRecord();
             }
             break;
         }
 
+    }
+    public interface onCreateButton {
+        void CreateRecord();
     }
 }

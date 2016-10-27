@@ -16,6 +16,7 @@ import com.haocean.dinninghall.R;
 import com.haocean.dinninghall.Runnable.CountRunnable;
 import com.haocean.dinninghall.adapter.SafetyAdapter;
 import com.haocean.dinninghall.contexts.RecordList;
+import com.haocean.dinninghall.publicMethod.UserData;
 import com.haocean.dinninghall.safety.SafetyListActivity;
 
 /**
@@ -23,7 +24,7 @@ import com.haocean.dinninghall.safety.SafetyListActivity;
  */
 public class ReviewIndex extends Fragment {
     private ListView list;
-    private String Jsondata;
+    SafetyAdapter mAdapter;
 String type="countSafe";
     public void Run(){
         CountRunnable countRunnable=new CountRunnable(handlist,type);
@@ -45,11 +46,10 @@ String type="countSafe";
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 System.out.println("到这里了吗？");
-                String type=null;
                 Intent intent=new Intent(getActivity(), ReviewListActivity.class);
 
                 intent.putExtra("typeRecord", RecordList.ReviewArrStr.get(i));
-                getActivity().startActivity(intent);
+                startActivityForResult(intent, 1);
             }
         });
         return view;
@@ -61,9 +61,7 @@ String type="countSafe";
 
             switch(msg.what){
                 case 0:
-                    Jsondata=CountRunnable.getContacts();
-                    // 解析json，
-                    SafetyAdapter mAdapter = new SafetyAdapter(Jsondata,1);
+                     mAdapter = new SafetyAdapter(1);
                     list.setAdapter(mAdapter);//为ListView绑定Adapter
                     break;
                 case 1:
@@ -77,4 +75,20 @@ String type="countSafe";
 
         }
     };
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        System.out.println("让我看看行不行？？？？？？？？？？？？？？？？？？？+++++++++requestCode"+requestCode+"resultCode"+resultCode);
+        System.out.println("UserDatacount"+ UserData.getCount());
+        if(requestCode==1){
+            switch (resultCode)
+            {
+                case 2:
+                    mAdapter.setData();
+                    mAdapter.notifyDataSetChanged();
+                    break;
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+
+    }
 }

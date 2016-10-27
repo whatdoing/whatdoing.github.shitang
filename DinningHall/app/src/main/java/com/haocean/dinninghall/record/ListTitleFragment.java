@@ -16,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.haocean.dinninghall.R;
+import com.haocean.dinninghall.Runnable.CountRunnable;
+import com.haocean.dinninghall.adapter.SafetyAdapter;
 import com.haocean.dinninghall.contexts.RecordList;
 import com.haocean.dinninghall.publicMethod.UserData;
 import com.haocean.dinninghall.view.MyListView.XListView;
@@ -56,11 +58,37 @@ public class ListTitleFragment extends Fragment implements View.OnClickListener{
         }else{
             typeRecord=activity.getTypeRecord();
         }
-        System.out.println("------------"+RecordList.Lists.get(typeRecord));
+
         recordname.setText(RecordList.Lists.get(typeRecord));
     }
+    public void Run(){
+        CountRunnable countRunnable=new CountRunnable(handlist,"countProcess");
+        Thread dataThread=new Thread(countRunnable);
+        dataThread.start();
+    }
+    Handler handlist = new Handler(){
+        public void handleMessage(Message msg){
+            super.handleMessage(msg);
+
+            switch(msg.what){
+                case 0:
+                    setCount();
+                    break;
+                case 1:
+//                    Toast.makeText(getActivity(), "系统维护数据无法查询到，请稍后重试！", Toast.LENGTH_SHORT).show();
+                    break;
+                case 2:
+
+//                    Toast.makeText(getActivity(), "无查询数据", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+
+        }
+    };
     public void setCount(){
         try {
+
+
             JSONObject jsonObject=new JSONObject(UserData.getCount());
             String strType=jsonObject.getString(activity.getTypeRecord());
 
@@ -72,6 +100,9 @@ public class ListTitleFragment extends Fragment implements View.OnClickListener{
             e.printStackTrace();
         }
     }
+
+
+
     @Override
     public void onClick(View view) {
         int id = view.getId();

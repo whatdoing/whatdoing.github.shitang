@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.haocean.dinninghall.R;
 import com.haocean.dinninghall.Runnable.CreateRecordRunnable;
 import com.haocean.dinninghall.contexts.RecordList;
+import com.haocean.dinninghall.record.RecordListActivity;
 import com.haocean.dinninghall.record.utils.ValueUtils;
 
 public class CreateSafetyActivity extends Activity implements View.OnClickListener{
@@ -37,11 +38,9 @@ public class CreateSafetyActivity extends Activity implements View.OnClickListen
 
         FragmentManager fragmentManager= getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.fragment_title, new CreateTitleFragment(),"createFragmentTitle").commit();
-
         //解析tempString
         fragment= RecordList.Fragment.get(typeRecord);
         fragmentManager.beginTransaction().replace(R.id.fragment_context, fragment,"createFragment").commit();
-
     }
 
     public String getTempString(){
@@ -90,12 +89,13 @@ public class CreateSafetyActivity extends Activity implements View.OnClickListen
             super.handleMessage(msg);
             switch(msg.what){
                 case 0:
-
+                    Intent intent = new Intent();
+                    intent.setClass(CreateSafetyActivity.this, SafetyListActivity.class);
+                    setResult(3, intent);
                     finish();
                     Toast.makeText(CreateSafetyActivity.this, "新建成功", Toast.LENGTH_SHORT).show();
                     break;
                 case 1:
-
                     Toast.makeText(CreateSafetyActivity.this, "新建失败", Toast.LENGTH_SHORT).show();
                     break;
             }
@@ -108,12 +108,13 @@ public class CreateSafetyActivity extends Activity implements View.OnClickListen
             super.handleMessage(msg);
             switch(msg.what){
                 case 0:
-
+                    Intent intent = new Intent();
+                    intent.setClass(CreateSafetyActivity.this, SafetyListActivity.class);
+                    setResult(3, intent);
                     finish();
                     Toast.makeText(CreateSafetyActivity.this, "编辑成功", Toast.LENGTH_SHORT).show();
                     break;
                 case 1:
-
                     Toast.makeText(CreateSafetyActivity.this, "编辑失败", Toast.LENGTH_SHORT).show();
                     break;
             }

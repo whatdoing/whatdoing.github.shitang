@@ -25,7 +25,6 @@ public class UserData {
         return loginShare.getString("jession",null);
     }
 
-
     public static String getPassword() {
         return loginShare.getString("password",null);
     }

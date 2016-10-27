@@ -39,7 +39,7 @@ public class LoginRunnale implements Runnable {
     public SharedPreferences userShare;
     private SharedPreferences.Editor userEdit;
     private Context context;
-    public static String jession = "";//session
+    public  String jession = "";//session
     private boolean loginSuccess=false;
     private String username;
     private String password;
@@ -120,7 +120,7 @@ public class LoginRunnale implements Runnable {
                     //这里第一个输出来就是Jsessionid,可以保存
                     if (i == 0) {
                         jession = cookies.get(i).getValue();
-                        System.out.println("------jession-----"+jession);
+                        userEdit.putString("jession", jession).commit();
                     }
                 }
             }
@@ -156,8 +156,9 @@ public class LoginRunnale implements Runnable {
                     userEdit.putString("phone",jsonobject.getString("phone")).commit();
                     userEdit.putString("url",jsonobject.getString("url")).commit();
                     userEdit.putString("school_name",jsonobject.getString("school_name")).commit();
+                    userEdit.putString("jurisdiction",jsonobject.getString("jurisdiction")).commit();
 
-                    System.out.println("jsonobject.getString(school_name)"+jsonobject.getString("school_name"));
+                    System.out.println("jsonobject.getString(jsonobject)"+jsonobject);
                     loginSuccess = true;
                 } else {
                     loginSuccess = false;

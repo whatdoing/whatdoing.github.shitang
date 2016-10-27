@@ -22,6 +22,7 @@ import com.haocean.dinninghall.adapter.DocumentsAdapter;
 import com.haocean.dinninghall.adapter.ListViewAdapter;
 import com.haocean.dinninghall.contexts.ManManagementList;
 import com.haocean.dinninghall.contexts.RecordList;
+import com.haocean.dinninghall.publicMethod.UserData;
 import com.haocean.dinninghall.record.RecordListActivity;
 
 import org.json.JSONException;
@@ -35,8 +36,8 @@ import java.util.Map;
  */
 public class ManIndexFrament extends Fragment{
     private ListView list;
-    private String Jsondata;
     String type="countStaff";
+    DocumentsAdapter mAdapter;
     public void Run(){
         CountRunnable countRunnable=new CountRunnable(handlist,type);
         Thread dataThread=new Thread(countRunnable);
@@ -59,12 +60,9 @@ public class ManIndexFrament extends Fragment{
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                System.out.println("到这里了吗？");
-                String type=null;
                 Intent intent=new Intent(getActivity(), ManManagementIndexActivity.class);
-
                 intent.putExtra("typeRecord",ManManagementList.ManManagementStr.get(i));
-                getActivity().startActivity(intent);
+                startActivityForResult(intent, 1);
             }
         });
         return view;
@@ -77,8 +75,7 @@ public class ManIndexFrament extends Fragment{
             switch(msg.what){
                 case 0:
                     // 解析json，
-                    Jsondata=CountRunnable.getContacts();
-                    DocumentsAdapter mAdapter = new DocumentsAdapter(Jsondata);
+                     mAdapter = new DocumentsAdapter();
                     list.setAdapter(mAdapter);//为ListView绑定Adapter
                     break;
                 case 1:
@@ -92,4 +89,20 @@ public class ManIndexFrament extends Fragment{
 
         }
     };
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        System.out.println("让我看看行不行？？？？？？？？？？？？？？？？？？？+++++++++requestCode"+requestCode+"resultCode"+resultCode);
+        System.out.println("UserDatacount"+ UserData.getCount());
+        if(requestCode==1){
+            switch (resultCode)
+            {
+                case 2:
+                    mAdapter.setData();
+                    mAdapter.notifyDataSetChanged();
+                    break;
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+
+    }
 }

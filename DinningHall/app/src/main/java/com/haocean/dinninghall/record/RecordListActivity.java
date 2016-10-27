@@ -121,6 +121,9 @@ public class RecordListActivity  extends SlidingFragmentActivity implements Left
     public void dataChanged(){
         bottomListFragment.dataChanged();
     }
+    public void setCount(){
+        listTitleFragment.Run();
+    }
     /*
     * 左侧菜单选择后执行
     * 菜单隐藏，数据加载
@@ -193,7 +196,6 @@ public class RecordListActivity  extends SlidingFragmentActivity implements Left
            {
                case 2:
                case 3:
-                   System.out.println("resultCode"+resultCode);
                    Datarunnable(data);
                    break;
            }

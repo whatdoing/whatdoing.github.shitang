@@ -22,6 +22,7 @@ import com.haocean.dinninghall.Runnable.CountRunnable;
 import com.haocean.dinninghall.adapter.DocumentsAdapter;
 import com.haocean.dinninghall.adapter.SafetyAdapter;
 import com.haocean.dinninghall.contexts.RecordList;
+import com.haocean.dinninghall.publicMethod.UserData;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,7 +32,7 @@ import org.json.JSONObject;
  */
 public class SafetyIndex extends Fragment {
     private ListView list;
-    private String Jsondata;
+    SafetyAdapter mAdapter;
     String type="countLog";
    public void Run(){
        CountRunnable countRunnable=new CountRunnable(handlist,type);
@@ -52,10 +53,9 @@ public class SafetyIndex extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 System.out.println("到这里了吗？");
-                String type=null;
                 Intent intent=new Intent(getActivity(), SafetyListActivity.class);
                 intent.putExtra("typeRecord",RecordList.SafetyArrStr.get(i));
-                getActivity().startActivity(intent);
+                startActivityForResult(intent, 1);
             }
         });
         return view;
@@ -67,11 +67,7 @@ public class SafetyIndex extends Fragment {
 
             switch(msg.what){
                 case 0:
-                    Jsondata=CountRunnable.getContacts();
-
-                    // 解析json，
-
-                    SafetyAdapter mAdapter = new SafetyAdapter(Jsondata,0);
+                     mAdapter = new SafetyAdapter(0);
                     list.setAdapter(mAdapter);//为ListView绑定Adapter
                     break;
                 case 1:
@@ -85,4 +81,20 @@ public class SafetyIndex extends Fragment {
 
         }
     };
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        System.out.println("让我看看行不行？？？？？？？？？？？？？？？？？？？+++++++++requestCode"+requestCode+"resultCode"+resultCode);
+        System.out.println("UserDatacount"+ UserData.getCount());
+        if(requestCode==1){
+            switch (resultCode)
+            {
+                case 2:
+                    mAdapter.setData();
+                    mAdapter.notifyDataSetChanged();
+                    break;
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+
+    }
 }

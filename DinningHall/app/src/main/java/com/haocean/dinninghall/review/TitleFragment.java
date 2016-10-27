@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 
 import com.haocean.dinninghall.R;
 import com.haocean.dinninghall.record.CreateRecordActivity;
+import com.haocean.dinninghall.record.RecordIndex;
 import com.haocean.dinninghall.safety.SafetyListActivity;
 
 
@@ -26,7 +27,6 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.list_title, container, false);//初始化fragment
         activity= (ReviewListActivity)getActivity();
-System.out.println("----TITLE----");
         LinearLayout back= (LinearLayout) view.findViewById(R.id.back);
         ImageView search= (ImageView) view.findViewById(R.id.search);
         ImageView function= (ImageView) view.findViewById(R.id.function);
@@ -42,6 +42,9 @@ System.out.println("----TITLE----");
         int id = view.getId();
         switch (id) {
             case R.id.back: {
+                Intent intent = new Intent();
+                intent.setClass(activity, ReviewIndex.class);
+                activity.setResult(2, intent);
                 activity.finish();
             }
              break;
@@ -50,12 +53,18 @@ System.out.println("----TITLE----");
             }
             break;
             case R.id.function: {
-                Intent intent=new Intent(getActivity(),CreateReviewActivity.class);
-                intent.putExtra("typeRecord",activity.getTypeRecord());
-                startActivity(intent);
+//                Intent intent=new Intent(getActivity(),CreateReviewActivity.class);
+//                intent.putExtra("typeRecord",activity.getTypeRecord());
+//                startActivity(intent);
+                onCreateButton CreateButton=(onCreateButton)activity;
+                System.out.println("来了吗");
+                CreateButton.CreateRecord();
             }
             break;
         }
 
+    }
+    public interface onCreateButton {
+        void CreateRecord();
     }
 }

@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.haocean.dinninghall.R;
+import com.haocean.dinninghall.record.RecordIndex;
 
 
 /**
@@ -40,6 +41,9 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
         int id = view.getId();
         switch (id) {
             case R.id.back: {
+                Intent intent = new Intent();
+                intent.setClass(activity, ManIndexFrament.class);
+                activity.setResult(2, intent);
                 activity.finish();
             }
              break;
@@ -48,13 +52,18 @@ public class TitleFragment extends Fragment implements View.OnClickListener{
             }
             break;
             case R.id.function: {
-                Intent intent=new Intent(getActivity(),CreateManActivity.class);
-                intent.putExtra("typeRecord",activity.getTypeMan());
-                System.out.println("-----man title frag----"+activity.getTypeMan());
-                startActivity(intent);
+                onCreateButton CreateButton=(onCreateButton)activity;
+                System.out.println("来了吗");
+                CreateButton.CreateRecord();
+//                Intent intent=new Intent(getActivity(),CreateManActivity.class);
+//                intent.putExtra("typeRecord",activity.getTypeMan());
+//                startActivity(intent);
             }
             break;
         }
 
+    }
+    public interface onCreateButton {
+        void CreateRecord();
     }
 }

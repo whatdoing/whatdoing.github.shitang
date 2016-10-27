@@ -21,6 +21,7 @@ import com.haocean.dinninghall.R;
 import com.haocean.dinninghall.Runnable.CountRunnable;
 import com.haocean.dinninghall.adapter.SafetyAdapter;
 import com.haocean.dinninghall.contexts.RecordList;
+import com.haocean.dinninghall.publicMethod.UserData;
 import com.haocean.dinninghall.record.RecordListActivity;
 
 import org.apache.http.message.BasicNameValuePair;
@@ -37,7 +38,7 @@ import java.util.Map;
 public class RecordIndex extends Fragment{
     private LinearLayout recordList;
     private ListView list;
-    static  String   DocString;
+    SafetyAdapter mAdapter;
     String type="countProcess";
     public void Run(){
         CountRunnable countRunnable=new CountRunnable(handlist,type);
@@ -56,11 +57,9 @@ public class RecordIndex extends Fragment{
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                System.out.println("到这里了吗？");
                 Intent intent=new Intent(getActivity(), RecordListActivity.class);
                 intent.putExtra("typeRecord",RecordList.ArrStr.get(i));
-
-                getActivity().startActivity(intent);
+                startActivityForResult(intent, 1);
             }
         });
 
@@ -72,16 +71,14 @@ public class RecordIndex extends Fragment{
 
             switch(msg.what){
                 case 0:
-                    DocString=CountRunnable.getContacts();
                     // 解析json，
-                    SafetyAdapter mAdapter = new SafetyAdapter(DocString,2);
+                     mAdapter = new SafetyAdapter(2);
                     list.setAdapter(mAdapter);//为ListView绑定Adapter
                     break;
                 case 1:
                     Toast.makeText(getActivity(), "系统维护数据无法查询到，请稍后重试！", Toast.LENGTH_SHORT).show();
                     break;
                 case 2:
-
                     Toast.makeText(getActivity(), "无查询数据", Toast.LENGTH_SHORT).show();
                     break;
             }
@@ -90,5 +87,20 @@ public class RecordIndex extends Fragment{
     };
 
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+System.out.println("让我看看行不行？？？？？？？？？？？？？？？？？？？+++++++++requestCode"+requestCode+"resultCode"+resultCode);
+        System.out.println("UserDatacount"+ UserData.getCount());
+        if(requestCode==1){
+            switch (resultCode)
+            {
+                case 2:
+                    mAdapter.setData();
+                    mAdapter.notifyDataSetChanged();
+                    break;
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
 
+    }
 }

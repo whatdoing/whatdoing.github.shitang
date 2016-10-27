@@ -37,7 +37,6 @@ public class DeleteRunnable implements Runnable{
 
     public void getid(String id){
         this.id=id;
-        System.out.println("-----删除的id----"+id);
     }
     public void getHand(Handler handler){
         this.handler=handler;

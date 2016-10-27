@@ -25,7 +25,7 @@ public class BottomListFragment extends Fragment implements XListView.IXListView
     private ReviewListActivity activity;
     String respond;
     ListViewAdapter mAdapter;
-
+    String type;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -36,19 +36,14 @@ public class BottomListFragment extends Fragment implements XListView.IXListView
         listview.setXListViewListener(this);
         return view;
     }
-    private int replaceFragment(Fragment fragment, String stackName) {
-        FragmentManager manager = getActivity().getFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.fragment_title, fragment);
-        transaction.addToBackStack(stackName);
-        return transaction.commit();
+    public void dataChanged(){
+        mAdapter.notifyDataSetChanged();
     }
 
     public void updata(String data,int i){
 
         this.respond=data;
 
-        System.out.println("---respond--"+respond);
 
         handlist.obtainMessage(i).sendToTarget();
     }
@@ -57,11 +52,25 @@ public class BottomListFragment extends Fragment implements XListView.IXListView
     Handler handlist = new Handler(){
         public void handleMessage(Message msg){
             super.handleMessage(msg);
-
+            boolean t = false;
+            if(type==null){
+                type=activity.getTypeRecord();
+                t=false;
+            }else{
+                t= type.equals(activity.getTypeRecord());
+                if(!t){
+                    type=activity.getTypeRecord();
+                }
+            }
             switch(msg.what){
                 case 0:
-                    mAdapter = new ListViewAdapter(respond,activity.getTypeRecord(),activity);
-                    listview.setAdapter(mAdapter);//为ListView绑定Adapter
+                    if(mAdapter!=null&&t){
+                        mAdapter.setJsonAry(respond,activity.getTypeRecord());
+                        dataChanged();
+                    }else{
+                        mAdapter = new ListViewAdapter(respond,activity.getTypeRecord(),activity);
+                        listview.setAdapter(mAdapter);//为ListView绑定Adapter
+                    }
                     break;
                 case 1:
                     mAdapter = new ListViewAdapter(respond,activity.getTypeRecord(),activity);

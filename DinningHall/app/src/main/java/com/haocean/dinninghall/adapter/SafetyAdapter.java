@@ -34,18 +34,26 @@ public class SafetyAdapter extends BaseAdapter {
     String strType;
     int num;
     /**构造函数*/
-    public SafetyAdapter(String Jsondata,int num) {
+    public SafetyAdapter(int num) {
         this.mInflater = LayoutInflater.from(AppController.getInstance());
         this.num=num;
-        UserData.setCount(Jsondata);
+
         try {
-            listItem =new JSONObject(Jsondata);
+            listItem =new JSONObject(UserData.getCount());
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
 
+    public void setData(){
+        try {
+            System.out.println("难道没进来吗？？？？");
+            listItem =new JSONObject(UserData.getCount());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     public int getCount() {
         return listItem.length();//返回数组的长度
@@ -92,31 +100,7 @@ public class SafetyAdapter extends BaseAdapter {
 
             holder.Mnumber = (TextView) convertView.findViewById(R.id.Mnumber);
             holder.Ynumber = (TextView) convertView.findViewById(R.id.Ynumber);
-            try {
-                if(num==1){
-                    keys= RecordList.ReviewArrStr.get(position);
-                    holder.name.setText(RecordList.ReviewLists.get(keys));
-                }
-                else if(num==2){
-                    keys=RecordList.ArrStr.get(position);
-                    holder.name.setText(RecordList.Lists.get(keys));
-                }
-                else{
-                    keys= RecordList.SafetyArrStr.get(position);
-                    holder.name.setText(RecordList.SafetyLists.get(keys));
-                }
-                System.out.println("--safe ada---"+keys);
-                /**设置TextView显示的内容，即我们存放在动态数组中的数据*/
 
-                strType=listItem.getString(keys);
-
-                JSONObject jsonObject = new JSONObject(strType);
-
-                holder.Mnumber.setText(jsonObject.getString("Mnumber"));
-                holder.Ynumber.setText(jsonObject.getString("Ynumber"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
             convertView.setTag(holder);//绑定ViewHolder对象
 
         }
@@ -125,6 +109,31 @@ public class SafetyAdapter extends BaseAdapter {
 
             holder = (ViewHolder)convertView.getTag();//取出ViewHolder对象
 
+        }
+        try {
+            if(num==1){
+                keys= RecordList.ReviewArrStr.get(position);
+                holder.name.setText(RecordList.ReviewLists.get(keys));
+            }
+            else if(num==2){
+                keys=RecordList.ArrStr.get(position);
+                holder.name.setText(RecordList.Lists.get(keys));
+            }
+            else{
+                keys= RecordList.SafetyArrStr.get(position);
+                holder.name.setText(RecordList.SafetyLists.get(keys));
+            }
+            System.out.println("--safe ada---"+keys);
+            /**设置TextView显示的内容，即我们存放在动态数组中的数据*/
+
+            strType=listItem.getString(keys);
+
+            JSONObject jsonObject = new JSONObject(strType);
+
+            holder.Mnumber.setText(jsonObject.getString("Mnumber"));
+            holder.Ynumber.setText(jsonObject.getString("Ynumber"));
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
         return convertView;
 

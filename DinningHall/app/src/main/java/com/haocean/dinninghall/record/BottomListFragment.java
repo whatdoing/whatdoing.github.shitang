@@ -35,7 +35,7 @@ public class BottomListFragment extends Fragment implements XListView.IXListView
     private RecordListActivity activity;
       String respond;
     ListViewAdapter mAdapter;
-
+String type;
     public void dataChanged(){
         mAdapter.notifyDataSetChanged();
     }
@@ -61,11 +61,20 @@ public class BottomListFragment extends Fragment implements XListView.IXListView
     Handler handlist = new Handler(){
         public void handleMessage(Message msg){
             super.handleMessage(msg);
-
+            boolean t = false;
+            if(type==null){
+                type=activity.getTypeRecord();
+                t=false;
+            }else{
+                t= type.equals(activity.getTypeRecord());
+                if(!t){
+                    type=activity.getTypeRecord();
+                }
+            }
             switch(msg.what){
                 case 0:
-                    if(mAdapter!=null){
-                        mAdapter.setJsonAry(respond);
+                    if(mAdapter!=null && t){
+                        mAdapter.setJsonAry(respond,activity.getTypeRecord());
                         dataChanged();
                     }else{
                         mAdapter = new ListViewAdapter(respond,activity.getTypeRecord(),activity);
@@ -73,6 +82,7 @@ public class BottomListFragment extends Fragment implements XListView.IXListView
                     }
                     break;
                 case 1:
+
                     mAdapter = new ListViewAdapter(respond,activity.getTypeRecord(),activity);
                     listview.setAdapter(mAdapter);//为ListView绑定Adapter
                     Toast.makeText(getActivity(), "无查询数据", Toast.LENGTH_LONG).show();

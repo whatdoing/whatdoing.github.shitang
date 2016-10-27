@@ -24,7 +24,7 @@ import java.io.IOException;
 public class CountRunnable implements Runnable {
     public SharedPreferences loginShare;
 
-    private  static String contacts;
+    private   String contacts;
     private String url;
 
     String address="",type="";
@@ -38,7 +38,7 @@ public class CountRunnable implements Runnable {
         this.type=type;
     }
 
-    public static String getContacts() {
+    public  String getContacts() {
 
         return contacts;
 
@@ -69,6 +69,7 @@ public class CountRunnable implements Runnable {
         System.out.println("nnnnnnn---------"+contacts);
         if(contacts.contains(":") && contacts!="null") {
             handler.obtainMessage(0).sendToTarget();
+            UserData.setCount(contacts);
         }else if(contacts.contains("[]")){
             handler.obtainMessage(1).sendToTarget();
         }else{

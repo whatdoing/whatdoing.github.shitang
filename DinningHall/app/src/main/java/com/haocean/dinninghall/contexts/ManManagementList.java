@@ -12,7 +12,6 @@ import com.haocean.dinninghall.entity.record.UltravioletDisinfection;
 import com.haocean.dinninghall.manManagement.CreateManFragment.RosterFragment;
 import com.haocean.dinninghall.manManagement.CreateManFragment.MorningInspectionFragment;
 import com.haocean.dinninghall.manManagement.ManManagementIndexActivity;
-import com.haocean.dinninghall.manManagement.RosterIndexActivity;
 
 
 import java.util.ArrayList;
@@ -46,7 +45,6 @@ public class ManManagementList {
 
 
 
-        ManManagementClass.put("Roster", RosterIndexActivity.class);
         ManManagementClass.put("MorningInspection",ManManagementIndexActivity.class);
 
 

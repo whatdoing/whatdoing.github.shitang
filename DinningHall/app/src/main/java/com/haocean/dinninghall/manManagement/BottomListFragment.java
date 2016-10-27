@@ -22,12 +22,12 @@ import com.haocean.dinninghall.view.MyListView.XListView;
  */
 public class BottomListFragment extends Fragment implements XListView.IXListViewListener{
 private XListView listview;
-private    String respond,typeMan;
+private    String respond;
     ListViewAdapter mAdapter;
+    String type;
     private ManManagementIndexActivity activity;
     public void setData(String data){
         respond=data;
-        System.out.println("------输出----------"+data);
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,15 +41,14 @@ private    String respond,typeMan;
     }
 
 
+    public void dataChanged(){
+        mAdapter.notifyDataSetChanged();
+    }
 
 
-
-    public void updata(String manData,int i,String typeMan){
+    public void updata(String manData,int i){
 
         this.respond=manData;
-        this.typeMan=typeMan;
-        System.out.println("---respond--"+respond);
-        System.out.println("---hand得到的消息是-----"+i);
         handlist.obtainMessage(i).sendToTarget();
     }
     //hand消息
@@ -57,21 +56,37 @@ private    String respond,typeMan;
     Handler handlist = new Handler(){
         public void handleMessage(Message msg){
             super.handleMessage(msg);
-
+            boolean t = false;
+            if(type==null){
+                type=activity.getTypeMan();
+                System.out.println(1+"type"+type);
+                t=false;
+            }else{
+                t= type.equals(activity.getTypeMan());
+                if(!t){
+                    type=activity.getTypeMan();
+                }
+                System.out.println(2+"type"+activity.getTypeMan());
+            }
             switch(msg.what){
                 case 0:
-                    System.out.println("----------"+typeMan);
-                    mAdapter = new ListViewAdapter(respond,typeMan,activity);
-                    listview.setAdapter(mAdapter);//为ListView绑定Adapter
+                    if(mAdapter!=null&&t){
+                        System.out.println(3+"type"+activity.getTypeMan());
+                        mAdapter.setJsonAry(respond,activity.getTypeMan());
+                        dataChanged();
+                    }else{
+                        System.out.println(4+"type"+activity.getTypeMan());
+                        mAdapter = new ListViewAdapter(respond,activity.getTypeMan(),activity);
+                        listview.setAdapter(mAdapter);//为ListView绑定Adapter
+                    }
                     break;
                 case 1:
-                    mAdapter = new ListViewAdapter(respond,typeMan,activity);
+                    mAdapter = new ListViewAdapter(respond,activity.getTypeMan(),activity);
                     listview.setAdapter(mAdapter);//为ListView绑定Adapter
                     Toast.makeText(getActivity(), "无查询数据", Toast.LENGTH_LONG).show();
                     break;
                 case 2:
                     Toast.makeText(getActivity(), "系统维护数据无法查询到，请稍后重试！", Toast.LENGTH_LONG).show();
-
                     break;
             }
 

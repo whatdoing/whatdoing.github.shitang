@@ -68,8 +68,9 @@ public class ListViewAdapter extends BaseAdapter {
             e.printStackTrace();
         }
     }
-    public void setJsonAry(String listItem){
+    public void setJsonAry(String listItem,String typeRecord){
         try {
+            this.typeRecord=typeRecord;
             jsonAry = new JSONArray(listItem);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -104,6 +105,8 @@ public class ListViewAdapter extends BaseAdapter {
                     try {
                         Method m = context.getClass().getMethod("dataChanged");
                          m.invoke(context);
+                        Method c = context.getClass().getMethod("setCount");
+                        c.invoke(context);
                     } catch (NoSuchMethodException e) {
                         e.printStackTrace();
                     } catch (InvocationTargetException e) {
@@ -124,7 +127,7 @@ public class ListViewAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         try {
-            System.out.println("个数有多少？"+getCount());
+            System.out.println("个数有多少？"+typeRecord);
             Class   clazz= RecordList.Class.get(typeRecord);
 
             Object holder=null;

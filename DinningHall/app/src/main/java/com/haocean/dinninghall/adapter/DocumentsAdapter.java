@@ -40,17 +40,22 @@ public class DocumentsAdapter extends BaseAdapter {
     private JSONObject listItem;
 
     /**构造函数*/
-    public DocumentsAdapter(String Jsondata) {
+    public DocumentsAdapter( ) {
         this.mInflater = LayoutInflater.from(AppController.getInstance());
-        UserData.setCount(Jsondata);
-        System.out.println("---man  jsondata-----"+Jsondata);
         try {
-            listItem =new JSONObject(Jsondata);
+            listItem =new JSONObject(UserData.getCount());
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
-
+    public void setData(){
+        try {
+            System.out.println("难道没进来吗？？？？");
+            listItem =new JSONObject(UserData.getCount());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     public int getCount() {
         return listItem.length();//返回数组的长度
@@ -96,14 +101,7 @@ public class DocumentsAdapter extends BaseAdapter {
             holder.name = (TextView) convertView.findViewById(R.id.name);
 
             holder.number = (TextView) convertView.findViewById(R.id.number);
-            try {
-                String keys=ManManagementList.ManManagementStr.get(position);
-                /**设置TextView显示的内容，即我们存放在动态数组中的数据*/
-                holder.name.setText(ManManagementList.ManManagementLists.get(keys));
-                holder.number.setText("共"+listItem.getString(keys)+"条");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+
             convertView.setTag(holder);//绑定ViewHolder对象
 
         }
@@ -112,6 +110,14 @@ public class DocumentsAdapter extends BaseAdapter {
 
             holder = (ViewHolder)convertView.getTag();//取出ViewHolder对象
 
+        }
+        try {
+            String keys=ManManagementList.ManManagementStr.get(position);
+            /**设置TextView显示的内容，即我们存放在动态数组中的数据*/
+            holder.name.setText(ManManagementList.ManManagementLists.get(keys));
+            holder.number.setText("共"+listItem.getString(keys)+"条");
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
         return convertView;
 

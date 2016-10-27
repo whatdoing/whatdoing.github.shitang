@@ -8,8 +8,10 @@ import android.view.Window;
 
 import com.haocean.dinninghall.R;
 import com.haocean.dinninghall.Runnable.RecordRunnable;
+import com.haocean.dinninghall.adapter.ListViewAdapter;
 import com.haocean.dinninghall.review.leftOrRightFragment.LeftFragment;
 import com.haocean.dinninghall.review.leftOrRightFragment.RightFragment;
+import com.haocean.dinninghall.safety.CreateSafetyActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +19,7 @@ import java.util.Map;
 import lib.SlidingMenu;
 import lib.app.SlidingFragmentActivity;
 
-public class ReviewListActivity extends SlidingFragmentActivity implements LeftFragment.onItemListener,RightFragment.onButtonListener{
+public class ReviewListActivity extends SlidingFragmentActivity implements LeftFragment.onItemListener,RightFragment.onButtonListener,TitleFragment.onCreateButton, ListViewAdapter.onEditButton {
 
     FragmentManager fragmentManager;
     private SlidingMenu _SlidingMenu; // 侧边栏菜单
@@ -31,7 +33,6 @@ public class ReviewListActivity extends SlidingFragmentActivity implements LeftF
     private void init() {
         Intent intent = getIntent();
         typeRecord = intent.getStringExtra("typeRecord");
-        System.out.println("-----safe type-----"+typeRecord);
     }
 
     @Override
@@ -55,7 +56,12 @@ public class ReviewListActivity extends SlidingFragmentActivity implements LeftF
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.rightMenu, _RightFragment).commit(); // 将右菜单默认VIEW替换为右菜单Fragment
     }
-
+    public void dataChanged(){
+        bottomListFragment.dataChanged();
+    }
+    public void setCount(){
+        listTitleFragment.Run();
+    }
     /**
 
      * 初始化侧边栏菜单
@@ -171,5 +177,33 @@ public class ReviewListActivity extends SlidingFragmentActivity implements LeftF
         //缺少一个数据的加载
         //titleFragment的一个数据统计
         //buttomListFragment的一个数据列表
+    }
+    @Override
+    public void CreateRecord() {
+        Intent intent=new Intent(this,CreateReviewActivity.class);
+        intent.putExtra("typeRecord",this.getTypeRecord());
+        startActivityForResult(intent, 1);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent d) {
+        if(requestCode==1){
+            switch (resultCode)
+            {
+                case 2:
+                case 3:
+                    Datarunnable(data);
+                    break;
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, d);
+
+    }
+    @Override
+    public void EditButton(Map<String, String> map) {
+        Intent   intent=new Intent(this,CreateReviewActivity.class);
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            intent.putExtra(entry.getKey(),entry.getValue());
+        }
+        startActivityForResult(intent, 1);
     }
 }

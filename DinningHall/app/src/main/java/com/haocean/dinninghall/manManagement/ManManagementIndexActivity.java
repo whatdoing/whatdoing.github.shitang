@@ -8,9 +8,10 @@ import android.view.Window;
 
 import com.haocean.dinninghall.R;
 import com.haocean.dinninghall.Runnable.RecordRunnable;
+import com.haocean.dinninghall.adapter.ListViewAdapter;
 import com.haocean.dinninghall.manManagement.leftOrRightFragment.LeftFragment;
 import com.haocean.dinninghall.manManagement.leftOrRightFragment.RightFragment;
-import com.haocean.dinninghall.record.RecordListActivity;
+import com.haocean.dinninghall.record.CreateRecordActivity;
 
 
 import java.util.HashMap;
@@ -22,7 +23,7 @@ import lib.app.SlidingFragmentActivity;
 /**
  * Created by haocean on 2016/10/8.
  */
-public class ManManagementIndexActivity  extends SlidingFragmentActivity implements LeftFragment.onItemListener,RightFragment.onButtonListener {
+public class ManManagementIndexActivity  extends SlidingFragmentActivity implements LeftFragment.onItemListener,RightFragment.onButtonListener, com.haocean.dinninghall.manManagement.TitleFragment.onCreateButton, ListViewAdapter.onEditButton {
 
     FragmentManager fragmentManager;
     private SlidingMenu _SlidingMenu; // 侧边栏菜单
@@ -39,6 +40,7 @@ public class ManManagementIndexActivity  extends SlidingFragmentActivity impleme
         typeMan = intent.getStringExtra("typeRecord");
 
     }
+    //获得类型
     //获取列表内容
     private void Datarunnable(Map<String,String> data){
         RecordRunnable recordRunnable=new RecordRunnable();
@@ -50,11 +52,11 @@ public class ManManagementIndexActivity  extends SlidingFragmentActivity impleme
         System.out.println("-----Mandata-----"+manData);
 
         if(manData==null){
-            bottomListFragment.updata(manData,2,typeMan);
+            bottomListFragment.updata(manData,2);
         }else if(manData.trim().equals("[]")){
-            bottomListFragment.updata(manData,1,typeMan);
+            bottomListFragment.updata(manData,1);
         }else{
-            bottomListFragment.updata(manData,0,typeMan);
+            bottomListFragment.updata(manData,0);
         }
     }
     @Override
@@ -146,8 +148,12 @@ public class ManManagementIndexActivity  extends SlidingFragmentActivity impleme
             _SlidingMenu.showContent();
         }
     }
-
-
+    public void dataChanged(){
+        bottomListFragment.dataChanged();
+    }
+    public void setCount(){
+        listTitleFragment.Run();
+    }
     @Override
     public void onBackListener(String data) {
         //清空搜索条件
@@ -162,5 +168,40 @@ public class ManManagementIndexActivity  extends SlidingFragmentActivity impleme
         //缺少一个数据的加载
         //titleFragment的一个数据统计
         //buttomListFragment的一个数据列表
+    }
+
+    @Override
+    public void CreateRecord() {
+        System.out.println("从这里进的吗");
+        Intent intent=new Intent(ManManagementIndexActivity.this,CreateManActivity.class);
+        intent.putExtra("typeRecord",ManManagementIndexActivity.this.getTypeMan());
+        startActivityForResult(intent, 1);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent d) {
+        System.out.println(requestCode);
+        System.out.println("resultCode"+resultCode);
+        System.out.println("怎么会没反应呢？");
+        if(requestCode==1){
+            switch (resultCode)
+            {
+                case 2:
+                case 3:
+                    Datarunnable(data);
+                    break;
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, d);
+
+    }
+    @Override
+    public void EditButton(Map<String, String> map) {
+        Intent   intent=new Intent(this,CreateManActivity.class);
+
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            intent.putExtra(entry.getKey(),entry.getValue());
+        }
+
+        startActivityForResult(intent, 1);
     }
 }

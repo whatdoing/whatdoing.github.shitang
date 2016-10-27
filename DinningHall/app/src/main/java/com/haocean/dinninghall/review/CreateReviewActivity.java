@@ -18,6 +18,7 @@ import com.haocean.dinninghall.Runnable.CreateRecordRunnable;
 import com.haocean.dinninghall.contexts.RecordList;
 import com.haocean.dinninghall.record.utils.ValueUtils;
 import com.haocean.dinninghall.review.CreateTitleFragment;
+import com.haocean.dinninghall.safety.SafetyListActivity;
 
 public class CreateReviewActivity extends Activity implements View.OnClickListener{
     public   String typeRecord;
@@ -31,7 +32,6 @@ public class CreateReviewActivity extends Activity implements View.OnClickListen
         Intent intent = getIntent();
         typeRecord = intent.getStringExtra("typeRecord");
         tempString=intent.getStringExtra("tempString");
-        System.out.println("---  safe   tempString--"+tempString);
         id=intent.getStringExtra("id");
 
 
@@ -89,7 +89,9 @@ public class CreateReviewActivity extends Activity implements View.OnClickListen
             super.handleMessage(msg);
             switch(msg.what){
                 case 0:
-
+                    Intent intent = new Intent();
+                    intent.setClass(CreateReviewActivity.this, SafetyListActivity.class);
+                    setResult(3, intent);
                     finish();
                     Toast.makeText(CreateReviewActivity.this, "新建成功", Toast.LENGTH_SHORT).show();
                     break;
@@ -107,7 +109,9 @@ public class CreateReviewActivity extends Activity implements View.OnClickListen
             super.handleMessage(msg);
             switch(msg.what){
                 case 0:
-
+                    Intent intent = new Intent();
+                    intent.setClass(CreateReviewActivity.this, SafetyListActivity.class);
+                    setResult(3, intent);
                     finish();
                     Toast.makeText(CreateReviewActivity.this, "编辑成功", Toast.LENGTH_SHORT).show();
                     break;

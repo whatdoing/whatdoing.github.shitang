@@ -29,9 +29,7 @@ public class CreateManActivity extends Activity  implements View.OnClickListener
     public  void init(){
         Intent intent = getIntent();
         typeMan = intent.getStringExtra("typeRecord");
-        System.out.println("---createMan-----"+typeMan);
         tempString=intent.getStringExtra("tempString");
-        System.out.println("---解析tempString--"+tempString);
         id=intent.getStringExtra("id");
 
 
@@ -81,12 +79,13 @@ public class CreateManActivity extends Activity  implements View.OnClickListener
             super.handleMessage(msg);
             switch(msg.what){
                 case 0:
-
+                    Intent intent = new Intent();
+                    intent.setClass(CreateManActivity.this, ManManagementIndexActivity.class);
+                    setResult(3, intent);
                     finish();
                     Toast.makeText(CreateManActivity.this, "新建成功", Toast.LENGTH_SHORT).show();
                     break;
                 case 1:
-
                     Toast.makeText(CreateManActivity.this, "新建失败", Toast.LENGTH_SHORT).show();
                     break;
             }
@@ -99,12 +98,13 @@ public class CreateManActivity extends Activity  implements View.OnClickListener
             super.handleMessage(msg);
             switch(msg.what){
                 case 0:
-                    //  myPublicClass.clearBimp();
+                    Intent intent = new Intent();
+                    intent.setClass(CreateManActivity.this, ManManagementIndexActivity.class);
+                    setResult(3, intent);
                     finish();
                     Toast.makeText(CreateManActivity.this, "编辑成功", Toast.LENGTH_SHORT).show();
                     break;
                 case 1:
-                    //   myPublicClass.clearBimp();
                     Toast.makeText(CreateManActivity.this, "编辑失败", Toast.LENGTH_SHORT).show();
                     break;
             }

@@ -106,10 +106,10 @@ private CheckBox ceshi,remember;
             public void onClick(View arg0) {
                 if(ceshi.isChecked()){
                     //选中
-                    address="http://tzyh.safetybao.com/";
+                    address="http://test.safetybao.com/";
                 }else{
                     //不选中
-                    address="http://tzyh.safetybao.com/";
+                    address="http://test.safetybao.com/";
                 }
             }
         });
@@ -185,14 +185,13 @@ private CheckBox ceshi,remember;
                     //成功后，提交jsession共享
 
 
-                    if(true){
+
                         loginput(map);//登录成功就跳转然后根据是否记住密码保存登录信息
-                        loginEdit.putString("jession", LoginRunnale.jession);
                         Intent  intent = new Intent(LoginActivity.this, DocumentActivity.class);
                         startActivity(intent);
                         finish();
-                    }
-                    loginEdit.commit();
+
+
 
                     break;
                 case 1:

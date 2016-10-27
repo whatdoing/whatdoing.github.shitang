@@ -7,6 +7,8 @@ import android.view.Window;
 
 import com.haocean.dinninghall.R;
 import com.haocean.dinninghall.Runnable.RecordRunnable;
+import com.haocean.dinninghall.adapter.ListViewAdapter;
+import com.haocean.dinninghall.record.CreateRecordActivity;
 import com.haocean.dinninghall.safety.leftOrRightFragment.LeftFragment;
 import com.haocean.dinninghall.safety.leftOrRightFragment.RightFragment;
 
@@ -16,7 +18,7 @@ import java.util.Map;
 import lib.SlidingMenu;
 import lib.app.SlidingFragmentActivity;
 
-public class SafetyListActivity extends SlidingFragmentActivity implements LeftFragment.onItemListener,RightFragment.onButtonListener  {
+public class SafetyListActivity extends SlidingFragmentActivity implements LeftFragment.onItemListener,RightFragment.onButtonListener, com.haocean.dinninghall.safety.TitleFragment.onCreateButton, ListViewAdapter.onEditButton  {
 
     FragmentManager fragmentManager;
     private SlidingMenu _SlidingMenu; // 侧边栏菜单
@@ -32,7 +34,12 @@ public class SafetyListActivity extends SlidingFragmentActivity implements LeftF
         typeRecord = intent.getStringExtra("typeRecord");
         System.out.println("-----safe type-----"+typeRecord);
     }
-
+    public void dataChanged(){
+        bottomListFragment.dataChanged();
+    }
+    public void setCount(){
+        listTitleFragment.Run();
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -170,5 +177,40 @@ public class SafetyListActivity extends SlidingFragmentActivity implements LeftF
         //缺少一个数据的加载
         //titleFragment的一个数据统计
         //buttomListFragment的一个数据列表
+    }
+
+    @Override
+    public void CreateRecord() {
+        System.out.println("从这里进的吗");
+        Intent intent=new Intent(this,CreateSafetyActivity.class);
+        intent.putExtra("typeRecord",this.getTypeRecord());
+        startActivityForResult(intent, 1);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent d) {
+        System.out.println(requestCode);
+        System.out.println("resultCode"+resultCode);
+        System.out.println("怎么会没反应呢？");
+        if(requestCode==1){
+            switch (resultCode)
+            {
+                case 2:
+                case 3:
+                    Datarunnable(data);
+                    break;
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, d);
+
+    }
+    @Override
+    public void EditButton(Map<String, String> map) {
+        Intent   intent=new Intent(this,CreateSafetyActivity.class);
+
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            intent.putExtra(entry.getKey(),entry.getValue());
+        }
+
+        startActivityForResult(intent, 1);
     }
 }

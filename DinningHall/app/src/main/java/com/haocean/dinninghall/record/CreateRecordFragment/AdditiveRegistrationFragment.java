@@ -107,7 +107,6 @@ public class AdditiveRegistrationFragment extends Fragment implements View.OnCli
             }
             break;
             case R.id.userecord: {
-
                 MyDialogs.cereateDialog(userecord,userecords,activity);
             }
             break;
