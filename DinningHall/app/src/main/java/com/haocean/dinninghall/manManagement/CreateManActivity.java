@@ -81,7 +81,7 @@ public class CreateManActivity extends Activity  implements View.OnClickListener
                 case 0:
                     Intent intent = new Intent();
                     intent.setClass(CreateManActivity.this, ManManagementIndexActivity.class);
-                    setResult(3, intent);
+                    setResult(2, intent);
                     finish();
                     Toast.makeText(CreateManActivity.this, "新建成功", Toast.LENGTH_SHORT).show();
                     break;

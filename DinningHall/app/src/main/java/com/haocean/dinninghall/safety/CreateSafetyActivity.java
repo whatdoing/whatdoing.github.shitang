@@ -91,7 +91,7 @@ public class CreateSafetyActivity extends Activity implements View.OnClickListen
                 case 0:
                     Intent intent = new Intent();
                     intent.setClass(CreateSafetyActivity.this, SafetyListActivity.class);
-                    setResult(3, intent);
+                    setResult(2, intent);
                     finish();
                     Toast.makeText(CreateSafetyActivity.this, "新建成功", Toast.LENGTH_SHORT).show();
                     break;

@@ -12,13 +12,17 @@ import com.haocean.dinninghall.contexts.Application;
 public class UserData {
     static SharedPreferences loginShare= AppController.getInstance().getSharedPreferences("userFile", Context.MODE_PRIVATE);
 
+//    {"addresstree":[],"xtsz":{"yhgl":"1111","jsgl":"1111","mkgl":"1111","xxgl":"1000"},"gcjl":{"yhgl":"1111","jsgl":"1111","mkgl":"1111","xxgl":"1000"},"rygl":{"yhgl":"1111","jsgl":"1111","mkgl":"1111","xxgl":"1000"},"glrz":{"yhgl":"1111","jsgl":"1111","mkgl":"1111","xxgl":"1000"},"yhbg":{"yhgl":"1111","jsgl":"1111","mkgl":"1111","xxgl":"1000"}}}
 
     public static String getCount() {
         return loginShare.getString("count",null);
     }
+    public static String getJurisdiction(){
+        return loginShare.getString("jurisdiction",null);
+    }
 
     public static void setCount(String value) {
-        AppController.getInstance().getSharedPreferences("userFile", Context.MODE_PRIVATE).edit().putString("count",value).commit();
+        loginShare.edit().putString("count",value).commit();
     }
 
     public static String getJession() {
@@ -30,7 +34,7 @@ public class UserData {
     }
 
     public static void setPassword(String value) {
-        AppController.getInstance().getSharedPreferences("userFile", Context.MODE_PRIVATE).edit().putString("password",value).commit();
+        loginShare.edit().putString("password",value).commit();
     }
 
     public static String getUsername() {
@@ -38,7 +42,7 @@ public class UserData {
     }
 
     public static void setUsername(String value) {
-        AppController.getInstance().getSharedPreferences("userFile", Context.MODE_PRIVATE).edit().putString("username",value).commit();
+        loginShare.edit().putString("username",value).commit();
     }
 
 
@@ -78,26 +82,26 @@ public class UserData {
 
 
     public static void setRealname(String value){
-       AppController.getInstance().getSharedPreferences("userFile", Context.MODE_PRIVATE).edit().putString("realname",value).commit();
+       loginShare.edit().putString("realname",value).commit();
 
     }
     public static void setSex(String value){
-        AppController.getInstance().getSharedPreferences("userFile", Context.MODE_PRIVATE).edit().putString("sex",value).commit();
+        loginShare.edit().putString("sex",value).commit();
 
     }
     public static void setRole(String value){
-        AppController.getInstance().getSharedPreferences("userFile", Context.MODE_PRIVATE).edit().putString("role",value).commit();
+        loginShare.edit().putString("role",value).commit();
 
     }
     public static void setEmail(String value){
-        AppController.getInstance().getSharedPreferences("userFile", Context.MODE_PRIVATE).edit().putString("email",value).commit();
+        loginShare.edit().putString("email",value).commit();
 
     }
     public static void setPhone(String value){
-        AppController.getInstance().getSharedPreferences("userFile", Context.MODE_PRIVATE).edit().putString("phone",value).commit();
+        loginShare.edit().putString("phone",value).commit();
 
     }
     public static void setUrl(String value){
-        AppController.getInstance().getSharedPreferences("userFile", Context.MODE_PRIVATE).edit().putString("url",value).commit();
+        loginShare.edit().putString("url",value).commit();
     }
 }

@@ -183,11 +183,14 @@ public class ManManagementIndexActivity  extends SlidingFragmentActivity impleme
         System.out.println("resultCode"+resultCode);
         System.out.println("怎么会没反应呢？");
         if(requestCode==1){
+            Datarunnable(data);
             switch (resultCode)
             {
                 case 2:
+                    setCount();
+                    System.out.println("有没有执行到啊？？？？？？？？？？");
+                    break;
                 case 3:
-                    Datarunnable(data);
                     break;
             }
         }

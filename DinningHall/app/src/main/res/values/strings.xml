@@ -9,4 +9,10 @@
     <string name="xlistview_footer_hint_ready">松开载入更多</string>
 
 
+
+    <string name="rygl">人员管理</string>
+    <string name="gcjl">过程记录</string>
+    <string name="glrz">自查日志</string>
+    <string name="yhbg">隐患报告</string>
+
 </resources>

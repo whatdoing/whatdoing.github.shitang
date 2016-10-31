@@ -464,17 +464,19 @@
     </string-array>
 
     <!-- 搜索条件 -->
-    <!--<string-array-->
-        <!--name="Feed">-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
+    <string-array
+        name="Feed">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
 
-        <!--<item></item>-->
-        <!--<item></item>-->
-        <!--<item></item>-->
-    <!--</string-array>-->
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+
 
 
 </resources>

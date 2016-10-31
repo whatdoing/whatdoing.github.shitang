@@ -187,11 +187,13 @@ public class ReviewListActivity extends SlidingFragmentActivity implements LeftF
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent d) {
         if(requestCode==1){
+            Datarunnable(data);
             switch (resultCode)
             {
                 case 2:
+                    setCount();
+                    break;
                 case 3:
-                    Datarunnable(data);
                     break;
             }
         }

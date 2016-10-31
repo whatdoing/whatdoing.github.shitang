@@ -192,11 +192,13 @@ public class SafetyListActivity extends SlidingFragmentActivity implements LeftF
         System.out.println("resultCode"+resultCode);
         System.out.println("怎么会没反应呢？");
         if(requestCode==1){
+            Datarunnable(data);
             switch (resultCode)
             {
                 case 2:
+                    setCount();
+                    break;
                 case 3:
-                    Datarunnable(data);
                     break;
             }
         }

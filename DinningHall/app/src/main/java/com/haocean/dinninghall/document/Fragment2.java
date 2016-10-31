@@ -35,6 +35,7 @@ import com.haocean.dinninghall.view.MyGridView;
 public class Fragment2 extends Fragment {
     private LinearLayout recordList;
     private DocumentActivity activity;
+    private MyGridAdapter myGridAdapter;
 //管理日志
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,9 +47,9 @@ public class Fragment2 extends Fragment {
 
         View recordview=inflater.inflate(R.layout.grid_view, null);
         MyGridView gridview= (MyGridView) recordview.findViewById(R.id.gridview);
+        myGridAdapter=new MyGridAdapter(AppController.getInstance());
 
-
-        gridview.setAdapter(new MyGridAdapter(AppController.getInstance()));
+        gridview.setAdapter(myGridAdapter);
 
         gridview.setOnItemClickListener(new GridviewListener());
         recordList.addView(recordview);

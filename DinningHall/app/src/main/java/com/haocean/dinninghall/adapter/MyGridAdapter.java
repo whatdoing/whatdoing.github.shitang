@@ -10,6 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.haocean.dinninghall.R;
+import com.haocean.dinninghall.publicMethod.UserData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Description:gridview的Adapter
@@ -17,8 +21,8 @@ import com.haocean.dinninghall.R;
  */
 public class MyGridAdapter extends BaseAdapter {
 	private Context mContext;
-
-	public String[] img_text = { "人员管理", "过程记录", "自查日志", "隐患报告"};
+public List<String>  _text=new ArrayList<String>();
+	public String[] img_text = { "rygl", "gcjl", "glrz", "yhbg"};
 	public int[] imgs = { R.mipmap.man_manger, R.mipmap.record,
 			R.mipmap.app_phonecharge, R.mipmap.app_creditcard,
 			R.mipmap.app_movie, R.mipmap.app_lottery,
@@ -26,12 +30,28 @@ public class MyGridAdapter extends BaseAdapter {
 
 	public MyGridAdapter(Context mContext) {
 		super();
+		try {
+			for(int i=0;i<img_text.length;i++){
+				if(UserData.getJurisdiction().contains(img_text[i])){
+					int 	strid=  R.string.class.getField(img_text[i]).getInt(null);
+					_text.add(mContext.getString(strid));
+				}
+			}
+		} catch (NoSuchFieldException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
+//		<string name="rygl">人员管理</string>
+//		<string name="gcjl">过程记录</string>
+//		<string name="glrz">自查日志</string>
+//		<string name="yhbg">隐患报告</string>
 		this.mContext = mContext;
 	}
 
 	@Override
 	public int getCount() {
-		return img_text.length;
+		return _text.size();
 	}
 
 	@Override
@@ -54,7 +74,7 @@ public class MyGridAdapter extends BaseAdapter {
 		ImageView iv = BaseViewHolder.get(convertView, R.id.iv_item);
 		iv.setBackgroundResource(imgs[position]);
 
-		tv.setText(img_text[position]);
+		tv.setText(_text.get(position));
 		return convertView;
 	}
 

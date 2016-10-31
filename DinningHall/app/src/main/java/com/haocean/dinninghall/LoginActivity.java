@@ -35,10 +35,9 @@ private CheckBox ceshi,remember;
     private EditText username,password;
     private Button login;
     private String address,flag="false";//地址，是否记录密码
-    public SharedPreferences loginShare;
-    private SharedPreferences.Editor loginEdit;
+    public SharedPreferences loginShare,userShare;
+    private SharedPreferences.Editor loginEdit,userEdit;
     Map<String,String> map;
-    public static String jession = "";//session
     private void findById(){
         ceshi = (CheckBox) findViewById(R.id.ceshi);//选择测试地址
         remember = (CheckBox) findViewById(R.id.remember);//记住密码
@@ -50,8 +49,11 @@ private CheckBox ceshi,remember;
 
     }
     private void  init(){
-        loginShare = getSharedPreferences("userFile", Context.MODE_PRIVATE);
+        loginShare = getSharedPreferences("loginFile", Context.MODE_PRIVATE);
         loginEdit = loginShare.edit();//打开编辑
+        //登录信息，帐号密码，记住密码
+        userShare = getSharedPreferences("userFile", Context.MODE_PRIVATE);
+        userEdit = userShare.edit();//打开编辑
         //登录信息，帐号密码，记住密码
 
 
@@ -62,9 +64,10 @@ private CheckBox ceshi,remember;
             password.setText(loginShare.getString("password", " ").toString());
             if (loginShare.getString("address", "").toString().contains("http://tzyh.safetybao.com/")) {
                 address="http://tzyh.safetybao.com/";
-                ceshi.setChecked(true);
-            }else{
-                address="http://tzyh.safetybao.com/";
+              //  ceshi.setChecked(true);
+            }else if(loginShare.getString("address", "").toString().contains("http://test.safetybao.com/")){
+                address="http://test.safetybao.com/";
+                  ceshi.setChecked(true);
             }
             remember.setChecked(true);
         }
@@ -109,7 +112,7 @@ private CheckBox ceshi,remember;
                     address="http://test.safetybao.com/";
                 }else{
                     //不选中
-                    address="http://test.safetybao.com/";
+                    address="http://tzyh.safetybao.com/";
                 }
             }
         });
@@ -132,70 +135,41 @@ private CheckBox ceshi,remember;
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent  intent = new Intent(LoginActivity.this, DocumentActivity.class);
-//                startActivity(intent);
-//                finish();
-
-
-                flag=String.valueOf(remember.isChecked());
-                map=new HashMap<String,String>();
-                map.put("username",username.getText().toString().trim());
-                map.put("password",password.getText().toString().trim());
-                map.put("address",address.trim());
-                map.put("flag", flag.trim());//是否记住密码
-
-
-
-                if(!Empty.isToEmpty(map,LoginActivity.this)){
-
+                     userEdit.putString("address",address).commit();
                     LoginRunnale lr = new LoginRunnale(LoginActivity.this,address,loginhand);
                     lr.setPassword(password.getText().toString().trim());
                     lr.setUsername(username.getText().toString().trim());
                     Thread thread = new Thread(lr);
                     thread.start();
-                    //此处还需要验证是否登录成功
-                   //先模拟登录成功
-
-
-                }
             }
         });
 
     }
 //登录成功之后保存所有登录信息数据
-    private void loginput(Map<String, String> maps){
-        Set keyset = maps.keySet();
+    private void loginput(){
+        flag=String.valueOf(remember.isChecked());
         if(flag.contains("true")){
             //选中
-            for(Object keyname:keyset){
-                loginEdit.putString(keyname.toString(),maps.get(keyname).toString());
-            }
+            loginEdit.putString("username",username.getText().toString().toString()).commit();
+            loginEdit.putString("password",password.getText().toString().toString()).commit();
             loginEdit.commit();
         }else{
             loginEdit.clear();
-            loginEdit.putString("flag",flag).commit();
             //不选中
         }
+        loginEdit.putString("flag",flag).commit();
     }
     Handler loginhand = new Handler() {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch (msg.what) {
                 case 0:
-                    //成功后，提交jsession共享
-
-
-
-                        loginput(map);//登录成功就跳转然后根据是否记住密码保存登录信息
+                        loginput();//登录成功就跳转然后根据是否记住密码保存登录信息
                         Intent  intent = new Intent(LoginActivity.this, DocumentActivity.class);
                         startActivity(intent);
                         finish();
-
-
-
                     break;
                 case 1:
-
                     Toast.makeText(LoginActivity.this, "登录失败,请重新登录!", Toast.LENGTH_SHORT).show();
                     break;
             }

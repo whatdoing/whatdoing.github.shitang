@@ -91,7 +91,7 @@ public class CreateReviewActivity extends Activity implements View.OnClickListen
                 case 0:
                     Intent intent = new Intent();
                     intent.setClass(CreateReviewActivity.this, SafetyListActivity.class);
-                    setResult(3, intent);
+                    setResult(2, intent);
                     finish();
                     Toast.makeText(CreateReviewActivity.this, "新建成功", Toast.LENGTH_SHORT).show();
                     break;

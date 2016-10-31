@@ -14,6 +14,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.haocean.dinninghall.R;
+import com.haocean.dinninghall.publicMethod.UserData;
 import com.haocean.dinninghall.record.RecordIndex;
 
 import cn.hugeterry.updatefun.UpdateFunGO;
@@ -54,7 +55,7 @@ public class DocumentActivity extends FragmentActivity implements FragmentTabHos
      * 选修卡文字
      *
      */
-    private String mTextArray[] = { "过程记录", "功能列表", "更多" };
+    private String mTextArray[] = {"过程记录", "功能列表", "更多" };
     /**
      *
      *
@@ -80,7 +81,11 @@ public class DocumentActivity extends FragmentActivity implements FragmentTabHos
         mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
         // 得到fragment的个数
         int count = mFragmentArray.length;
-        for (int i = 0; i < count; i++) {
+        int j = 0;
+        if(!UserData.getJurisdiction().contains("gcjl")){
+            j=1;
+        }
+        for (int i=j; i < count; i++) {
             // 给每个Tab按钮设置图标、文字和内容
             TabHost.TabSpec  tabSpec = mTabHost.newTabSpec(mTextArray[i])
                     .setIndicator(getTabItemView(i));
