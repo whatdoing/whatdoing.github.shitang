@@ -68,8 +68,11 @@ public class CountRunnable implements Runnable {
         }
         System.out.println("nnnnnnn---------"+contacts);
         if(contacts.contains(":") && contacts!="null") {
+
+            while (!UserData.getCount().equals(contacts)){
+                UserData.setCount(contacts);
+            }
             handler.obtainMessage(0).sendToTarget();
-            UserData.setCount(contacts);
         }else if(contacts.contains("[]")){
             handler.obtainMessage(1).sendToTarget();
         }else{

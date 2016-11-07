@@ -23,14 +23,16 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.net.URLEncoder;
 import java.util.Map;
 
 
 public class RecordRunnable implements Runnable {
     public SharedPreferences loginShare;
-    private SharedPreferences.Editor loginEdit;
+
 
     private Activity activity;
 
@@ -67,19 +69,22 @@ public class RecordRunnable implements Runnable {
         System.out.println("---RecordRunnable里的typeMan----"+typeMan);
         for (Map.Entry<String, String> entry : data.entrySet()) {
             System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());
-            if(!entry.getKey().equals("searchOk")|| !entry.getKey().equals("searchBack")){
-                url=url+"&"+entry.getKey()+"="+entry.getValue();
+            if(!entry.getKey().contains("searchOk")|| !entry.getKey().contains("searchBack")){
+                url=url+"&"+entry.getKey()+"="+URLEncoder.encode(entry.getValue());
             }
 
         }
 
 
-        HttpPost httpPost = new HttpPost(url);
+        HttpPost httpPost = null;
+
+            httpPost = new HttpPost(url);
+
 
         httpPost.setHeader("X-Requested-With", "XMLHttpRequest");
         httpPost.setHeader("User-Agent", "android");
         httpPost.setHeader("Cookie", "PHPSESSID="+ UserData.getJession());
-        System.out.println("PHPSESSID+"+UserData.getJession());
+
         HttpResponse response;
         try {
             response = httpClient.execute(httpPost);
@@ -114,7 +119,6 @@ public class RecordRunnable implements Runnable {
 
     @Override
     public void run(){
-
         getDataList();
     }
 }

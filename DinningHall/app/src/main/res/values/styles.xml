@@ -13,5 +13,10 @@
         <item name="android:paddingLeft">15.0dip</item>
     </style>
 
+    <!-- checkbox样式-->
+    <style name="CheckboxThemezhidao">
+        <item name="android:button">@drawable/btn_check_zhidao</item>
+        <item name="android:paddingLeft">5.0dip</item>
+    </style>
     <style name="MIS_NO_ACTIONBAR" parent="Theme.AppCompat.Light.NoActionBar"></style>
 </resources>

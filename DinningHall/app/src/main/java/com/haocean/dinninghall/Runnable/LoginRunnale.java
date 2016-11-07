@@ -120,6 +120,7 @@ public class LoginRunnale implements Runnable {
                     //这里第一个输出来就是Jsessionid,可以保存
                     if (i == 0) {
                         jession = cookies.get(i).getValue();
+                        System.out.println("---------jession-----"+jession);
                         userEdit.putString("jession", jession).commit();
                     }
                 }
@@ -158,6 +159,7 @@ public class LoginRunnale implements Runnable {
                     userEdit.putString("school_name",jsonobject.getString("school_name")).commit();
                     userEdit.putString("jurisdiction",jsonobject.getString("jurisdiction")).commit();
 
+                   // userEdit.putString("school_id",jsonobject.getString("school_id"));
                     System.out.println("jsonobject.getString(jsonobject)"+jsonobject);
                     loginSuccess = true;
                 } else {

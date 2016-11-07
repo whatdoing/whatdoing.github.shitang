@@ -292,7 +292,7 @@
 							android:text="所属学校" />
 
 						<TextView
-							android:id="@+id/school"
+							android:id="@+id/school_name"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:padding="5dip"

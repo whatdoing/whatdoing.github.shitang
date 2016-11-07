@@ -4,7 +4,7 @@ package com.haocean.dinninghall.entity.record;
  * Created by Administrator on 2016/10/14 0014.
  */
 public class SafetyReport {
-    private String promise;//
+   /* private String promise;//*/
     private String safety_system;//
     private String personnel;//
     private String selfdiscipline;//
@@ -63,12 +63,21 @@ public class SafetyReport {
         this.contactsphone = contactsphone;
     }
 
-    public String getPromise() {
+  /*  public String getPromise() {
         return promise;
     }
 
     public void setPromise(String promise) {
         this.promise = promise;
+    }*/
+  private String report_month;
+
+    public String getReport_month() {
+        return report_month;
+    }
+
+    public void setReport_month(String report_month) {
+        this.report_month = report_month;
     }
 
     public String getSafety_system() {

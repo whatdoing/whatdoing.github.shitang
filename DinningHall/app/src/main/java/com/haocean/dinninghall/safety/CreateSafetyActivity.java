@@ -14,10 +14,15 @@ import android.app.Fragment;
 import android.widget.Toast;
 
 import com.haocean.dinninghall.R;
+import com.haocean.dinninghall.Runnable.CheckInfoRunnable;
 import com.haocean.dinninghall.Runnable.CreateRecordRunnable;
+import com.haocean.dinninghall.Runnable.RecordRunnable;
 import com.haocean.dinninghall.contexts.RecordList;
 import com.haocean.dinninghall.record.RecordListActivity;
 import com.haocean.dinninghall.record.utils.ValueUtils;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class CreateSafetyActivity extends Activity implements View.OnClickListener{
 
@@ -28,6 +33,8 @@ public class CreateSafetyActivity extends Activity implements View.OnClickListen
     private  String tempString;
 
     CreateRecordRunnable createRecordRunnable;
+
+    Map<String, String> data=new HashMap<String, String>();;
     public  void init() {
         Intent intent = getIntent();
         typeRecord = intent.getStringExtra("typeRecord");
@@ -54,12 +61,18 @@ public class CreateSafetyActivity extends Activity implements View.OnClickListen
         setContentView(R.layout.activity_create_record);
 
         init();
+        Run();
         submit= (Button) findViewById(R.id.submit);
 
         submit.setOnClickListener(this);
     }
 
-
+public void Run(){
+    CheckInfoRunnable checkInfoRunnable=new CheckInfoRunnable();
+    checkInfoRunnable.createHand(CreateSafetyActivity.this,"CheckInfo");
+    Thread dataThread=new Thread(checkInfoRunnable);
+    dataThread.start();
+}
 
     @Override
     public void onClick(View v) {

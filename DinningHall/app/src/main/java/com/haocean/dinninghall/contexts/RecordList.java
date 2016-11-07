@@ -32,12 +32,20 @@ import com.haocean.dinninghall.entity.record.Roster;
 import com.haocean.dinninghall.entity.record.SafetyReport;
 import com.haocean.dinninghall.entity.record.TablewareDisinfection;
 import com.haocean.dinninghall.entity.record.UltravioletDisinfection;
+import com.haocean.dinninghall.manManagement.leftOrRightFragment.right.MorningRightFragment;
+import com.haocean.dinninghall.manManagement.leftOrRightFragment.right.RosterRightFragment;
 import com.haocean.dinninghall.record.CreateRecordFragment.AdditiveRegistrationFragment;
 import com.haocean.dinninghall.record.CreateRecordFragment.FoodSamplesFragment;
 import com.haocean.dinninghall.record.CreateRecordFragment.OilRecoveryFragment;
 import com.haocean.dinninghall.record.CreateRecordFragment.RecyclingProcessFragment;
 import com.haocean.dinninghall.record.CreateRecordFragment.TablewareDisinfectionFragment;
 import com.haocean.dinninghall.record.CreateRecordFragment.UltravioletDisinfectionFragment;
+import com.haocean.dinninghall.record.leftOrRightFragment.right.AdditiveRightFragment;
+import com.haocean.dinninghall.record.leftOrRightFragment.right.FoodRightFragment;
+import com.haocean.dinninghall.record.leftOrRightFragment.right.OilRightFragment;
+import com.haocean.dinninghall.record.leftOrRightFragment.right.RecyclingRightFragment;
+import com.haocean.dinninghall.record.leftOrRightFragment.right.TablewareRightFragment;
+import com.haocean.dinninghall.record.leftOrRightFragment.right.UltravioletRightFragment;
 import com.haocean.dinninghall.review.CreateSafetyFragment.ReviewRecordFragment;
 import com.haocean.dinninghall.safety.CreateSafetyFragment.CheckLogFragment;
 import com.haocean.dinninghall.safety.CreateSafetyFragment.RatingCriteriaFragment;
@@ -60,6 +68,7 @@ public class RecordList {
     public final static Map<String,Class> Entity=new HashMap<String,Class>();
     public final static Map<String, Integer> Layout=new HashMap<String, Integer>();
     public final static Map<String, Integer> RightLayout=new HashMap<String, Integer>();
+    public final static Map<String, android.support.v4.app.Fragment> RightFragment=new HashMap<String, android.support.v4.app.Fragment>();
     public final static Map<String, Fragment> Fragment=new HashMap<String, Fragment>();
     public final static Map<String, Fragment> DetailFragment=new HashMap<String, Fragment>();
     public final static Map<String,String> Lists=new HashMap<String,String>();
@@ -113,12 +122,22 @@ public class RecordList {
 
        // Layout.put("ReviewRecord",)
 
-        RightLayout.put("TablewareDisinfection",R.layout.right_fragment_menu0);
-        RightLayout.put("RecyclingProcess",R.layout.right_fragment_menu1);
-        RightLayout.put("FoodSamples",R.layout.right_fragment_menu2);
-        RightLayout.put("AdditiveRegistration",R.layout.right_fragment_menu3);
-        RightLayout.put("OilRecovery",R.layout.right_fragment_menu4);
-        RightLayout.put("UltravioletDisinfection",R.layout.right_fragment_menu5);
+//        RightLayout.put("TablewareDisinfection",R.layout.right_fragment_menu0);
+//        RightLayout.put("RecyclingProcess",R.layout.right_fragment_menu1);
+//        RightLayout.put("FoodSamples",R.layout.right_fragment_menu2);
+//        RightLayout.put("AdditiveRegistration",R.layout.right_fragment_menu3);
+//        RightLayout.put("OilRecovery",R.layout.right_fragment_menu4);
+//        RightLayout.put("UltravioletDisinfection",R.layout.right_fragment_menu5);
+        RightFragment.put("TablewareDisinfection",new TablewareRightFragment());
+        RightFragment.put("RecyclingProcess",new RecyclingRightFragment());
+        RightFragment.put("FoodSamples",new FoodRightFragment());
+        RightFragment.put("AdditiveRegistration",new AdditiveRightFragment());
+        RightFragment.put("OilRecovery",new OilRightFragment());
+        RightFragment.put("UltravioletDisinfection",new UltravioletRightFragment());
+        RightFragment.put("Roster",new RosterRightFragment());
+        RightFragment.put("MorningInspection",new MorningRightFragment());
+
+
         RightLayout.put("Roster",R.layout.right_man_fragment);
         RightLayout.put("MorningInspection",R.layout.right_morning_fragment);
 
@@ -193,6 +212,7 @@ public class RecordList {
         DetailFragment.put("CheckLog",new DetailFragment3());
 
     }
+
 
 
 }

@@ -4,14 +4,18 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.View;
 import android.view.Window;
 
 import com.haocean.dinninghall.R;
 import com.haocean.dinninghall.Runnable.RecordRunnable;
 import com.haocean.dinninghall.adapter.ListViewAdapter;
+import com.haocean.dinninghall.contexts.RecordList;
 import com.haocean.dinninghall.manManagement.leftOrRightFragment.LeftFragment;
 import com.haocean.dinninghall.manManagement.leftOrRightFragment.RightFragment;
 import com.haocean.dinninghall.record.CreateRecordActivity;
+import com.haocean.dinninghall.record.utils.ValueUtils;
 
 
 import java.util.HashMap;
@@ -23,12 +27,12 @@ import lib.app.SlidingFragmentActivity;
 /**
  * Created by haocean on 2016/10/8.
  */
-public class ManManagementIndexActivity  extends SlidingFragmentActivity implements LeftFragment.onItemListener,RightFragment.onButtonListener, com.haocean.dinninghall.manManagement.TitleFragment.onCreateButton, ListViewAdapter.onEditButton {
+public class ManManagementIndexActivity  extends SlidingFragmentActivity implements LeftFragment.onItemListener, com.haocean.dinninghall.manManagement.TitleFragment.onCreateButton, ListViewAdapter.onEditButton {
 
     FragmentManager fragmentManager;
     private SlidingMenu _SlidingMenu; // 侧边栏菜单
     private LeftFragment _LeftFragment; // 左侧菜单Fragment
-    private RightFragment _RightFragment; // 右侧菜单Fragment
+    private Fragment _RightFragment; // 右侧菜单Fragment
 
     private String typeMan;
     private TitleFragment titleFragment;
@@ -64,8 +68,8 @@ public class ManManagementIndexActivity  extends SlidingFragmentActivity impleme
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.list_activity);
-        initSlidingMenu();
         init();//加载
+        initSlidingMenu();
         Datarunnable(data);
     }
 
@@ -73,7 +77,8 @@ public class ManManagementIndexActivity  extends SlidingFragmentActivity impleme
   * 初始化右侧搜索菜单
   * */
     private void initRightMenu(SlidingMenu sideingMenu){
-        _RightFragment = new RightFragment();// 创建右边菜单Fragment
+//        _RightFragment = new RightFragment();// 创建右边菜单Fragment
+        _RightFragment= RecordList.RightFragment.get(typeMan);
         sideingMenu.setSecondaryMenu(R.layout.right_menu_layout); // 设置右菜单默认VIEW
         sideingMenu.setSecondaryShadowDrawable(R.drawable.shadowright); // 设置右菜单阴影
         sideingMenu.setRightBehindWidthRes(R.dimen.right_menu_width); // 设置右菜单的宽度,该值为右菜单展开的宽度
@@ -154,15 +159,24 @@ public class ManManagementIndexActivity  extends SlidingFragmentActivity impleme
     public void setCount(){
         listTitleFragment.Run();
     }
-    @Override
+
+
     public void onBackListener(String data) {
         //清空搜索条件
         System.out.println("data" + data);
     }
 
-    @Override
-    public void onOKListener(Map<String, String> data) {
+    //搜索的条件
+    private  Map<String,String> addMap(){
+        Map<String,String> searchMap=new HashMap<String, String>();
+        View viewall = getWindow().getDecorView();
+        searchMap= ValueUtils.getAllChildViews(viewall);
+        System.out.println("------searchMap--------"+searchMap);
+        return  searchMap;
+    }
+    public void onOKListener() {
         RightSlidingMenuIsShow();
+        data=addMap();
         System.out.println("data-----man-----" + data);
         Datarunnable(data);
         //缺少一个数据的加载

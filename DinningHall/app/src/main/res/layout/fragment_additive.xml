@@ -25,6 +25,43 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dip"
+                    android:text="食堂名称" />
+
+                <EditText
+                    android:id="@+id/canteenName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
                     android:text="品名(食品添加剂名称)" />
 
                 <Button
@@ -361,7 +398,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dip"
-                    android:text="责任人签名" />
+                    android:text="责任人" />
 
                 <EditText
                     android:id="@+id/liable_person"

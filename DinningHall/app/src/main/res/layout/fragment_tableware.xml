@@ -25,17 +25,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dip"
-                        android:text="餐具名称" />
+                        android:text="食堂名称" />
 
-                    <Button
-                        android:id="@+id/tablewarename"
+                    <EditText
+                        android:id="@+id/canteenName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dip"
                         android:layout_weight="1"
                         android:textSize="14sp"
                         android:gravity="center_vertical|right"
-                        android:hint="请选择"
+                        android:hint="请填写"
                         android:background="@color/touming"
                         android:textColor="#333333"
                         android:textColorHint="#b6b6b6" />
@@ -47,6 +47,117 @@
                     android:background="#ebebeb"  />
 
             </LinearLayout>
+            <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:text="餐具选择" />
+
+            <Button
+            android:id="@+id/tableandroidnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:gravity="center_vertical|right"
+            android:hint="请填写"
+            android:background="@color/touming"
+            android:textColor="#333333"
+            android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+            android:layout_width="match_parent"
+            android:background="#ebebeb"  />
+
+            </LinearLayout>
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_height="wrap_content">-->
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:padding="5dp" >-->
+
+                    <!--<TextView-->
+                        <!--android:focusable="true"-->
+                        <!--android:focusableInTouchMode="true"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:padding="5dip"-->
+                        <!--android:text="餐具名称" />-->
+
+                    <!--<Button-->
+                        <!--android:id="@+id/tablewarename"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:padding="5dip"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:textSize="14sp"-->
+                        <!--android:gravity="center_vertical|right"-->
+                        <!--android:hint="请选择"-->
+                        <!--android:background="@color/touming"-->
+                        <!--android:textColor="#333333"-->
+                        <!--android:textColorHint="#b6b6b6" />-->
+
+
+                <!--</LinearLayout>-->
+                <!--<View  android:layout_height="1px"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:background="#ebebeb"  />-->
+
+            <!--</LinearLayout>-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_height="wrap_content">-->
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:padding="5dp" >-->
+
+                    <!--<TextView-->
+                        <!--android:focusable="true"-->
+                        <!--android:focusableInTouchMode="true"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:padding="5dip"-->
+                        <!--android:text="数量" />-->
+
+                    <!--<EditText-->
+                        <!--android:id="@+id/tablewarecount"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:padding="5dip"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:textSize="14sp"-->
+                        <!--android:gravity="center_vertical|right"-->
+                        <!--android:hint="请填写"-->
+                        <!--android:background="@color/touming"-->
+                        <!--android:textColor="#333333"-->
+                        <!--android:textColorHint="#b6b6b6" />-->
+
+
+                <!--</LinearLayout>-->
+                <!--<View  android:layout_height="1px"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:background="#ebebeb"  />-->
+
+            <!--</LinearLayout>-->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:orientation="vertical"
@@ -62,10 +173,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dip"
-                        android:text="数量" />
+                        android:text="清洗方式" />
 
-                    <EditText
-                        android:id="@+id/tablewarecount"
+                    <Button
+                        android:id="@+id/cleantype"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dip"
@@ -99,10 +210,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dip"
-                        android:text="清洗方式" />
+                        android:text="消毒方式" />
 
-                    <EditText
-                        android:id="@+id/cleantype"
+                    <Button
+                        android:id="@+id/disinfection_type"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dip"

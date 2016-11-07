@@ -14,8 +14,17 @@ public class UserData {
 
 //    {"addresstree":[],"xtsz":{"yhgl":"1111","jsgl":"1111","mkgl":"1111","xxgl":"1000"},"gcjl":{"yhgl":"1111","jsgl":"1111","mkgl":"1111","xxgl":"1000"},"rygl":{"yhgl":"1111","jsgl":"1111","mkgl":"1111","xxgl":"1000"},"glrz":{"yhgl":"1111","jsgl":"1111","mkgl":"1111","xxgl":"1000"},"yhbg":{"yhgl":"1111","jsgl":"1111","mkgl":"1111","xxgl":"1000"}}}
 
+
+   /* public static String getSchool_id() {
+        return loginShare.getString("school_id","");
+    }
+
+    public static void setSchool_id(String value) {
+        loginShare.edit().putString("school_id",value).commit();
+    }*/
+
     public static String getCount() {
-        return loginShare.getString("count",null);
+        return loginShare.getString("count","");
     }
     public static String getJurisdiction(){
         return loginShare.getString("jurisdiction",null);

@@ -47,7 +47,7 @@ import me.nereo.multi_image_selector.MultiImageSelector;
  */
 public class UserActivity extends Activity implements View.OnClickListener{
     LinearLayout avater,Realname,Sex,Phone,Email,quit;
-    TextView username,realname,sex,role,phone,email,school;
+    TextView username,realname,sex,role,phone,email,school_name;
     private static final int REQUEST_IMAGE = 2;
     protected static final int REQUEST_STORAGE_READ_ACCESS_PERMISSION = 101;
     protected static final int REQUEST_STORAGE_WRITE_ACCESS_PERMISSION = 102;
@@ -69,18 +69,18 @@ public class UserActivity extends Activity implements View.OnClickListener{
         role=(TextView)findViewById(R.id.role);
         phone=(TextView)findViewById(R.id.phone);
         email=(TextView)findViewById(R.id.email);
-        school=(TextView)findViewById(R.id.school);
+        school_name=(TextView)findViewById(R.id.school_name);
     }
     public void data(){
 
-        System.out.println("看看进来胃没2");
+
             username.setText(UserData.getUsername());
             realname.setText(UserData.getRealname());
             sex.setText(UserData.getSex());
             role.setText(UserData.getRole());
             phone.setText(UserData.getPhone());
             email.setText(UserData.getEmail());
-            school.setText(UserData.getSchoolName());
+        school_name.setText(UserData.getSchoolName());
 
 
             RecordList.UserSave.put("realname",UserData.getRealname());

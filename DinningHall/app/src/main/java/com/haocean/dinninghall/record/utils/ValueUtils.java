@@ -44,7 +44,7 @@ public class ValueUtils {
             for(Field field:fields){
                 field.setAccessible(true);
 
-                System.out.println("strShArea"+strSHArea);
+
                 if(Arrays.asList(strSHArea).contains(field.getName())){
                     int id= R.id.class.getField(field.getName()).getInt(null);
                     View view=activity.findViewById(id);
@@ -52,6 +52,9 @@ public class ValueUtils {
                         field.set(object,((EditText) view).getText().toString());
                     }else if(view instanceof Button){
                         field.set(object,((Button) view).getText().toString());
+                    }else if(view instanceof TextView){
+                        field.set(object,((TextView) view).getText().toString());
+                        System.out.println("--"+field.getName()+"-----------"+((TextView) view).getText().toString());
                     }
 
                 }

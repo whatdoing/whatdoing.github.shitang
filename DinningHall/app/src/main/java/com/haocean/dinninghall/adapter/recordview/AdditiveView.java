@@ -37,7 +37,8 @@ public class  AdditiveView{
     public TextView liable_person;
     @FindIdAnno(R.id.id)
     public TextView id;
-	
+    @FindIdAnno(R.id.canteenName)
+    public TextView canteenName;
     @FindIdAnno(R.id.bianji)
     public ImageView bianji;
     @FindIdAnno(R.id.shanchu)

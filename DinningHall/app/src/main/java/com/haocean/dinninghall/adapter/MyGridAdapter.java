@@ -21,27 +21,14 @@ import java.util.List;
  */
 public class MyGridAdapter extends BaseAdapter {
 	private Context mContext;
-public List<String>  _text=new ArrayList<String>();
-	public String[] img_text = { "rygl", "gcjl", "glrz", "yhbg"};
-	public int[] imgs = { R.mipmap.man_manger, R.mipmap.record,
-			R.mipmap.app_phonecharge, R.mipmap.app_creditcard,
-			R.mipmap.app_movie, R.mipmap.app_lottery,
-			R.mipmap.app_facepay, R.mipmap.app_close, R.mipmap.app_plane };
+	private List<String>  _text=new ArrayList<String>();
+	private List<Integer>  _imgs=new ArrayList<Integer>();
 
-	public MyGridAdapter(Context mContext) {
+
+	public MyGridAdapter(Context mContext, List<String> _text, List<Integer>  _imgs) {
 		super();
-		try {
-			for(int i=0;i<img_text.length;i++){
-				if(UserData.getJurisdiction().contains(img_text[i])){
-					int 	strid=  R.string.class.getField(img_text[i]).getInt(null);
-					_text.add(mContext.getString(strid));
-				}
-			}
-		} catch (NoSuchFieldException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		}
+		this._text=_text;
+		this._imgs=_imgs;
 //		<string name="rygl">人员管理</string>
 //		<string name="gcjl">过程记录</string>
 //		<string name="glrz">自查日志</string>
@@ -72,7 +59,7 @@ public List<String>  _text=new ArrayList<String>();
 		}
 		TextView tv = BaseViewHolder.get(convertView, R.id.tv_item);
 		ImageView iv = BaseViewHolder.get(convertView, R.id.iv_item);
-		iv.setBackgroundResource(imgs[position]);
+		iv.setBackgroundResource(_imgs.get(position));
 
 		tv.setText(_text.get(position));
 		return convertView;

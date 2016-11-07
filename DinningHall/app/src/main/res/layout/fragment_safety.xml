@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp" >
 
-                <TextView
+               <!-- <TextView
                     android:focusable="true"
                     android:focusableInTouchMode="true"
                     android:layout_width="wrap_content"
@@ -69,7 +69,11 @@
                     android:hint="请填写"
                     android:background="@color/touming"
                     android:textColor="#333333"
-                    android:textColorHint="#b6b6b6" />
+                    android:textColorHint="#b6b6b6" />-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="本单位及报告人保证本报告内容的真实、准确和完整，没有虚假记载、误导性陈述或者重大遗漏。"
+                    android:layout_height="match_parent" />
 
             </LinearLayout>
             <View  android:layout_height="1px"
@@ -705,9 +709,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dip"
-                    android:text="法定代表人签字" />
+                    android:text="法定代表人" />
 
-                <EditText
+                <TextView
                     android:id="@+id/legal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -715,7 +719,7 @@
                     android:layout_weight="1"
                     android:textSize="14sp"
                     android:gravity="center_vertical|right"
-                    android:hint="请填写"
+
                     android:background="@color/touming"
                     android:textColor="#333333"
                     android:textColorHint="#b6b6b6" />
@@ -766,43 +770,7 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp" >
 
-                <TextView
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dip"
-                    android:text=" 报告日期" />
-
-                <Button
-                    android:id="@+id/report_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dip"
-                    android:layout_weight="1"
-                    android:textSize="14sp"
-                    android:gravity="center_vertical|right"
-                    android:hint="请选择"
-                    android:background="@color/touming"
-                    android:textColor="#333333"
-                    android:textColorHint="#b6b6b6" />
-
-
-            </LinearLayout>
-            <View  android:layout_height="1px"
-                android:layout_width="match_parent"
-                android:background="#ebebeb"  />
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -868,6 +836,118 @@
                     android:textSize="14sp"
                     android:gravity="center_vertical|right"
                     android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="单位名称" />
+
+                <EditText
+                    android:id="@+id/inspect_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text=" 报告日期" />
+
+                <Button
+                    android:id="@+id/report_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请选择"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
+
+
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="月份" />
+
+                <Button
+                    android:id="@+id/report_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请选择"
                     android:background="@color/touming"
                     android:textColor="#333333"
                     android:textColorHint="#b6b6b6" />

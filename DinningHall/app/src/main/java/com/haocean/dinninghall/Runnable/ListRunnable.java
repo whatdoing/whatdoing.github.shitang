@@ -45,12 +45,19 @@ public class ListRunnable  implements Runnable {
     public String contactsList;
     private String url;
     private String typeMan=null;
-
+    Handler handler;
     String address="";
     Context context;
     public ListRunnable( Context context){
         this.context=context;
 
+    }
+    public void setTypeMan(String typeMan,Handler handler){
+        this.typeMan=typeMan;
+        this.handler=handler;
+        loginShare = context.getSharedPreferences("userFile", Context.MODE_PRIVATE);
+        this.address=loginShare.getString("address","");
+        System.out.println("----address--"+address);
     }
     public void setTypeMan(String typeMan){
         this.typeMan=typeMan;
@@ -59,7 +66,6 @@ public class ListRunnable  implements Runnable {
         this.address=loginShare.getString("address","");
         System.out.println("----address--"+address);
     }
-
     public void getDataList(){
         HttpClient httpClient = new DefaultHttpClient();
         if(typeMan==null){
@@ -90,10 +96,14 @@ System.out.println("-----url-----"+url);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("--cccc--"+contactsList);
+        if(handler!=null){
+            handler.obtainMessage(0).sendToTarget();;
+        }
+
         if(!contactsList.contains("{")){
             contactsList=contactsList.substring(2,contactsList.length()-1).replace("\"","");
             DataList.list=contactsList;
+            System.out.println("---list----"+DataList.list);
         }
         else{
             try {
@@ -111,6 +121,7 @@ System.out.println("-----url-----"+url);
                     DataList.contactsphone = contactsphone.substring(1, contactsphone.length() - 1).replace("\"", "");
 
                 }
+
                 else{
                     String name = dataJson.getJSONArray("name").toString();
                     String manufacturer = dataJson.getJSONArray("manufacturer").toString();

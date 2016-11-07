@@ -90,10 +90,10 @@
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
-                    android:text="餐饮名称" />
+                    android:text="餐具名称" />
 
                 <EditText
-                    android:id="@+id/tablewarename"
+                    android:id="@+id/tableandroidnum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:paddingTop="10px" android:paddingBottom="10px"
                     android:layout_weight="1"

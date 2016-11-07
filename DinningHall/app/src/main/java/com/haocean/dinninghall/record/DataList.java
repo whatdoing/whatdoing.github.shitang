@@ -17,5 +17,6 @@ public class DataList {
     public static String purchase_date="";
     public static String purchasenum="";
 
+    public static String tablewarename="";
 
 }

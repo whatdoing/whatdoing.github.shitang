@@ -11,11 +11,149 @@
         android:orientation="vertical"
         android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:text="责任人" />
+
+                <EditText
+                    android:id="@+id/liable_person"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|right"
+                    android:hint="请填写"
+                    android:background="@color/touming"
+                    android:textColor="#333333"
+                    android:textColorHint="#b6b6b6" />
 
 
+            </LinearLayout>
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
 
+        </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="270dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="岗位工种" />
+
+            <Button
+                android:id="@+id/jobtype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:layout_weight="1"
+                android:textSize="14sp"
+                android:gravity="center_vertical|right"
+                android:hint="请选择"
+                android:background="@color/touming"
+                android:textColor="#333333"
+                android:textColorHint="#b6b6b6" />
+
+
+        </LinearLayout>
+        <View  android:layout_height="1px"
+            android:layout_width="match_parent"
+            android:background="#ebebeb"  />
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp" >
+
+            <TextView
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:text="部门" />
+
+            <Button
+                android:id="@+id/department"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dip"
+                android:layout_weight="1"
+                android:textSize="14sp"
+                android:gravity="center_vertical|right"
+                android:hint="请选择"
+                android:background="@color/touming"
+                android:textColor="#333333"
+                android:textColorHint="#b6b6b6" />
+
+
+        </LinearLayout>
+        <View  android:layout_height="1px"
+            android:layout_width="match_parent"
+            android:background="#ebebeb"  />
+    </LinearLayout>
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_marginLeft="3dp"
+       android:layout_height="match_parent">
+       <Button
+           android:id="@+id/xuanze"
+           android:layout_width="wrap_content"
+           android:text="选择人员"
+
+           android:layout_gravity="center_vertical"
+           android:layout_height="wrap_content" />
+   </LinearLayout>
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/people"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+</LinearLayout>
+        <LinearLayout
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:padding="5dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <!--<LinearLayout
             android:layout_width="wrap_content"
             android:orientation="vertical"
             android:layout_height="wrap_content">
@@ -89,46 +227,42 @@
                 android:layout_width="match_parent"
                 android:background="#ebebeb"  />
 
+        </LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content">
+            <RadioGroup
+
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+
+
+                <RadioButton
+android:id="@+id/normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="正常"
+                    />
+                <RadioButton
+android:id="@+id/abnormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="异常"
+                    />
+            </RadioGroup>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:orientation="vertical"
+            android:id="@+id/hide"
+            
             android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp" >
-
-                <TextView
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dip"
-                    android:text="责任人" />
-
-                <EditText
-                    android:id="@+id/liable_person"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dip"
-                    android:layout_weight="1"
-                    android:textSize="14sp"
-                    android:gravity="center_vertical|right"
-                    android:hint="请填写"
-                    android:background="@color/touming"
-                    android:textColor="#333333"
-                    android:textColorHint="#b6b6b6" />
-
-
-            </LinearLayout>
-            <View  android:layout_height="1px"
-                android:layout_width="match_parent"
-                android:background="#ebebeb"  />
-
-        </LinearLayout>
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:orientation="vertical"
@@ -363,6 +497,7 @@
 
     </LinearLayout>
 
+    </LinearLayout>
 
 
 </ScrollView>

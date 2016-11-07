@@ -21,12 +21,18 @@ import com.haocean.dinninghall.Runnable.CountRunnable;
 import com.haocean.dinninghall.adapter.MyGridAdapter;
 import com.haocean.dinninghall.contexts.Application;
 import com.haocean.dinninghall.manManagement.ManIndexFrament;
+import com.haocean.dinninghall.manManagement.ManManagementIndexActivity;
+import com.haocean.dinninghall.publicMethod.UserData;
 import com.haocean.dinninghall.record.CreateTitleFragment;
 import com.haocean.dinninghall.record.RecordIndex;
 import com.haocean.dinninghall.record.leftOrRightFragment.LeftFragment;
 import com.haocean.dinninghall.review.ReviewIndex;
 import com.haocean.dinninghall.safety.SafetyIndex;
 import com.haocean.dinninghall.view.MyGridView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 
 /**
@@ -36,6 +42,14 @@ public class Fragment2 extends Fragment {
     private LinearLayout recordList;
     private DocumentActivity activity;
     private MyGridAdapter myGridAdapter;
+    public int[] imgs = { R.mipmap.man_manger, R.mipmap.record,
+            R.mipmap.app_phonecharge, R.mipmap.app_creditcard,
+            R.mipmap.app_movie, R.mipmap.app_lottery,
+            R.mipmap.app_facepay, R.mipmap.app_close, R.mipmap.app_plane };
+    private String[] img_text = { "rygl", "gcjl", "glrz", "yhbg"};
+    private List<Integer>  _imgs=new ArrayList<Integer>();
+    private Fragment[] Fragments = { new  ManIndexFrament(), new  RecordIndex(), new SafetyIndex(), new ReviewIndex()};
+    private List<Fragment> listFragment = new ArrayList<Fragment>();
 //管理日志
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,7 +61,8 @@ public class Fragment2 extends Fragment {
 
         View recordview=inflater.inflate(R.layout.grid_view, null);
         MyGridView gridview= (MyGridView) recordview.findViewById(R.id.gridview);
-        myGridAdapter=new MyGridAdapter(AppController.getInstance());
+        List<String> _text=quanxian();
+        myGridAdapter=new MyGridAdapter(AppController.getInstance(),_text,_imgs);
 
         gridview.setAdapter(myGridAdapter);
 
@@ -56,28 +71,34 @@ public class Fragment2 extends Fragment {
 
         return view;
     }
+    private List<String> quanxian(){
+         List<String> _text=new ArrayList<String>();
+        try {
+            for(int i=0;i<img_text.length;i++){
+                if(UserData.getJurisdiction().contains(img_text[i])){
+                    int 	strid=  R.string.class.getField(img_text[i]).getInt(null);
+                    _text.add(getString(strid));
+                    _imgs.add(imgs[i]);
+                    listFragment.add(Fragments[i]);
+                }
+            }
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return _text;
+    }
     private class GridviewListener implements GridView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+            if(activity instanceof DocumentActivity) {
+                System.out.println("map"+   adapterView.getTag(i));
+            }
             FragmentManager fragmentManager= getActivity().getSupportFragmentManager();
             Fragment fragment = null;
-            switch (i){
-                case 0:
-                    fragment=new  ManIndexFrament();
-                    break;
-                case 1:
-                    fragment=new  RecordIndex();
-                    break;
-                case 2:
-                    fragment=new SafetyIndex();
-                    break;
-                case 3:
-                    fragment=new ReviewIndex();
-                    break;
-            default:
-
-                break;
-            }
+            fragment= listFragment.get(i);
             if(fragment!=null){
                 fragmentManager.beginTransaction().add(R.id.realtabcontent, fragment,"twoFragment").commit();
             }

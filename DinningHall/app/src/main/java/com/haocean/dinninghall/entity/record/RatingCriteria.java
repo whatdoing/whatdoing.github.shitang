@@ -30,6 +30,7 @@ public class RatingCriteria {
     private String userid;//
     private String school_id;//
 
+
 	private String legal;//
 	private String legalphone;//
 	private String inspect_people;//

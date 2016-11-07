@@ -12,7 +12,15 @@ public class UltravioletDisinfection {
 	private String remarks;//备注
 	private String userid;//创建该条记录的用户id
 	private String schoolid;//该记录所属学校id[关联字段]
+	private String canteenName;//该记录所属学校id[关联字段]
 
+	public String getCanteenName() {
+		return canteenName;
+	}
+
+	public void setCanteenName(String canteenName) {
+		this.canteenName = canteenName;
+	}
 
 	public String getEntry_date() {
 		return entry_date;

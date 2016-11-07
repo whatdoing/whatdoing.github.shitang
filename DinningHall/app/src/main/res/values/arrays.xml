@@ -3,9 +3,12 @@
         <!-- 餐具清洗消毒记录表-->
         <string-array
             name="TablewareDisinfection">
-            <item>tablewarename</item>
-            <item>tablewarecount</item>
+            <!--<item>tablewarename</item>-->
+            <!--<item>tablewarecount</item>-->
+            <item>canteenName</item>
+            <item>tableandroidnum</item>
             <item>cleantype</item>
+            <item>disinfection_type</item>
             <item>start_date</item>
             <item>end_date</item>
             <item>clean_condition</item>
@@ -31,9 +34,9 @@
             name="RecyclingProcess">
             <item>swillnum</item>
             <item>recyclinguse</item>
-            <item>catering_signature</item>
-            <item>recovery_signature</item>
-
+            <!--<item>catering_signature</item>-->
+            <!--<item>recovery_signature</item>-->
+            <item>canteenName</item>
             <item>recovery_company</item>
             <item>recovery_address</item>
             <item>contacts</item>
@@ -59,8 +62,10 @@
         <string-array
             name="FoodSamples">
             <item>number</item>
-            <item>foodname</item>
-            <item>foodcount</item>
+            <!--<item>foodname</item>-->
+            <!--<item>foodcount</item>-->
+            <item>tableandroidnum</item>
+            <item>canteenName</item>
             <item>start_date</item>
             <item>end_date</item>
             <item>peoplenum</item>
@@ -96,6 +101,7 @@
             <item>userecord</item>
             <item>destruction_record</item>
             <item>liable_person</item>
+            <item>canteenName</item>
         </string-array>
         <!-- 搜索条件 -->
         <string-array
@@ -119,7 +125,7 @@
             <item>recyclinguse</item>
             <item>catering_signature</item>
             <item>recovery_signature</item>
-
+            <item>canteenName</item>
             <item>recovery_company</item>
             <item>recovery_address</item>
             <item>contacts</item>
@@ -146,7 +152,7 @@
             <item>start_date</item>
             <item>end_date</item>
             <item>cumulative_time</item>
-
+            <item>canteenName</item>
             <item>liable_person</item>
             <item>remarks</item>
 
@@ -229,7 +235,7 @@
     <!--餐饮服务单位食品安全综合报告-->
     <string-array
         name="SafetyReport">
-        <item>promise</item>
+      <!--<item>promise</item>-->
         <item>safety_system</item>
         <item>personnel</item>
         <item>selfdiscipline</item>
@@ -252,7 +258,7 @@
         <item>report_date</item>
         <item>contacts</item>
         <item>contactsphone</item>
-
+<item>report_month</item>
     </string-array>
 
     <!-- 搜索条件 -->

@@ -5,13 +5,12 @@
     android:orientation="vertical"
     android:padding="10dp"
     >
-    <LinearLayout
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:orientation="horizontal"
         android:layout_height="wrap_content">
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -89,7 +88,7 @@
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:textColor="@color/background"
-                        android:text="16"/>
+                        android:text=""/>
 
                 </LinearLayout>
 
@@ -245,10 +244,20 @@
                         android:textColor="@color/background"
                         android:text="2016-01-01"/>
                 </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="2dip"
+                android:layout_width="wrap_content">
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10px">
+                 >
 
                     <TextView
                         android:layout_height="wrap_content"
@@ -260,38 +269,34 @@
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:textColor="@color/background"
-                        android:text="是"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10px">
-
-
+                        android:text=""/>
                 </LinearLayout>
 
             </LinearLayout>
 
-
-
         </LinearLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:gravity="right"
             android:layout_height="wrap_content">
             <ImageView
+                android:layout_alignParentRight="true"
                 android:id="@+id/bianji"
                 android:layout_width="30dip"
                 android:layout_height="30dip"
                 android:layout_marginRight="5dp"
+                android:padding="5dp"
                 android:background="@mipmap/edit"/>
             <ImageView
+                android:layout_toLeftOf="@+id/bianji"
                 android:id="@+id/shanchu"
+                android:padding="5dp"
                 android:layout_width="30dip"
+                android:layout_marginRight="5dp"
                 android:layout_height="30dip"
                 android:background="@mipmap/delete"/>
-        </LinearLayout>
-    </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
 </LinearLayout>

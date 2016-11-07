@@ -4,15 +4,42 @@ public class TablewareDisinfection {
 	
 
 	private String create_date;//创建日期
-	private String tablewarename;//餐具名称
-	private String tablewarecount;//数量(避免中文)
+//	private String tablewarename;//餐具名称
+//	private String tablewarecount;//数量(避免中文)
 	private String cleantype;//清洗方式(字数不多)
+	private String disinfection_type;//清毒方式(字数不多)
 	private String start_date;//消毒开始时间[消毒开始时间——消毒结束时间输出时候 去除00：00：00]
 	private String end_date;//消毒结束时间
 	private String clean_condition;//消毒情况（字数不定）
 	private String liable_person;//责任人[以上表格基本字段 以下关联字段]
 	private String school_id;//创建的学校id
 	private String userid;//创建人的用户id
+	private String canteenName;//食堂名称
+	private String tableandroidnum;//餐具和数量
+
+	public String getDisinfection_type() {
+		return disinfection_type;
+	}
+
+	public void setDisinfection_type(String disinfection_type) {
+		this.disinfection_type = disinfection_type;
+	}
+
+	public String getTableandroidnum() {
+		return tableandroidnum;
+	}
+
+	public void setTableandroidnum(String tableandroidnum) {
+		this.tableandroidnum = tableandroidnum;
+	}
+
+	public String getCanteenName() {
+		return canteenName;
+	}
+
+	public void setCanteenName(String canteenName) {
+		this.canteenName = canteenName;
+	}
 
 	public String getCreate_date() {
 		return create_date;
@@ -22,21 +49,21 @@ public class TablewareDisinfection {
 		this.create_date = create_date;
 	}
 
-	public String getTablewarename() {
-		return tablewarename;
-	}
-
-	public void setTablewarename(String tablewarename) {
-		this.tablewarename = tablewarename;
-	}
-
-	public String getTablewarecount() {
-		return tablewarecount;
-	}
-
-	public void setTablewarecount(String tablewarecount) {
-		this.tablewarecount = tablewarecount;
-	}
+//	public String getTablewarename() {
+//		return tablewarename;
+//	}
+//
+//	public void setTablewarename(String tablewarename) {
+//		this.tablewarename = tablewarename;
+//	}
+//
+//	public String getTablewarecount() {
+//		return tablewarecount;
+//	}
+//
+//	public void setTablewarecount(String tablewarecount) {
+//		this.tablewarecount = tablewarecount;
+//	}
 
 	public String getCleantype() {
 		return cleantype;

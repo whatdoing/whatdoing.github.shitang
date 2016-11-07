@@ -5,16 +5,20 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.os.Message;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.SubMenu;
+import android.view.View;
 import android.view.Window;
 
 import com.haocean.dinninghall.R;
 import com.haocean.dinninghall.Runnable.RecordRunnable;
 
 import com.haocean.dinninghall.adapter.ListViewAdapter;
+import com.haocean.dinninghall.contexts.RecordList;
 import com.haocean.dinninghall.record.leftOrRightFragment.LeftFragment;
 import com.haocean.dinninghall.record.leftOrRightFragment.RightFragment;
+import com.haocean.dinninghall.record.utils.ValueUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,11 +29,11 @@ import lib.app.SlidingFragmentActivity;
 /**
  * Created by haocean on 2016/9/26.
  */
-public class RecordListActivity  extends SlidingFragmentActivity implements LeftFragment.onItemListener,RightFragment.onButtonListener,TitleFragment.onCreateButton, ListViewAdapter.onEditButton{
+public class RecordListActivity  extends SlidingFragmentActivity implements LeftFragment.onItemListener,TitleFragment.onCreateButton, ListViewAdapter.onEditButton{
     FragmentManager fragmentManager;
     private SlidingMenu _SlidingMenu; // 侧边栏菜单
     private LeftFragment _LeftFragment; // 左侧菜单Fragment
-    private RightFragment _RightFragment; // 右侧菜单Fragment
+    private Fragment _RightFragment; // 右侧菜单Fragment
     private TitleFragment titleFragment;
     private ListTitleFragment listTitleFragment;
     private String typeRecord;
@@ -46,15 +50,17 @@ public class RecordListActivity  extends SlidingFragmentActivity implements Left
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.list_activity);
-        initSlidingMenu();
         init();//加载
+        initSlidingMenu();
         Datarunnable(data);
     }
     /*
     * 初始化右侧搜索菜单
     * */
     private void initRightMenu(SlidingMenu sideingMenu){
-        _RightFragment = new RightFragment();// 创建右边菜单Fragment
+//        _RightFragment = new RightFragment();// 创建右边菜单Fragment
+        _RightFragment=RecordList.RightFragment.get(typeRecord);
+        System.out.println(_RightFragment+"--------"+typeRecord);
         sideingMenu.setSecondaryMenu(R.layout.right_menu_layout); // 设置右菜单默认VIEW
         sideingMenu.setSecondaryShadowDrawable(R.drawable.shadowright); // 设置右菜单阴影
         sideingMenu.setRightBehindWidthRes(R.dimen.right_menu_width); // 设置右菜单的宽度,该值为右菜单展开的宽度
@@ -161,16 +167,23 @@ public class RecordListActivity  extends SlidingFragmentActivity implements Left
     }
 
 
-    @Override
+
     public void onBackListener(String data) {
         //清空搜索条件
         System.out.println("data"+data);
     }
+    //搜索的条件
+    private  Map<String,String> addMap(){
+        Map<String,String> searchMap=new HashMap<String, String>();
+        View viewall = getWindow().getDecorView();
+        searchMap= ValueUtils.getAllChildViews(viewall);
+        System.out.println("------searchMap--------"+searchMap);
+        return  searchMap;
+    }
 
-    @Override
-    public void onOKListener(Map<String, String> data) {
+    public void onOKListener() {
         RightSlidingMenuIsShow();
-
+        data=addMap();
         System.out.println("data"+data);
         Datarunnable(data);
         //缺少一个数据的加载
@@ -188,9 +201,7 @@ public class RecordListActivity  extends SlidingFragmentActivity implements Left
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent d) {
-        System.out.println(requestCode);
-        System.out.println("resultCode"+resultCode);
-        System.out.println("怎么会没反应呢？");
+
         if(requestCode==1){
             Datarunnable(data);
            switch (resultCode)

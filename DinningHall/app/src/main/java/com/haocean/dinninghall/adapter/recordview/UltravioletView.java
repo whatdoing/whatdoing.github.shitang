@@ -30,6 +30,8 @@ public class  UltravioletView{
     public TextView remarks;
     @FindIdAnno(R.id.id)
     public TextView id;
+    @FindIdAnno(R.id.canteenName)
+    public TextView canteenName;
 	
     @FindIdAnno(R.id.bianji)
     public ImageView bianji;

@@ -18,8 +18,8 @@ import com.haocean.dinninghall.safety.CreateSafetyActivity;
  */
 public class SafetyReportFragment extends Fragment implements View.OnClickListener{
     private CreateSafetyActivity activity;
-private Button report_date;
-
+private Button report_date,month;
+private String[] m={"1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"};
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -27,7 +27,9 @@ private Button report_date;
 
         activity= (CreateSafetyActivity)getActivity();
         report_date=(Button)view.findViewById(R.id.report_date);
+        month=(Button)view.findViewById(R.id.report_date);
         report_date.setOnClickListener(this);
+        month.setOnClickListener(this);
         String tempString=activity.getTempString();
         System.out.println("-----safety-----"+tempString);
         if(tempString!=null) {
@@ -45,6 +47,10 @@ private Button report_date;
         switch (id) {
             case R.id.report_date: {
                 MyDialogs.cereateDateDialog(report_date, activity);
+            }
+            break;
+            case R.id.report_month: {
+                MyDialogs.cereateDialog(month,m,activity);
             }
             break;
         }

@@ -29,7 +29,7 @@ public class FoodSamplesFragment extends Fragment implements View.OnClickListene
         start_date= (Button) view.findViewById(R.id.start_date);
         end_date= (Button) view.findViewById(R.id.end_date);
 
-
+        number.setOnClickListener(this);
         start_date.setOnClickListener(this);
         end_date.setOnClickListener(this);
             String tempString=activity.getTempString();

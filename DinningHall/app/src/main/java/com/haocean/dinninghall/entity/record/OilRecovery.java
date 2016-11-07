@@ -6,15 +6,23 @@ public class OilRecovery {
 	private String create_date;//创建日期（录入时间）
 	private String oilnum;//废油数量（公斤）
 	private String recyclinguse;//回收用途(文本)
-	private String catering_signature;//餐饮单位经手人签名
-	private String recovery_signature;//回收单位经手人签名[签名 文本]
+//	private String catering_signature;//餐饮单位经手人签名
+//	private String recovery_signature;//回收单位经手人签名[签名 文本]
 	private String recovery_company;//[底部 回收单位的数据字段]回收单位名称
 	private String recovery_address;//回收单位地址
 	private String contacts;//联系人
 	private String contactsphone;//电话
 	private String userid;//创建该条记录的用户id
 	private String school_id;//该记录所属学校id[关联字段]
+	private String canteenName;//食堂单位
 
+	public String getCanteenName() {
+		return canteenName;
+	}
+
+	public void setCanteenName(String canteenName) {
+		this.canteenName = canteenName;
+	}
 
 	public String getEntry_date() {
 		return entry_date;
@@ -48,21 +56,21 @@ public class OilRecovery {
 		this.recyclinguse = recyclinguse;
 	}
 
-	public String getCatering_signature() {
-		return catering_signature;
-	}
-
-	public void setCatering_signature(String catering_signature) {
-		this.catering_signature = catering_signature;
-	}
-
-	public String getRecovery_signature() {
-		return recovery_signature;
-	}
-
-	public void setRecovery_signature(String recovery_signature) {
-		this.recovery_signature = recovery_signature;
-	}
+//	public String getCatering_signature() {
+//		return catering_signature;
+//	}
+//
+//	public void setCatering_signature(String catering_signature) {
+//		this.catering_signature = catering_signature;
+//	}
+//
+//	public String getRecovery_signature() {
+//		return recovery_signature;
+//	}
+//
+//	public void setRecovery_signature(String recovery_signature) {
+//		this.recovery_signature = recovery_signature;
+//	}
 
 	public String getRecovery_company() {
 		return recovery_company;

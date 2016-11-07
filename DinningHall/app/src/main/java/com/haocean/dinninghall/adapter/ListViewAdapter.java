@@ -188,25 +188,6 @@ public class ListViewAdapter extends BaseAdapter {
 
                                         onEditButton editButton=(onEditButton)context;
                                         editButton.EditButton(map);
-//                                        if(typeRecord.equals("Roster")||typeRecord.equals("MorningInspection")){
-//                                            intent=new Intent(context,CreateManActivity.class);
-//                                        }
-//                                        else if(typeRecord.equals("CheckLog")||typeRecord.equals("RatingCriteria")||typeRecord.equals("SafetyReport")){
-//                                            intent=new Intent(context,CreateSafetyActivity.class);
-//                                        }
-//                                        else if(typeRecord.equals("ReviewRecord")){
-//                                            intent=new Intent(context,CreateReviewActivity.class);
-//                                        }
-//                                        else{
-//                                            intent=new Intent(context,CreateRecordActivity.class);
-//                                        }
-//                                        intent.putExtra("tempString",tempString);
-//                                        intent.putExtra("typeRecord",typeRecord);
-//                                        intent.putExtra("id",id);
-//                                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                                        System.out.println("第一步");
-//                                        ((Activity) context).startActivityForResult(intent, 1000);
-                                       // context.startActivityForResult(intent,1);
 
                                     }
                                 });

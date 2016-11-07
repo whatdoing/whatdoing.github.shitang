@@ -16,10 +16,10 @@ public class  FoodView{
     public TextView create_date;
     @FindIdAnno(R.id.number)
     public TextView number;
-    @FindIdAnno(R.id.foodname)
-    public TextView foodname;
-    @FindIdAnno(R.id.foodcount)
-    public TextView foodcount;
+//    @FindIdAnno(R.id.foodname)
+//    public TextView foodname;
+//    @FindIdAnno(R.id.foodcount)
+//    public TextView foodcount;
     @FindIdAnno(R.id.start_date)
     public TextView start_date;
     @FindIdAnno(R.id.end_date)
@@ -28,8 +28,12 @@ public class  FoodView{
     public TextView peoplenum;
     @FindIdAnno(R.id.liable_person)
     public TextView liable_person;
+    @FindIdAnno(R.id.tableandroidnum)
+    public TextView tableandroidnum;
     @FindIdAnno(R.id.id)
     public TextView id;
+    @FindIdAnno(R.id.canteenName)
+    public TextView canteenName;
 
     @FindIdAnno(R.id.bianji)
     public ImageView bianji;

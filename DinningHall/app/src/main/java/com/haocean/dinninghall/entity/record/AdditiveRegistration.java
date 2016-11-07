@@ -1,5 +1,10 @@
 package com.haocean.dinninghall.entity.record;
 
+import android.widget.TextView;
+
+import com.haocean.dinninghall.R;
+import com.haocean.dinninghall.adapter.recordview.FindIdAnno;
+
 public class AdditiveRegistration {
 
 	private String create_date;//创建日期（录入时间）
@@ -15,7 +20,15 @@ public class AdditiveRegistration {
 	private String liable_person;//	责任人签名
 	private String userid;//创建该条记录的用户id
 	private String school_id;//该记录所属学校id[关联字段]
+	private String canteenName;//食堂名称
 
+	public String getCanteenName() {
+		return canteenName;
+	}
+
+	public void setCanteenName(String canteenName) {
+		this.canteenName = canteenName;
+	}
 
 	public String getCreate_date() {
 		return create_date;

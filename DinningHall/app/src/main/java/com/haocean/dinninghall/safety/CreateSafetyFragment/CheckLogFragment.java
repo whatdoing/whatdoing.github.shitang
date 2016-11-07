@@ -6,11 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.haocean.dinninghall.R;
+import com.haocean.dinninghall.Runnable.CheckInfoRunnable;
 import com.haocean.dinninghall.contexts.MyDialogs;
 import com.haocean.dinninghall.record.utils.ValueUtils;
 import com.haocean.dinninghall.safety.CreateSafetyActivity;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by Administrator on 2016/10/17 0017.
@@ -18,7 +24,22 @@ import com.haocean.dinninghall.safety.CreateSafetyActivity;
 public class CheckLogFragment extends Fragment implements View.OnClickListener{
     private CreateSafetyActivity activity;
     private Button inspect_date;
+    private TextView address,legal,inspect_company,legalphone;
+    String contacts="";
+    public void getInfo(){
+        contacts= CheckInfoRunnable.getContacts();
 
+        try {
+            JSONArray jsonArray=new JSONArray(contacts);
+            JSONObject jsonObject=jsonArray.getJSONObject(0);
+            inspect_company.setText(jsonObject.getString("school_name"));
+            legal.setText(jsonObject.getString("legal"));
+            address.setText(jsonObject.getString("address"));
+            legalphone.setText(jsonObject.getString("legalphone"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -26,6 +47,12 @@ public class CheckLogFragment extends Fragment implements View.OnClickListener{
 
         activity= (CreateSafetyActivity)getActivity();
         inspect_date=(Button)view.findViewById(R.id.inspect_date);
+        legalphone=(TextView)view.findViewById(R.id.legalphone);
+        address=(TextView)view.findViewById(R.id.address);
+        legal=(TextView)view.findViewById(R.id.legal);
+        inspect_company=(TextView)view.findViewById(R.id.inspect_company);
+        getInfo();
+
         inspect_date.setOnClickListener(this);
         String tempString=activity.getTempString();
         if(tempString!=null) {
