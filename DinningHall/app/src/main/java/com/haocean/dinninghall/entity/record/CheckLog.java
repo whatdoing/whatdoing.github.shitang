@@ -25,7 +25,50 @@ public class CheckLog {
     private String personnel2;//
     private String personnel3_change;//
     private String personnel3;//
-    private String environmental_health4_change;//
+
+
+
+
+	private String personnel4_change;//
+
+	private String environmental_health1_change;
+
+	private String environmental_health2_change;
+	private String environmental_health3_change;
+
+	public String getPersonnel4_change() {
+		return personnel4_change;
+	}
+
+	public void setPersonnel4_change(String personnel4_change) {
+		this.personnel4_change = personnel4_change;
+	}
+
+	public String getEnvironmental_health1_change() {
+		return environmental_health1_change;
+	}
+
+	public void setEnvironmental_health1_change(String environmental_health1_change) {
+		this.environmental_health1_change = environmental_health1_change;
+	}
+
+	public String getEnvironmental_health2_change() {
+		return environmental_health2_change;
+	}
+
+	public void setEnvironmental_health2_change(String environmental_health2_change) {
+		this.environmental_health2_change = environmental_health2_change;
+	}
+
+	public String getEnvironmental_health3_change() {
+		return environmental_health3_change;
+	}
+
+	public void setEnvironmental_health3_change(String environmental_health3_change) {
+		this.environmental_health3_change = environmental_health3_change;
+	}
+
+	private String environmental_health4_change;//
     private String environmental_health4;//
     private String material_control1_change;//
     private String material_control1;//

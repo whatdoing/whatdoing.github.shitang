@@ -90,6 +90,7 @@ System.out.println("-----url-----"+url);
             response = httpClient.execute(httpPost);
             HttpEntity responseEntityPublic = response.getEntity();
             contactsList = EntityUtils.toString(responseEntityPublic,"utf-8");
+            System.out.println("------setBar"+contactsList);
 
         } catch (ClientProtocolException e) {
             e.printStackTrace();
@@ -100,10 +101,18 @@ System.out.println("-----url-----"+url);
             handler.obtainMessage(0).sendToTarget();;
         }
 
-        if(!contactsList.contains("{")){
-            contactsList=contactsList.substring(2,contactsList.length()-1).replace("\"","");
-            DataList.list=contactsList;
-            System.out.println("---list----"+DataList.list);
+       if(!contactsList.contains("{")){
+            if(typeMan.equals("FoodSamples")){
+                contactsList=contactsList.substring(2,contactsList.length()-1).replace("\"","");
+                DataList.Flist=contactsList;
+                System.out.println("---list----"+DataList.list);
+            }
+            else{
+                contactsList=contactsList.substring(2,contactsList.length()-1).replace("\"","");
+                DataList.list=contactsList;
+                System.out.println("---list----"+DataList.list);
+            }
+
         }
         else{
             try {

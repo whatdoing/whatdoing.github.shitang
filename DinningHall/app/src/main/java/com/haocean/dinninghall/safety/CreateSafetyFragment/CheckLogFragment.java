@@ -35,7 +35,7 @@ public class CheckLogFragment extends Fragment implements View.OnClickListener{
             inspect_company.setText(jsonObject.getString("school_name"));
             legal.setText(jsonObject.getString("legal"));
             address.setText(jsonObject.getString("address"));
-            legalphone.setText(jsonObject.getString("legalphone"));
+            legalphone.setText(jsonObject.getString("contactPhone"));
         } catch (JSONException e) {
             e.printStackTrace();
         }

@@ -14,7 +14,15 @@ public class FoodSamples {
 	private String school_id;//该记录所属学校id[关联字段]
 	private String tableandroidnum;//名称数量
 	private String canteenName;//食堂名称
+	private String allid;
 
+	public String getAllid() {
+		return allid;
+	}
+
+	public void setAllid(String allid) {
+		this.allid = allid;
+	}
 	public String getCanteenName() {
 		return canteenName;
 	}

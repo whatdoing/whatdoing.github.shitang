@@ -33,13 +33,13 @@ import org.json.JSONObject;
  */
 public class MorningInspectionFragment extends Fragment implements View.OnClickListener{
     private  CreateManActivity activity;
-    Button jobtype,department,xuanze;
+    Button jobtype,department,xuanze,morningcheck;
     RadioButton abnormal,normal;
     LinearLayout hide,people,result;
     TextView name;//隐藏的
     String[] job={"食堂负责人","食品安全管理员","食品添加剂专职管理人员","厨师","洗碗工","洗菜工"};
     String[] value={"校领导","食堂负责人","厨房","后勤"};
-
+String[] morning ={"正常","未保洁"};
     String jobs,d;
 String nameList="";
     @Override
@@ -51,6 +51,7 @@ String nameList="";
         jobtype=(Button)view.findViewById(R.id.jobtype);
         department=(Button)view.findViewById(R.id.department);
         xuanze=(Button) view.findViewById(R.id.xuanze);
+        morningcheck=(Button) view.findViewById(R.id.morningcheck);
         abnormal=(RadioButton)view.findViewById(R.id.abnormal);
         name=(TextView)view.findViewById(R.id.name);
         normal=(RadioButton)view.findViewById(R.id.normal);
@@ -63,6 +64,7 @@ String nameList="";
         abnormal.setOnClickListener(this);
         normal.setOnClickListener(this);
         xuanze.setOnClickListener(this);
+        morningcheck.setOnClickListener(this);
         hide.setVisibility(View.GONE);
         String tempString=activity.getTempString();
         if(tempString!=null) {
@@ -174,20 +176,22 @@ String nameList="";
             case R.id.abnormal:
 
                 hide.setVisibility(View.VISIBLE);
-               // result.setVisibility(View.VISIBLE);
+
 
                 break;
             case R.id.normal:
                 hide.setVisibility(View.GONE);
-                //result.setVisibility(View.VISIBLE);
 
+                break;
+            case R.id.morningcheck:
+
+                MyDialogs.cereateDialog(morningcheck, morning, activity);
                 break;
             case R.id.xuanze:
                 jobs=jobtype.getText().toString();
                 d=department.getText().toString();
                 nameList="";
-                System.out.println("---jobs----"+jobs);
-                System.out.println("---d----"+d);
+
                 Run(jobs,d,activity.getTypeMan());
 
                 break;

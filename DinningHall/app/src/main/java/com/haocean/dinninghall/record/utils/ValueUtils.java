@@ -41,20 +41,30 @@ public class ValueUtils {
             Class   clazz= RecordList.Entity.get(typeRecord);
             object  =clazz.newInstance();
             Field[]  fields=clazz.getDeclaredFields();
-            for(Field field:fields){
+            for(final Field field:fields){
                 field.setAccessible(true);
 
-
+                System.out.println("strShArea"+strSHArea);
                 if(Arrays.asList(strSHArea).contains(field.getName())){
                     int id= R.id.class.getField(field.getName()).getInt(null);
-                    View view=activity.findViewById(id);
+                    final View view=activity.findViewById(id);
                     if(view instanceof EditText){
                         field.set(object,((EditText) view).getText().toString());
                     }else if(view instanceof Button){
                         field.set(object,((Button) view).getText().toString());
                     }else if(view instanceof TextView){
                         field.set(object,((TextView) view).getText().toString());
-                        System.out.println("--"+field.getName()+"-----------"+((TextView) view).getText().toString());
+                    }
+                    else if(view instanceof RadioGroup){
+                        System.out.println("-----现在是radioGoup----");
+                        if(((RadioButton) ((RadioGroup) view).getChildAt(1)).isChecked()){
+                            field.set(object,((RadioButton) ((RadioGroup) view).getChildAt(1)).getText().toString());
+                        }
+                        else if(((RadioButton) ((RadioGroup) view).getChildAt(0)).isChecked()){
+                            field.set(object,((RadioButton) ((RadioGroup) view).getChildAt(0)).getText().toString());
+                        }else{
+                            field.set(object,"");
+                        }
                     }
 
                 }
@@ -106,7 +116,7 @@ public class ValueUtils {
                         if(value.equals("是")){
                             ((RadioButton) ((RadioGroup) view).getChildAt(0)).setChecked(true);
                         }
-                        else{
+                        else if(value.equals("否")){
                             ((RadioButton) ((RadioGroup) view).getChildAt(1)).setChecked(true);
                         }
 
@@ -161,7 +171,7 @@ public class ValueUtils {
                         if(value.equals("是")){
                             ((RadioButton) ((RadioGroup) view).getChildAt(0)).setChecked(true);
                         }
-                        else{
+                        else if(value.equals("否")){
                             ((RadioButton) ((RadioGroup) view).getChildAt(1)).setChecked(true);
                         }
 

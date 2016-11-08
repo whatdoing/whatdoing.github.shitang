@@ -38,11 +38,11 @@ public class CreateManActivity extends Activity  implements View.OnClickListener
         fragmentManager.beginTransaction().replace(R.id.fragment_title, new CreateTitleFragment(),"createFragmentTitle").commit();
         fragmentManager.beginTransaction().replace(R.id.fragment_context, fragment,"createFragment").commit();
     }
-    public String getTypeMan(){
-        return typeMan;
-    }
     public String getTempString(){
         return tempString;
+    }
+    public String getTypeMan(){
+        return typeMan;
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

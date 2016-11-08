@@ -12,9 +12,10 @@ public class RatingCriteriaView {
     //只需要在每个ID上设置对应的注解即可
 
 
-    @FindIdAnno(R.id.inspect_company)
-    public TextView inspect_company;
-
+   /* @FindIdAnno(R.id.inspect_company)
+    public TextView inspect_company;*/
+   @FindIdAnno(R.id.school_name)
+   public TextView school_name;
     @FindIdAnno(R.id.inspect_date)
     public TextView inspect_date;
     @FindIdAnno(R.id.inspect_people)

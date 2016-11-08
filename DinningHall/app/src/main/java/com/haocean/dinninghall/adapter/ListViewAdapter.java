@@ -76,6 +76,9 @@ public class ListViewAdapter extends BaseAdapter {
             e.printStackTrace();
         }
     }
+    public JSONArray getJsonAry(){
+        return jsonAry;
+    }
 
     @Override
     public int getCount() {

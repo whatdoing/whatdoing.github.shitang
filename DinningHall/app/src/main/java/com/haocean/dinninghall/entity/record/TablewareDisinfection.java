@@ -16,6 +16,15 @@ public class TablewareDisinfection {
 	private String userid;//创建人的用户id
 	private String canteenName;//食堂名称
 	private String tableandroidnum;//餐具和数量
+private String allid;
+
+	public String getAllid() {
+		return allid;
+	}
+
+	public void setAllid(String allid) {
+		this.allid = allid;
+	}
 
 	public String getDisinfection_type() {
 		return disinfection_type;

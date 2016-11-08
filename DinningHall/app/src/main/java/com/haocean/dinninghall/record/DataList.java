@@ -4,6 +4,8 @@ package com.haocean.dinninghall.record;
  * Created by Administrator on 2016/10/18 0018.
  */
 public class DataList {
+    public static String listId="";
+    public static  String Flist="";
     public static String list="";
     public static String recovery_address="";
     public static String contacts="";

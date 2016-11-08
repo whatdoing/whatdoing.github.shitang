@@ -26,15 +26,15 @@ public class CreateReviewActivity extends Activity implements View.OnClickListen
     private Fragment fragment;
     private String id;
     private  String tempString;
-
+int num;
     CreateRecordRunnable createRecordRunnable;
     public  void init() {
         Intent intent = getIntent();
         typeRecord = intent.getStringExtra("typeRecord");
+        System.out.println("---*****----"+typeRecord);
         tempString=intent.getStringExtra("tempString");
         id=intent.getStringExtra("id");
-
-
+        num=intent.getIntExtra("num",0);
         FragmentManager fragmentManager= getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.fragment_title, new CreateTitleFragment(),"createFragmentTitle").commit();
 
@@ -43,7 +43,15 @@ public class CreateReviewActivity extends Activity implements View.OnClickListen
         fragmentManager.beginTransaction().replace(R.id.fragment_context, fragment,"createFragment").commit();
 
     }
-
+    public String getTypeRecord(){
+        return typeRecord;
+    }
+    public int getNum(){
+        return num;
+    }
+    public String getId(){
+        return id;
+    }
     public String getTempString(){
         return tempString;
     }
@@ -113,11 +121,11 @@ public class CreateReviewActivity extends Activity implements View.OnClickListen
                     intent.setClass(CreateReviewActivity.this, SafetyListActivity.class);
                     setResult(3, intent);
                     finish();
-                    Toast.makeText(CreateReviewActivity.this, "编辑成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreateReviewActivity.this, "操作成功", Toast.LENGTH_SHORT).show();
                     break;
                 case 1:
 
-                    Toast.makeText(CreateReviewActivity.this, "编辑失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CreateReviewActivity.this, "操作失败", Toast.LENGTH_SHORT).show();
                     break;
             }
 

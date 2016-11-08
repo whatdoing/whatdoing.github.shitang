@@ -6,10 +6,14 @@ import android.os.Bundle;
 
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.SubMenu;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.haocean.dinninghall.R;
 import com.haocean.dinninghall.Runnable.RecordRunnable;
@@ -39,10 +43,11 @@ public class RecordListActivity  extends SlidingFragmentActivity implements Left
     private String typeRecord;
     private BottomListFragment bottomListFragment;
     Map<String,String> data=new HashMap<String, String>();
+    Map<String,String> searchMap=new HashMap<String, String>();
     private void init() {
         Intent intent = getIntent();
         typeRecord = intent.getStringExtra("typeRecord");
-
+        System.out.println("typeRecord+"+typeRecord);
     }
 
     @Override
@@ -53,6 +58,7 @@ public class RecordListActivity  extends SlidingFragmentActivity implements Left
         init();//加载
         initSlidingMenu();
         Datarunnable(data);
+
     }
     /*
     * 初始化右侧搜索菜单
@@ -136,15 +142,19 @@ public class RecordListActivity  extends SlidingFragmentActivity implements Left
     */
     @Override
     public void onOKItem(String typeRecord) {
-        this.typeRecord=typeRecord;
+        if(!(this.typeRecord.trim().equals(typeRecord))){
+            this.typeRecord=typeRecord;
+            initRightMenu(_SlidingMenu);
+
+            listTitleFragment.setTitle();
+
+            //缺少一个数据的加载
+            System.out.println("typeRecord"+typeRecord);
+            Datarunnable(data);
+
+        }
         LeftSlidingMenuIsShow();
-        listTitleFragment.setTitle();
 
-        //缺少一个数据的加载
-        System.out.println("typeRecord"+typeRecord);
-        Datarunnable(data);
-
-        initRightMenu(_SlidingMenu);
         //titleFragment的一个数据统计
         //buttomListFragment的一个数据列表
 
@@ -168,13 +178,43 @@ public class RecordListActivity  extends SlidingFragmentActivity implements Left
 
 
 
-    public void onBackListener(String data) {
+    public void onBackListener(View view) {
         //清空搜索条件
-        System.out.println("data"+data);
+        View viewall = getWindow().getDecorView();
+        searchMap= ValueUtils.getAllChildViews(viewall);
+        //遍历map
+        for (Map.Entry<String, String> entry : searchMap.entrySet()) {
+
+
+            try {
+                //生成控件
+                int id = R.id.class.getField(entry.getKey()).getInt(null);
+
+                View view1=view.findViewById(id);
+                if(view1 instanceof EditText){
+                    entry.setValue("");
+                    ((EditText) view1).setText("");
+                }else if(view1 instanceof Button){
+                    if(entry.getKey().contains("search")){
+
+                    }else{
+                        System.out.println("------成功了吗----");
+                        entry.setValue("");
+                        ((Button) view1).setText("");
+                    }
+
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (NoSuchFieldException e) {
+                e.printStackTrace();
+            }
+
+        }
     }
     //搜索的条件
     private  Map<String,String> addMap(){
-        Map<String,String> searchMap=new HashMap<String, String>();
+
         View viewall = getWindow().getDecorView();
         searchMap= ValueUtils.getAllChildViews(viewall);
         System.out.println("------searchMap--------"+searchMap);
@@ -186,15 +226,13 @@ public class RecordListActivity  extends SlidingFragmentActivity implements Left
         data=addMap();
         System.out.println("data"+data);
         Datarunnable(data);
-        //缺少一个数据的加载
-        //titleFragment的一个数据统计
-        //buttomListFragment的一个数据列表
+
     }
 
 
     @Override
     public void CreateRecord() {
-        System.out.println("从这里进的吗");
+
         Intent intent=new Intent(RecordListActivity.this,CreateRecordActivity.class);
         intent.putExtra("typeRecord",RecordListActivity.this.getTypeRecord());
         startActivityForResult(intent, 1);

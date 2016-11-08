@@ -57,6 +57,8 @@ public class MyDialogs {
         dialog.show();
     }
 
+
+
     //日期提示框
     public static void cereateDateDialog(final Button button, final Activity activity){
         final Calendar c = Calendar.getInstance();
@@ -68,15 +70,16 @@ public class MyDialogs {
                     @Override
                     public void onDateSet(DatePicker view, int year,
                                           int month, int day) {
-
+System.out.println("第一次++++");
                       final int  mYear = year;
                         final int   mMonth = month;
                         final int  mDay = day;
-                        new TimePickerDialog(activity,
-                                new TimePickerDialog.OnTimeSetListener() {
+                        new mtimePicket(activity,
+                                new mtimePicket.OnTimeSetListener() {
                                     @Override
                                     public void onTimeSet(TimePicker view, int hour, int minute) {
-                                     int   mHour = hour;
+                                        System.out.println("第2次++++");
+                                        int   mHour = hour;
                                         int   mMinute = minute;
                                         //更新EditText控件时间 小于10加0
                                         button.setText(new StringBuilder().append(mYear).append("-")
@@ -87,6 +90,7 @@ public class MyDialogs {
                                     }
                                 }, c.get(Calendar.HOUR_OF_DAY),
                                 c.get(Calendar.MINUTE), true).show();
+
                     }
                 }
                 // 设置初始日期

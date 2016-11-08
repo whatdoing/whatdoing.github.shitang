@@ -18,9 +18,10 @@ import com.haocean.dinninghall.record.utils.ValueUtils;
  */
 public class RosterFragment extends Fragment implements View.OnClickListener{
     private  CreateManActivity activity;
-Button sex,takework_date,jobtype,department,healthunit,iscanteen,maturity_date;
+Button sex,takework_date,jobtype,department,healthunit,iscanteen,maturity_date,safetymanager;
     String[] sexs={"男","女"};
     String[] iscanteens={"是","否"};
+
     String[] jobtypes={"食堂负责人","食品安全管理员","食品添加剂专职管理人员","厨师","洗碗工","洗菜工"};
     String[] departments={"校领导","食堂负责人","厨房","后勤"};
     String[] healthunits={"玉环县疾病预防控制中心","玉环县大麦屿社区卫生服务中心","玉环县坎门社区卫生服务中心","玉环县第二人民医院"};
@@ -40,6 +41,8 @@ Button sex,takework_date,jobtype,department,healthunit,iscanteen,maturity_date;
         sex= (Button) view.findViewById(R.id.sex);
         sex.setOnClickListener(this);
         jobtype= (Button) view.findViewById(R.id.jobtype);
+        safetymanager= (Button) view.findViewById(R.id.safetymanager);
+        safetymanager.setOnClickListener(this);
         jobtype.setOnClickListener(this);
         department= (Button) view.findViewById(R.id.department);
         department.setOnClickListener(this);
@@ -79,6 +82,9 @@ Button sex,takework_date,jobtype,department,healthunit,iscanteen,maturity_date;
                 break;
             case R.id.iscanteen:
                 MyDialogs.cereateDialog(iscanteen,iscanteens,activity);
+                break;
+            case R.id.safetymanager:
+                MyDialogs.cereateDialog(safetymanager,iscanteens,activity);
                 break;
         }
 

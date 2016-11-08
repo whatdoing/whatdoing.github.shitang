@@ -16,6 +16,15 @@ public class ReviewRecord {
     private String userid;//
 
     private String school_id;//
+	private String dealstate;
+
+	public String getDealstate() {
+		return dealstate;
+	}
+
+	public void setDealstate(String dealstate) {
+		this.dealstate = dealstate;
+	}
 
 	public String getCreate_date() {
 		return create_date;

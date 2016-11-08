@@ -64,7 +64,6 @@ public class CreateRecordRunnable implements Runnable  {
             String value=(String) field.get(object);
             System.out.println("---进来了吗-----"+value);
             if(value!=null&&!value.contains("null")){
-System.out.println("-----"+field.getName()+"---"+(String) field.get(object));
                 parameters.add(new BasicNameValuePair(field.getName(), (String) field.get(object)));
             }
         }

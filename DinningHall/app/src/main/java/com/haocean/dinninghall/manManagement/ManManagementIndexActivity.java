@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.haocean.dinninghall.R;
 import com.haocean.dinninghall.Runnable.RecordRunnable;
@@ -39,6 +41,8 @@ public class ManManagementIndexActivity  extends SlidingFragmentActivity impleme
     private ListTitleFragment listTitleFragment;
     private BottomListFragment bottomListFragment;
     Map<String,String> data=new HashMap<String, String>();
+
+    Map<String,String> searchMap=new HashMap<String, String>();
     private void init() {
         Intent intent = getIntent();
         typeMan = intent.getStringExtra("typeRecord");
@@ -127,14 +131,18 @@ public class ManManagementIndexActivity  extends SlidingFragmentActivity impleme
 
     @Override
     public void onOKItem(String typeMan) {
-        this.typeMan = typeMan;
+        if(!(this.typeMan.trim().equals(typeMan))){
+            this.typeMan=typeMan;
+            initRightMenu(_SlidingMenu);
+
+            listTitleFragment.setTitle();
+
+            //缺少一个数据的加载
+            System.out.println("typeMan"+typeMan);
+            Datarunnable(data);
+
+        }
         LeftSlidingMenuIsShow();
-        listTitleFragment.setTitle();
-        //数据的加载
-        System.out.println("typeMan" + typeMan);
-        Datarunnable(data);
-        //右侧搜索界面
-        initRightMenu(_SlidingMenu);
 
     }
 
@@ -161,14 +169,45 @@ public class ManManagementIndexActivity  extends SlidingFragmentActivity impleme
     }
 
 
-    public void onBackListener(String data) {
+    public void onBackListener(View view) {
         //清空搜索条件
-        System.out.println("data" + data);
+        View viewall = getWindow().getDecorView();
+        searchMap= ValueUtils.getAllChildViews(viewall);
+        //遍历map
+        for (Map.Entry<String, String> entry : searchMap.entrySet()) {
+
+
+            try {
+                //生成控件
+                int id = R.id.class.getField(entry.getKey()).getInt(null);
+
+                View view1=view.findViewById(id);
+                if(view1 instanceof EditText){
+                    entry.setValue("");
+                    ((EditText) view1).setText("");
+                }else if(view1 instanceof Button){
+                    if(entry.getKey().contains("search")){
+
+                    }else{
+                        System.out.println("------成功了吗----");
+                        entry.setValue("");
+                        ((Button) view1).setText("");
+                    }
+
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (NoSuchFieldException e) {
+                e.printStackTrace();
+            }
+
+        }
+
     }
 
     //搜索的条件
     private  Map<String,String> addMap(){
-        Map<String,String> searchMap=new HashMap<String, String>();
+
         View viewall = getWindow().getDecorView();
         searchMap= ValueUtils.getAllChildViews(viewall);
         System.out.println("------searchMap--------"+searchMap);

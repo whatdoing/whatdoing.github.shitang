@@ -32,7 +32,7 @@ import java.util.Map;
 
 public class RecordRunnable implements Runnable {
     public SharedPreferences loginShare;
-
+    private SharedPreferences.Editor loginEdit;
 
     private Activity activity;
 
@@ -63,7 +63,7 @@ public class RecordRunnable implements Runnable {
 
         }else{
             url=address+typeMan+"Android/listInfo?";
-            System.out.println("----RecordRunnable 的url-----"+url);
+
         }
 
         System.out.println("---RecordRunnable里的typeMan----"+typeMan);
@@ -75,7 +75,7 @@ public class RecordRunnable implements Runnable {
 
         }
 
-
+        System.out.println("----RecordRunnable 的url-----"+url);
         HttpPost httpPost = null;
 
             httpPost = new HttpPost(url);

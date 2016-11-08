@@ -54,6 +54,9 @@ import com.haocean.dinninghall.safety.DetailActivity;
 import com.haocean.dinninghall.safety.DetailFragment.DetailFragment1;
 import com.haocean.dinninghall.safety.DetailFragment.DetailFragment2;
 import com.haocean.dinninghall.safety.DetailFragment.DetailFragment3;
+import com.haocean.dinninghall.safety.leftOrRightFragment.right.CheckLogRightFragment;
+import com.haocean.dinninghall.safety.leftOrRightFragment.right.RatingRightFragment;
+import com.haocean.dinninghall.safety.leftOrRightFragment.right.SafetyRightFragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -74,7 +77,7 @@ public class RecordList {
     public final static Map<String,String> Lists=new HashMap<String,String>();
     public final static ArrayList<String> ArrStr=new ArrayList<String>();
 
-
+    public final static Map<String,String> Type=new HashMap<String,String>();
     public final static ArrayList<String> SafetyArrStr=new ArrayList<String>();
     public final static Map<String,String> SafetyLists=new HashMap<String,String>();
 
@@ -119,7 +122,8 @@ public class RecordList {
 
         Layout.put("ReviewRecord",R.layout.review_list_item);
 
-
+        Type.put("添加整改记录","ReviewRecord");
+        Type.put("添加复查记录","ReviewRecord");
        // Layout.put("ReviewRecord",)
 
 //        RightLayout.put("TablewareDisinfection",R.layout.right_fragment_menu0);
@@ -141,9 +145,12 @@ public class RecordList {
         RightLayout.put("Roster",R.layout.right_man_fragment);
         RightLayout.put("MorningInspection",R.layout.right_morning_fragment);
 
-        RightLayout.put("SafetyReport",R.layout.safety_report_menu0);
-        RightLayout.put("RatingCriteria",R.layout.rating_criteria_menu0);
-        RightLayout.put("CheckLog",R.layout.check_log_menu0);
+        RightFragment.put("SafetyReport",new SafetyRightFragment());
+        RightFragment.put("RatingCriteria",new RatingRightFragment());
+        RightFragment.put("CheckLog",new CheckLogRightFragment());
+//        RightLayout.put("SafetyReport",R.layout.safety_report_menu0);
+//        RightLayout.put("RatingCriteria",R.layout.rating_criteria_menu0);
+//        RightLayout.put("CheckLog",R.layout.check_log_menu0);
 
         RightLayout.put("ReviewRecord",R.layout.review_record_menu0);
 
@@ -206,6 +213,8 @@ public class RecordList {
         Fragment.put("CheckLog",new CheckLogFragment());
 
         Fragment.put("ReviewRecord",new ReviewRecordFragment());
+        Fragment.put("添加整改记录",new ReviewRecordFragment());
+        Fragment.put("添加复查记录",new ReviewRecordFragment());
 
         DetailFragment.put("SafetyReport",new DetailFragment1());
         DetailFragment.put("RatingCriteria",new DetailFragment2());

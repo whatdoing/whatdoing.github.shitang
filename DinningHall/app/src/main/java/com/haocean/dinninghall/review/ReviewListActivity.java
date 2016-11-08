@@ -4,11 +4,15 @@ import android.app.FragmentManager;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.haocean.dinninghall.R;
 import com.haocean.dinninghall.Runnable.RecordRunnable;
 import com.haocean.dinninghall.adapter.ListViewAdapter;
+import com.haocean.dinninghall.record.utils.ValueUtils;
 import com.haocean.dinninghall.review.leftOrRightFragment.LeftFragment;
 import com.haocean.dinninghall.review.leftOrRightFragment.RightFragment;
 import com.haocean.dinninghall.safety.CreateSafetyActivity;
@@ -132,15 +136,21 @@ public class ReviewListActivity extends SlidingFragmentActivity implements LeftF
     */
     @Override
     public void onOKItem(String typeRecord) {
-        this.typeRecord=typeRecord;
+
+
+        if(!(this.typeRecord.trim().equals(typeRecord))){
+            this.typeRecord=typeRecord;
+            initRightMenu(_SlidingMenu);
+
+            listTitleFragment.setTitle();
+
+            //缺少一个数据的加载
+            System.out.println("typeRecord"+typeRecord);
+            Datarunnable(data);
+
+        }
         LeftSlidingMenuIsShow();
-        listTitleFragment.setTitle();
 
-        //缺少一个数据的加载
-        System.out.println("typeRecord"+typeRecord);
-        Datarunnable(data);
-
-        initRightMenu(_SlidingMenu);
 
     }
 
@@ -163,9 +173,38 @@ public class ReviewListActivity extends SlidingFragmentActivity implements LeftF
 
 
     @Override
-    public void onBackListener(String data) {
+    public void onBackListener(View view, Map<String,String> searchMap) {
         //清空搜索条件
-        System.out.println("data"+data);
+
+        //遍历map
+        for (Map.Entry<String, String> entry : searchMap.entrySet()) {
+
+
+            try {
+                //生成控件
+                int id = R.id.class.getField(entry.getKey()).getInt(null);
+
+                View view1=view.findViewById(id);
+                if(view1 instanceof EditText){
+                    entry.setValue("");
+                    ((EditText) view1).setText("");
+                }else if(view1 instanceof Button){
+                    if(entry.getKey().contains("search")){
+
+                    }else{
+                        System.out.println("------成功了吗----");
+                        entry.setValue("");
+                        ((Button) view1).setText("");
+                    }
+
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (NoSuchFieldException e) {
+                e.printStackTrace();
+            }
+
+        }
     }
 
     @Override
