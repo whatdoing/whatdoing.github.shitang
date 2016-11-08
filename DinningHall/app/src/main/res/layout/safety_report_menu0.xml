@@ -78,10 +78,72 @@
             <View  android:layout_height="1px"
                 android:layout_width="match_parent"
                 android:background="#ebebeb"  />
-           
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp" >
 
+                <TextView
+                    android:textColor="#333333"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:text="单位" />
 
+                <EditText
+                    android:id="@+id/inspect_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:paddingTop="10px" android:paddingBottom="10px"
+                    android:layout_weight="1"
+                    android:textSize="12dp"
+                    android:gravity="center_vertical|center"
+                    android:background="@drawable/edit"
+
+                    android:hint="请填写"
+                    android:textColor="#626262"
+                    android:textColorHint="#b6b6b6" />
+
+            </LinearLayout>
+
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp" >
+
+                <TextView
+                    android:textColor="#333333"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:text="报告人" />
+
+                <EditText
+                    android:id="@+id/reportname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:paddingTop="10px" android:paddingBottom="10px"
+                    android:layout_weight="1"
+                    android:textSize="12dp"
+                    android:gravity="center_vertical|center"
+                    android:background="@drawable/edit"
+
+                    android:hint="请填写"
+                    android:textColor="#626262"
+                    android:textColorHint="#b6b6b6" />
+
+            </LinearLayout>
+
+            <View  android:layout_height="1px"
+                android:layout_width="match_parent"
+                android:background="#ebebeb"  />
         </LinearLayout>
     </LinearLayout>
 

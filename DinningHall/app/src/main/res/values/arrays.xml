@@ -13,6 +13,7 @@
             <item>end_date</item>
             <item>clean_condition</item>
             <item>liable_person</item>
+            <item>allid</item>
         </string-array>
 
         <!-- 搜索条件 -->
@@ -70,6 +71,7 @@
             <item>end_date</item>
             <item>peoplenum</item>
             <item>liable_person</item>
+            <item>allid</item>
         </string-array>
 
         <!-- 搜索条件 -->
@@ -278,18 +280,15 @@
     <!--餐饮服务单位食品安全自评标准表-->
     <string-array
         name="RatingCriteria">
-
         <item>safety_system</item>
+        <item>realization_score</item>
         <item>personnel</item>
         <item>selfdiscipline</item>
         <item>layout_environment</item>
         <item>facility</item>
         <item>purchase</item>
-
         <item>production</item>
         <item>tableware_disinfection</item>
-
-
         <item>room_management</item>
         <item>transportation</item>
         <item>othertext</item>
@@ -299,16 +298,49 @@
         <item>earned_score</item>
         <item>standardized_score</item>
         <item>assessment_level</item>
-        <item>inspect_company</item>
+        <item>school_name</item>
         <item>permit</item>
-
         <item>address</item>
         <item>legal</item>
-        <item>legalphone</item>
+        <item>contactPhone</item>
         <item>inspect_people</item>
         <item>inspect_date</item>
-
-
+        <item>new_safety_system</item>
+        <item>new_personnel</item>
+        <item>new_selfdiscipline</item>
+        <item>new_layout_environment</item>
+        <item>new_facility</item>
+        <item>new_purchase</item>
+        <item>new_production</item>
+        <item>new_tableware_disinfection</item>
+        <item>new_room_management</item>
+        <item>new_transportation</item>
+        <item>new_othertext</item>
+        <item>new_bonusitems</item>
+        <item>personnel2</item>
+        <item>personnel3</item>
+        <item>personnel4</item>
+        <item>selfdiscipline2</item>
+        <item>selfdiscipline3</item>
+        <item>layout_environment6</item>
+        <item>layout_environment5</item>
+        <item>layout_environment4</item>
+        <item>layout_environment3</item>
+        <item>layout_environment2</item>
+        <item>facility2</item>
+        <item>facility3</item>
+        <item>facility4</item>
+        <item>facility5</item>
+        <item>facility6</item>
+        <item>facility7</item>
+        <item>purchase2</item>
+        <item>production2</item>
+        <item>production3</item>
+        <item>production4</item>
+        <item>tableware_disinfection2</item>
+        <item>room_management2</item>
+        <item>transportation2</item>
+        <item>transportation3</item>
     </string-array>
 
     <!-- 搜索条件 -->
@@ -322,6 +354,91 @@
         <item></item>
         <item></item>
         <item></item>
+    </string-array>
+
+    <string-array
+        name="New">
+
+        <item>new_safety_system</item>
+        <item>new_personnel</item>
+        <item>new_selfdiscipline</item>
+        <item>new_layout_environment</item>
+        <item>new_facility</item>
+        <item>new_purchase</item>
+
+        <item>new_production</item>
+        <item>new_tableware_disinfection</item>
+
+
+        <item>new_room_management</item>
+        <item>new_transportation</item>
+        <item>new_othertext</item>
+        <item>new_bonusitems</item>
+
+    </string-array>
+
+
+    <string-array
+        name="RC0">
+        <item>safety_system</item>
+    </string-array>
+    <string-array name="RC1">
+        <item>personnel</item>
+        <item>personnel2</item>
+        <item>personnel3</item>
+        <item>personnel4</item>
+    </string-array>
+    <string-array name="RC2">
+        <item>selfdiscipline</item>
+        <item>selfdiscipline2</item>
+        <item>selfdiscipline3</item>
+    </string-array>
+    <string-array name="RC3">
+        <item>layout_environment</item>
+        <item>layout_environment6</item>
+        <item>layout_environment5</item>
+        <item>layout_environment4</item>
+        <item>layout_environment3</item>
+        <item>layout_environment2</item>
+    </string-array>
+    <string-array name="RC4">
+        <item>facility</item>
+        <item>facility2</item>
+        <item>facility3</item>
+        <item>facility4</item>
+        <item>facility5</item>
+        <item>facility6</item>
+        <item>facility7</item>
+    </string-array>
+    <string-array name="RC5">
+        <item>purchase2</item>
+        <item>purchase</item>
+    </string-array>
+    <string-array name="RC6">
+        <item>production</item>
+        <item>production2</item>
+        <item>production3</item>
+        <item>production4</item>
+    </string-array>
+    <string-array name="RC7">
+        <item>tableware_disinfection</item>
+        <item>tableware_disinfection2</item>
+    </string-array>
+    <string-array name="RC8">
+        <item>room_management2</item>
+        <item>room_management</item>
+    </string-array>
+    <string-array name="RC9">
+        <item>transportation</item>
+        <item>transportation2</item>
+        <item>transportation3</item>
+    </string-array>
+    <string-array name="RC10">
+        <item>othertext</item>
+
+    </string-array>
+    <string-array name="RC11">
+        <item>bonusitems</item>
     </string-array>
 
     <!--餐饮服务单位食品安全自查日志表-->

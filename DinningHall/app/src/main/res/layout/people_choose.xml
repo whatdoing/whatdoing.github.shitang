@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:padding="5dp"
+    android:layout_height="wrap_content">
+    <CheckBox
+        android:id="@+id/check"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/background"
+        style="@style/CheckboxThemezhidao"
+
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/names"
+        android:text="食品添"
+        android:textSize="15sp"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@id/jobtype"
+        android:text="食品添加剂专职管理人员"
+
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@id/department"
+        android:text="食堂负责人"
+
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+</LinearLayout>

@@ -73,7 +73,7 @@
                     android:text="发现时间" />
 
                 <Button
-                    android:id="@+id/firstime"
+                    android:id="@+id/first_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:paddingTop="10px" android:paddingBottom="10px"
                     android:layout_weight="1"
@@ -91,7 +91,7 @@
                     android:text="到"
                     android:layout_height="wrap_content" />
                 <Button
-                    android:id="@+id/lastime"
+                    android:id="@+id/end_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:paddingTop="10px" android:paddingBottom="10px"
                     android:layout_weight="1"
@@ -272,7 +272,7 @@
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
-                    android:text="责任人" />
+                    android:text="录入人员" />
 
                 <EditText
                     android:id="@+id/liable_person"

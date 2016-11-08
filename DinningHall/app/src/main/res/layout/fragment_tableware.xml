@@ -76,7 +76,11 @@
             android:background="@color/touming"
             android:textColor="#333333"
             android:textColorHint="#b6b6b6" />
-
+<TextView
+    android:id="@+id/allid"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="gone"/>
 
             </LinearLayout>
             <View  android:layout_height="1px"

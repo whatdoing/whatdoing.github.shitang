@@ -123,7 +123,7 @@
                         android:layout_marginRight="20dp"
                         android:text="回收单位名称" />
 
-                    <EditText
+                    <Button
                         android:id="@+id/recovery_company"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:paddingTop="10px" android:paddingBottom="10px"

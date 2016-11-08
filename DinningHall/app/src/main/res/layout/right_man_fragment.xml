@@ -198,7 +198,7 @@
                         android:layout_marginRight="20dp"
                         android:text="食品安全管理人员" />
 
-                    <EditText
+                    <Button
                         android:id="@+id/safetymanager"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:paddingTop="10px" android:paddingBottom="10px"
@@ -207,7 +207,7 @@
                         android:gravity="center_vertical|center"
 
                         android:background="@drawable/edit"
-                        android:hint="请填写"
+                        android:hint="请选择"
                         android:textColor="#626262"
                         android:textColorHint="#b6b6b6" />
 
@@ -239,7 +239,7 @@
                         android:gravity="center_vertical|center"
 
                         android:background="@drawable/edit"
-                        android:hint="请填写"
+                        android:hint="请选择"
                         android:textColor="#626262"
                         android:textColorHint="#b6b6b6" />
 
@@ -270,7 +270,7 @@
                         android:gravity="center_vertical|center"
 
                         android:background="@drawable/edit"
-                        android:hint="请填写"
+                        android:hint="请选择"
                         android:textColor="#626262"
                         android:textColorHint="#b6b6b6" />
 

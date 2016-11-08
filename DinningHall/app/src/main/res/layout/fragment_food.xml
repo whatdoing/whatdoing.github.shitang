@@ -101,7 +101,7 @@
         android:padding="5dip"
         android:text="留样食品" />
 
-        <EditText
+        <Button
         android:id="@+id/tableandroidnum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

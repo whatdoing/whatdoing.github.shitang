@@ -124,7 +124,7 @@
                     android:layout_marginRight="20dp"
                     android:text="自查结果" />
 
-                <EditText
+                <Button
                     android:id="@+id/log_result"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:paddingTop="10px" android:paddingBottom="10px"

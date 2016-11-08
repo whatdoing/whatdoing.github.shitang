@@ -12,7 +12,6 @@
         <item name="android:button">@drawable/btn_check</item>
         <item name="android:paddingLeft">15.0dip</item>
     </style>
-
     <!-- checkbox样式-->
     <style name="CheckboxThemezhidao">
         <item name="android:button">@drawable/btn_check_zhidao</item>
