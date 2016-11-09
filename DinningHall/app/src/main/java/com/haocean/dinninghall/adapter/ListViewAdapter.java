@@ -188,7 +188,7 @@ public class ListViewAdapter extends BaseAdapter {
                                         map.put("tempString",tempString);
                                         map.put("typeRecord",typeRecord);
                                         map.put("id",id);
-
+                                        map.put("num","2");
                                         onEditButton editButton=(onEditButton)context;
                                         editButton.EditButton(map);
 

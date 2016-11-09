@@ -280,6 +280,7 @@
     <!--餐饮服务单位食品安全自评标准表-->
     <string-array
         name="RatingCriteria">
+        <item>month</item>
         <item>safety_system</item>
         <item>realization_score</item>
         <item>personnel</item>

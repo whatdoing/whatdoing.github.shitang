@@ -24,7 +24,7 @@ public class ReviewRecordFragment extends Fragment implements View.OnClickListen
     private CreateReviewActivity activity;
     private Button find_date,review_time,liable_date;
 private LinearLayout zgyj,zgqx,fcyj,fcsj;
-  int type ;
+  String type ;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,24 +48,26 @@ private LinearLayout zgyj,zgqx,fcyj,fcsj;
             //三种情况：编辑   整改   复查
 
             type=activity.getNum();
-            System.out.println("---------"+type);
-            if(type==0){
+            if(type.equals("0")){
                 fcsj.setVisibility(View.GONE);
                 fcyj.setVisibility(View.GONE);
 
             }
-            else if(type==1){
+            else if(type.equals("1")){
 
             }
             else{
+                System.out.println("-*-*-是不是编辑*-*-");
                 //编辑
                 try {
                     JSONObject jsonObject=new JSONObject(tempString);
                     if(jsonObject.getString("rectification_opinions").equals("")){
+                        System.out.println("----整改为空------");
                         zgqx.setVisibility(View.GONE);
                         zgyj.setVisibility(View.GONE);
                     }
                     if(jsonObject.getString("review_results").equals("")){
+                        System.out.println("----复查为空------");
                         fcsj.setVisibility(View.GONE);
                         fcyj.setVisibility(View.GONE);
                     }

@@ -48,6 +48,8 @@ public class Fragment2 extends Fragment {
             R.mipmap.app_facepay, R.mipmap.app_close, R.mipmap.app_plane };
     private String[] img_text = { "rygl", "gcjl", "glrz", "yhbg"};
     private List<Integer>  _imgs=new ArrayList<Integer>();
+
+    //需要跳转的页面
     private Fragment[] Fragments = { new  ManIndexFrament(), new  RecordIndex(), new SafetyIndex(), new ReviewIndex()};
     private List<Fragment> listFragment = new ArrayList<Fragment>();
 //管理日志

@@ -63,6 +63,16 @@ public class RatingCriteria {
     private String new_othertext;//十一.其它
     private String new_bonusitems;//十二.加分项
 
+	private String month;
+
+	public String getMonth() {
+		return month;
+	}
+
+	public void setMonth(String month) {
+		this.month = month;
+	}
+
 	private String permit;//
 	private String address;//
 	private String userid;//

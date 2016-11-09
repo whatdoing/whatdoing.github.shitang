@@ -43,7 +43,7 @@ public class TablewareDisinfectionFragment extends Fragment implements View.OnCl
     String[] str_disinfection_type={"蒸汽消毒","煮沸消毒","红外线消毒","化学消毒","其他"};
     String[] con={"正常","未保洁"};
      AlertDialog dlg;//选择弹出框
-   Map<String,String> count=new HashMap<String,String>();
+   Map<String,String> count;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -74,38 +74,32 @@ public class TablewareDisinfectionFragment extends Fragment implements View.OnCl
         }
         return view;
     }
-
     Handler handlist = new Handler() {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch(msg.what) {
                 case 0:
 
-                  View  view1=LayoutInflater.from(AppController.getInstance()).inflate(R.layout.dialog, null);
+                    View  view1=LayoutInflater.from(AppController.getInstance()).inflate(R.layout.dialog, null);
                     final String list= DataList.list;
-                  final String[]  arr=list.split(",");
-                    final String[] listIds=DataList.listId.split(",");
+                    final String[]  arr=list.split(",");
+                    count=new HashMap<String,String>();
                     LinearLayout  listviews=(LinearLayout)view1.findViewById(R.id.listviews);
-
                     for(int i = 0; i<arr.length; i++){
                         View  view2=LayoutInflater.from(AppController.getInstance()).inflate(R.layout.alert, null);
-                      EditText e= (EditText) view2.findViewById(R.id.tablewarecount);
+                        EditText e= (EditText) view2.findViewById(R.id.tablewarecount);
                         final int finalI = i;
                         e.addTextChangedListener(new TextWatcher() {
                             @Override
                             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
                             }
 
                             @Override
                             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
                             }
-
                             @Override
                             public void afterTextChanged(Editable s) {
                                 count.put(arr[finalI],s.toString() );
-
                             }
                         });
 
@@ -113,9 +107,6 @@ public class TablewareDisinfectionFragment extends Fragment implements View.OnCl
                         t.setText(arr[i]);
                         listviews.addView(view2);
                     }
-
-
-
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 //                final View layout = inflater.inflate(R.layout.dialog, null);//获取自定义布局
                     builder.setView(view1);
@@ -123,9 +114,12 @@ public class TablewareDisinfectionFragment extends Fragment implements View.OnCl
                     //确认按钮
                     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
 
+
                         @Override
                         public void onClick(DialogInterface arg0, int arg1) {
                             String num="";
+
+
                             Iterator<Map.Entry<String, String>> it = count.entrySet().iterator();
                             while (it.hasNext()) {
                                 Map.Entry<String, String> entry = it.next();
@@ -139,6 +133,7 @@ public class TablewareDisinfectionFragment extends Fragment implements View.OnCl
                                     }
                                 }
                             }
+
                             tableandroidnum.setText(num);
 
                         }
@@ -191,6 +186,7 @@ public class TablewareDisinfectionFragment extends Fragment implements View.OnCl
             }
             break;
             case R.id.tableandroidnum: {
+
                 dlg.show();
                 dlg.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
 

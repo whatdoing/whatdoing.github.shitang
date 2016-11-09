@@ -24,7 +24,7 @@ import org.json.JSONObject;
  */
 public class SafetyReportFragment extends Fragment implements View.OnClickListener{
     private CreateSafetyActivity activity;
-private Button report_date,month;
+private Button report_date,report_month;
 private String[] m={"1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"};
     private TextView address,legal,inspect_company,contactsphone;
     String contacts="";
@@ -49,13 +49,13 @@ private String[] m={"1月","2月","3月","4月","5月","6月","7月","8月","9�
 
         activity= (CreateSafetyActivity)getActivity();
         report_date=(Button)view.findViewById(R.id.report_date);
-        month=(Button)view.findViewById(R.id.report_date);
+        report_month=(Button)view.findViewById(R.id.report_month);
 
         legal=(TextView)view.findViewById(R.id.legal);
         inspect_company=(TextView)view.findViewById(R.id.inspect_company);
         contactsphone=(TextView)view.findViewById(R.id.contactsphone);
         report_date.setOnClickListener(this);
-        month.setOnClickListener(this);
+        report_month.setOnClickListener(this);
         getInfo();
         String tempString=activity.getTempString();
         System.out.println("-----safety-----"+tempString);
@@ -77,7 +77,7 @@ private String[] m={"1月","2月","3月","4月","5月","6月","7月","8月","9�
             }
             break;
             case R.id.report_month: {
-                MyDialogs.cereateDialog(month,m,activity);
+                MyDialogs.cereateDialog(report_month,m,activity);
             }
             break;
         }

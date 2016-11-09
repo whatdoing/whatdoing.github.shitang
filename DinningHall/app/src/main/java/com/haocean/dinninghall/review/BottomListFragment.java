@@ -69,10 +69,10 @@ public class BottomListFragment extends Fragment implements XListView.IXListView
                 intent.putExtra("typeRecord","ReviewRecord");
                 switch (position){
                     case 0:
-                        intent.putExtra("num",0);//整改
+                        intent.putExtra("num","0");//整改
                         break;
                     case 1:
-                        intent.putExtra("num",1);
+                        intent.putExtra("num","1");
                         break;
 
                 }

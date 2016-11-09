@@ -35,7 +35,7 @@ import java.lang.reflect.Field;
  */
 public class RatingCriteriaFragment extends Fragment implements View.OnClickListener {
     private CreateSafetyActivity activity;
-    private Button inspect_date,assessment_level;
+    private Button inspect_date,assessment_level,month;
     private TextView      earned_score,realization_score,standardized_score;
     String[] level={"优秀","良好","一般","整改"};
     RatingCriteria ratingCriteria=new RatingCriteria();
@@ -45,6 +45,7 @@ public class RatingCriteriaFragment extends Fragment implements View.OnClickList
    TextView newText;
     private TextView address,legal,school_name,contactPhone;
     String contacts="";
+    private String[] m={"1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"};
     public void getInfo(){
         contacts= CheckInfoRunnable.getContacts();
 
@@ -102,7 +103,7 @@ public class RatingCriteriaFragment extends Fragment implements View.OnClickList
     int  allid  = R.array.class.getField(field+i).getInt(null);
     final String[] strSHArea = res.getStringArray(allid);
     for(int j=0;j<strSHArea.length;j++){
-        System.out.println("---我走了几次--"+strSHArea[j]);
+
         int id= R.id.class.getField(strSHArea[j]).getInt(null);
         final EditText a=(EditText)view.findViewById(id);
 
@@ -185,13 +186,13 @@ public class RatingCriteriaFragment extends Fragment implements View.OnClickList
         earned_score=(TextView)view.findViewById(R.id.earned_score);
         realization_score=(TextView)view.findViewById(R.id.realization_score);
         standardized_score=(TextView)view.findViewById(R.id.standardized_score);
-
+        month=(Button)view.findViewById(R.id.month);
         contactPhone=(TextView)view.findViewById(R.id.contactPhone);
         address=(TextView)view.findViewById(R.id.address);
         legal=(TextView)view.findViewById(R.id.legal);
         school_name=(TextView)view.findViewById(R.id.school_name);
         getInfo();
-
+        month.setOnClickListener(this);
         inspect_date.setOnClickListener(this);
         assessment_level.setOnClickListener(this);
         initArray();
@@ -216,6 +217,10 @@ public class RatingCriteriaFragment extends Fragment implements View.OnClickList
             break;
             case R.id.assessment_level: {
                 MyDialogs.cereateDialog(assessment_level,level, activity);
+            }
+            break;
+            case R.id.month: {
+                MyDialogs.cereateDialog(month,m,activity);
             }
             break;
         }

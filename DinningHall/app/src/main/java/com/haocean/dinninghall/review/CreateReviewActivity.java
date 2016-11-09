@@ -26,15 +26,15 @@ public class CreateReviewActivity extends Activity implements View.OnClickListen
     private Fragment fragment;
     private String id;
     private  String tempString;
-int num;
+String  num;
     CreateRecordRunnable createRecordRunnable;
     public  void init() {
         Intent intent = getIntent();
         typeRecord = intent.getStringExtra("typeRecord");
-        System.out.println("---*****----"+typeRecord);
+
         tempString=intent.getStringExtra("tempString");
         id=intent.getStringExtra("id");
-        num=intent.getIntExtra("num",0);
+        num=intent.getStringExtra("num");
         FragmentManager fragmentManager= getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.fragment_title, new CreateTitleFragment(),"createFragmentTitle").commit();
 
@@ -46,7 +46,7 @@ int num;
     public String getTypeRecord(){
         return typeRecord;
     }
-    public int getNum(){
+    public String  getNum(){
         return num;
     }
     public String getId(){
