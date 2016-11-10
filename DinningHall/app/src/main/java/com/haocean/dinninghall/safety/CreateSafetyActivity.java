@@ -18,8 +18,10 @@ import com.haocean.dinninghall.Runnable.CheckInfoRunnable;
 import com.haocean.dinninghall.Runnable.CreateRecordRunnable;
 import com.haocean.dinninghall.Runnable.RecordRunnable;
 import com.haocean.dinninghall.contexts.RecordList;
+import com.haocean.dinninghall.entity.record.CheckLog;
 import com.haocean.dinninghall.record.RecordListActivity;
 import com.haocean.dinninghall.record.utils.ValueUtils;
+import com.haocean.dinninghall.safety.CreateSafetyFragment.CheckLogFragment;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,7 +35,7 @@ public class CreateSafetyActivity extends Activity implements View.OnClickListen
     private  String tempString;
 
     CreateRecordRunnable createRecordRunnable;
-
+    FragmentManager fragmentManager;
     Map<String, String> data=new HashMap<String, String>();;
     public  void init() {
         Intent intent = getIntent();
@@ -43,11 +45,9 @@ public class CreateSafetyActivity extends Activity implements View.OnClickListen
         id=intent.getStringExtra("id");
 
 
-        FragmentManager fragmentManager= getFragmentManager();
+         fragmentManager= getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.fragment_title, new CreateTitleFragment(),"createFragmentTitle").commit();
-        //解析tempString
-        fragment= RecordList.Fragment.get(typeRecord);
-        fragmentManager.beginTransaction().replace(R.id.fragment_context, fragment,"createFragment").commit();
+
     }
 
     public String getTempString(){
@@ -69,18 +69,39 @@ public class CreateSafetyActivity extends Activity implements View.OnClickListen
 
 public void Run(){
     CheckInfoRunnable checkInfoRunnable=new CheckInfoRunnable();
-    checkInfoRunnable.createHand(CreateSafetyActivity.this,"CheckInfo");
+    checkInfoRunnable.createHand(CreateSafetyActivity.this,"CheckInfo",handler);
     Thread dataThread=new Thread(checkInfoRunnable);
     dataThread.start();
 }
 
+    Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch(msg.what){
+                case 0:
+                    System.out.println("获取成功了吗");
+                    fragment= RecordList.Fragment.get(typeRecord);
+                    fragmentManager.beginTransaction().replace(R.id.fragment_context, fragment,"createFragment").commit();
+                    break;
+                case 1:
+                    Toast.makeText(CreateSafetyActivity.this, "获取失败", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+
+        }
+    };
     @Override
     public void onClick(View v) {
         int viewId=v.getId();
         switch (viewId){
             case R.id.submit:
                 Object object=  ValueUtils.setValue(typeRecord,CreateSafetyActivity.this);
-
+if(object instanceof CheckLog){
+    System.out.println("-----------sfdsf"+((CheckLogFragment)fragment).getSelcetMap().toString());
+    ((CheckLog)object).setYb("123");
+    ((CheckLog)object).setZd("13213123");
+}
 
                 if(id==null){
                     createRecordRunnable=new CreateRecordRunnable(hand,object);

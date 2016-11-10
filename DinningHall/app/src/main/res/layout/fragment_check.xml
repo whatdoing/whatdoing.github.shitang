@@ -60,7 +60,7 @@
                     <RadioGroup
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:id="@+id/all_yes_no"
+                        android:id="@+id/all_yes_no0"
                         android:orientation="horizontal"
                         android:layout_gravity="center_vertical"
                         android:layout_height="wrap_content">
@@ -70,18 +70,27 @@
                             style="@style/CheckboxThemezhidao"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/yes"
+                            android:id="@+id/yes0"
                             android:checked="false"
                             android:text="是"
                             />
                         <RadioButton  android:textColor="@color/black"
 
                             style="@style/CheckboxThemezhidao"
-                            android:id="@+id/no"
+                            android:id="@+id/no0"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checked="false"
                             android:text="否"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/cancel0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="取消"
                             />
                     </RadioGroup>
                 </LinearLayout>
@@ -110,7 +119,56 @@
                     android:padding="5dip"
                     android:text="一、许可管理" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:gravity="right"
+                    android:layout_gravity="right"
 
+                    android:layout_height="wrap_content">
+                    <TextView android:textColor="@color/black"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dip"
+                        android:text="全选：" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+
+                        android:id="@+id/all_yes_no1"
+                        android:orientation="horizontal"
+
+                        android:layout_height="wrap_content">
+
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/yes1"
+                            android:checked="false"
+                            android:text="是"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/no1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="否"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/cancel1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="取消"
+                            />
+                    </RadioGroup>
+                </LinearLayout>
 
 
             </LinearLayout>
@@ -218,7 +276,56 @@
                     android:padding="5dip"
                     android:text="二、信息公示" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:gravity="right"
+                    android:layout_gravity="right"
 
+                    android:layout_height="wrap_content">
+                    <TextView android:textColor="@color/black"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dip"
+                        android:text="全选：" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+
+                        android:id="@+id/all_yes_no2"
+                        android:orientation="horizontal"
+
+                        android:layout_height="wrap_content">
+
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/yes2"
+                            android:checked="false"
+                            android:text="是"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/no2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="否"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/cancel2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="取消"
+                            />
+                    </RadioGroup>
+                </LinearLayout>
 
 
             </LinearLayout>
@@ -481,7 +588,56 @@
                     android:text="三、制度管理" />
 
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:gravity="right"
+                    android:layout_gravity="right"
 
+                    android:layout_height="wrap_content">
+                    <TextView android:textColor="@color/black"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dip"
+                        android:text="全选：" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+
+                        android:id="@+id/all_yes_no3"
+                        android:orientation="horizontal"
+
+                        android:layout_height="wrap_content">
+
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/yes3"
+                            android:checked="false"
+                            android:text="是"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/no3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="否"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/cancel3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="取消"
+                            />
+                    </RadioGroup>
+                </LinearLayout>
 
             </LinearLayout>
             <View  android:layout_height="1px"
@@ -662,7 +818,56 @@
                     android:padding="5dip"
                     android:text="四、人员管理" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:gravity="right"
+                    android:layout_gravity="right"
 
+                    android:layout_height="wrap_content">
+                    <TextView android:textColor="@color/black"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dip"
+                        android:text="全选：" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+
+                        android:id="@+id/all_yes_no4"
+                        android:orientation="horizontal"
+
+                        android:layout_height="wrap_content">
+
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/yes4"
+                            android:checked="false"
+                            android:text="是"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/no4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="否"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/cancel4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="取消"
+                            />
+                    </RadioGroup>
+                </LinearLayout>
 
 
             </LinearLayout>
@@ -1001,7 +1206,56 @@
                     android:text="五、环境卫生" />
 
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:gravity="right"
+                    android:layout_gravity="right"
 
+                    android:layout_height="wrap_content">
+                    <TextView android:textColor="@color/black"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dip"
+                        android:text="全选：" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+
+                        android:id="@+id/all_yes_no5"
+                        android:orientation="horizontal"
+
+                        android:layout_height="wrap_content">
+
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/yes5"
+                            android:checked="false"
+                            android:text="是"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/no5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="否"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/cancel5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="取消"
+                            />
+                    </RadioGroup>
+                </LinearLayout>
 
             </LinearLayout>
             <View  android:layout_height="1px"
@@ -1337,7 +1591,56 @@
                     android:layout_height="wrap_content"
                     android:padding="5dip"
                     android:text="六、原料控制 （含食品添加剂）" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:gravity="right"
+                    android:layout_gravity="right"
 
+                    android:layout_height="wrap_content">
+                    <TextView android:textColor="@color/black"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dip"
+                        android:text="全选：" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+
+                        android:id="@+id/all_yes_no6"
+                        android:orientation="horizontal"
+
+                        android:layout_height="wrap_content">
+
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/yes6"
+                            android:checked="false"
+                            android:text="是"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/no6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="否"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/cancel6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="取消"
+                            />
+                    </RadioGroup>
+                </LinearLayout>
 
 
 
@@ -1599,7 +1902,56 @@
                     android:padding="5dip"
                     android:text="七、加工制作 过程" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:gravity="right"
+                    android:layout_gravity="right"
 
+                    android:layout_height="wrap_content">
+                    <TextView android:textColor="@color/black"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dip"
+                        android:text="全选：" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+
+                        android:id="@+id/all_yes_no7"
+                        android:orientation="horizontal"
+
+                        android:layout_height="wrap_content">
+
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/yes7"
+                            android:checked="false"
+                            android:text="是"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/no7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="否"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/cancel7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="取消"
+                            />
+                    </RadioGroup>
+                </LinearLayout>
 
 
             </LinearLayout>
@@ -2092,7 +2444,56 @@
                     android:layout_height="wrap_content"
                     android:padding="5dip"
                     android:text="八、设施设备 及维护" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:gravity="right"
+                    android:layout_gravity="right"
 
+                    android:layout_height="wrap_content">
+                    <TextView android:textColor="@color/black"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dip"
+                        android:text="全选：" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+
+                        android:id="@+id/all_yes_no8"
+                        android:orientation="horizontal"
+
+                        android:layout_height="wrap_content">
+
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/yes8"
+                            android:checked="false"
+                            android:text="是"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/no8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="否"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/cancel8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="取消"
+                            />
+                    </RadioGroup>
+                </LinearLayout>
 
 
 
@@ -2427,7 +2828,56 @@
                     android:padding="5dip"
                     android:text="九、餐饮具 清洗消毒" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:gravity="right"
+                    android:layout_gravity="right"
 
+                    android:layout_height="wrap_content">
+                    <TextView android:textColor="@color/black"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dip"
+                        android:text="全选：" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+
+                        android:id="@+id/all_yes_no9"
+                        android:orientation="horizontal"
+
+                        android:layout_height="wrap_content">
+
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/yes9"
+                            android:checked="false"
+                            android:text="是"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/no9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="否"
+                            />
+                        <RadioButton  android:textColor="@color/black"
+
+                            style="@style/CheckboxThemezhidao"
+                            android:id="@+id/cancel9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:text="取消"
+                            />
+                    </RadioGroup>
+                </LinearLayout>
 
 
             </LinearLayout>

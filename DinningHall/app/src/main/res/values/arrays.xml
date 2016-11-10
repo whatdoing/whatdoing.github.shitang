@@ -528,6 +528,104 @@
         <item>tableware_clean3_change</item>
     </string-array>
 
+    <string-array
+        name="all_yes_no0">
+        <item>license_management1_change</item>
+        <item>publicity1_change</item>
+        <item>publicity2_change</item>
+        <item>publicity3_change</item>
+        <item>zd_administration1_change</item>
+        <item>zd_administration2_change</item>
+        <item>zd_personnel1_change</item>
+        <item>zd_personnel2_change</item>
+        <item>personnel3_change</item>
+        <item>personnel4_change</item>
+        <item>environmental_health1_change</item>
+        <item>environmental_health2_change</item>
+        <item>environmental_health3_change</item>
+        <item>environmental_health4_change</item>
+        <item>zd_material_control1_change</item>
+        <item>material_control2_change</item>
+
+        <item>material_control3_change</item>
+        <item>processing_production1_change</item>
+        <item>processing_production2_change</item>
+        <item>processing_production3_change</item>
+        <item>processing_production4_change</item>
+
+        <item>processing_production5_change</item>
+        <item>processing_production6_change</item>
+        <item>equipment_maintenance1_change</item>
+        <item>equipment_maintenance2_change</item>
+        <item>equipment_maintenance3_change</item>
+
+        <item>zd_equipment_maintenance4_change</item>
+        <item>tableware_clean1_change</item>
+
+        <item>tableware_clean2_change</item>
+        <item>zd_tableware_clean3_change</item>
+    </string-array>
+    <string-array
+        name="all_yes_no1">
+    <item>license_management1_change</item>
+    </string-array>
+    <string-array
+        name="all_yes_no2">
+        <item>publicity1_change</item>
+        <item>publicity2_change</item>
+        <item>publicity3_change</item>
+    </string-array>
+    <string-array
+        name="all_yes_no3">
+        <item>zd_administration1_change</item>
+        <item>zd_administration2_change</item>
+    </string-array>
+    <string-array
+        name="all_yes_no4">
+        <item>zd_personnel1_change</item>
+        <item>zd_personnel2_change</item>
+        <item>personnel3_change</item>
+        <item>personnel4_change</item>
+    </string-array>
+    <string-array
+        name="all_yes_no5">
+        <item>environmental_health1_change</item>
+        <item>environmental_health2_change</item>
+        <item>environmental_health3_change</item>
+        <item>environmental_health4_change</item>
+    </string-array>
+    <string-array
+        name="all_yes_no6">
+        <item>zd_material_control1_change</item>
+        <item>material_control2_change</item>
+
+        <item>material_control3_change</item>
+    </string-array>
+    <string-array
+        name="all_yes_no7">
+        <item>processing_production1_change</item>
+        <item>processing_production2_change</item>
+        <item>processing_production3_change</item>
+        <item>processing_production4_change</item>
+
+        <item>processing_production5_change</item>
+        <item>processing_production6_change</item>
+    </string-array>
+    <string-array
+        name="all_yes_no8">
+        <item>equipment_maintenance1_change</item>
+        <item>equipment_maintenance2_change</item>
+        <item>equipment_maintenance3_change</item>
+
+        <item>zd_equipment_maintenance4_change</item>
+    </string-array>
+    <string-array
+        name="all_yes_no9">
+        <item>tableware_clean1_change</item>
+
+        <item>tableware_clean2_change</item>
+        <item>zd_tableware_clean3_change</item>
+    </string-array>
     <!-- 搜索条件 -->
     <string-array
         name="Check">

@@ -4,6 +4,8 @@ package com.haocean.dinninghall.entity.record;
  * Created by Administrator on 2016/10/14 0014.
  */
 public class CheckLog {
+    private String yb;//
+    private String zd;//
     private String create_date;//
     private String license_management1_change;//
     private String license_management1;//
@@ -27,7 +29,21 @@ public class CheckLog {
     private String personnel3;//
 
 
+	public String getYb() {
+		return yb;
+	}
 
+	public void setYb(String yb) {
+		this.yb = yb;
+	}
+
+	public String getZd() {
+		return zd;
+	}
+
+	public void setZd(String zd) {
+		this.zd = zd;
+	}
 
 	private String personnel4_change;//
 
