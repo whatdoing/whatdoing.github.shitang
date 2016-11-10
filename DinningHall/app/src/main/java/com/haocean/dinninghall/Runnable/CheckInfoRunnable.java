@@ -70,7 +70,7 @@ public class CheckInfoRunnable implements Runnable {
             contacts = EntityUtils.toString(responseEntityPublic,"utf-8");
 
 
-            if(!contacts.equals("")){
+            if(contacts!=null){
                 String u=address+"CheckLogAndroid/project";//bujige
                 httpPost = new HttpPost(u);
                 httpPost.setHeader("X-Requested-With", "XMLHttpRequest");
@@ -81,7 +81,13 @@ public class CheckInfoRunnable implements Runnable {
 
                 response = httpClient.execute(httpPost);
                 HttpEntity re = response.getEntity();
-                bujige = EntityUtils.toString(re,"utf-8");
+                String a=EntityUtils.toString(re,"utf-8");
+                if(a!=null){
+                    bujige = a;
+
+                }else{
+
+                }
                 System.out.println("-*-*-*-*"+bujige);
                 handler.obtainMessage(0).sendToTarget();
 

@@ -95,11 +95,9 @@ public class ValueUtils {
             for(Field field:fields){
                 field.setAccessible(true);
                 String value=jsonObject.getString(field.getName());
-                System.out.println(1+"fieldname-----"+field.getName()+"--------value----------"+value);
+                System.out.println(1+"fieldname-----"+field.getName()+"-------value----------"+value);
                 field.set(object,value);
-                System.out.println("-------okokokook------");
                 if(Arrays.asList(strSHArea).contains(field.getName())){
-                    System.out.println("-------aaaaa------");
                     int id= R.id.class.getField(field.getName()).getInt(null);
                     System.out.println("id"+id);
                     View view=views.findViewById(id);
@@ -204,9 +202,7 @@ public class ValueUtils {
                     String [] strids=vp.findViewById(viewchild.getId()).toString().split("/");
                     String strKey=strids[1].substring(0,strids[1].length()-1);
                     String strValue=((EditText) viewchild).getText().toString();
-                    System.out.println("----value里的数据---"+strValue+"控件名称"+strKey);
                     uploadimg.put(strKey,strValue);
-                    System.out.println("---upload---"+uploadimg);
                 }
                 if(viewchild instanceof Button){
                     String [] strids=vp.findViewById(viewchild.getId()).toString().split("/");

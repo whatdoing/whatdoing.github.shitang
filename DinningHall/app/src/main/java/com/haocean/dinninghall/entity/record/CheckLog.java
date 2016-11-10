@@ -5,6 +5,7 @@ package com.haocean.dinninghall.entity.record;
  */
 public class CheckLog {
     private String yb;//
+    private String log_result;//
     private String zd;//
     private String create_date;//
     private String license_management1_change;//
@@ -82,6 +83,14 @@ public class CheckLog {
 
 	public void setEnvironmental_health3_change(String environmental_health3_change) {
 		this.environmental_health3_change = environmental_health3_change;
+	}
+
+	public String getLog_result() {
+		return log_result;
+	}
+
+	public void setLog_result(String log_result) {
+		this.log_result = log_result;
 	}
 
 	private String environmental_health4_change;//

@@ -44,20 +44,21 @@ public class CheckLogFragment extends Fragment implements View.OnClickListener,R
     private TextView address,legal,inspect_company,legalphone;
     String contacts="";
     String bujige="";
-    Map<String,String> selectmap=new HashMap<String,String>();
+    Map<String,Map<Boolean,String>> selectmap=new HashMap<String,Map<Boolean, String>>();
     private AlertView mAlertViewExt;//窗口拓展例子
     public void getBujige(){
-        getInfo();
         bujige=CheckInfoRunnable.getBujige();
-        try {
-            JSONObject jsonObject=new JSONObject(bujige);
-            String yb=jsonObject.getString("yb");
-            String zd=jsonObject.getString("zd");
-            String bjg=yb+zd;
-            String[] bujiges=bjg.split(";");
-            alertShow(bujiges);
-        } catch (JSONException e) {
-            e.printStackTrace();
+        if(bujige!="") {
+            try {
+                JSONObject jsonObject = new JSONObject(bujige);
+                String yb = jsonObject.getString("yb");
+                String zd = jsonObject.getString("zd");
+                String bjg = yb + zd;
+                String[] bujiges = bjg.split(";");
+                alertShow(bujiges);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
     }
     public void alertShow(String[] arr) {
@@ -68,7 +69,7 @@ public class CheckLogFragment extends Fragment implements View.OnClickListener,R
     }
     public void getInfo(){
         contacts= CheckInfoRunnable.getContacts();
-        System.out.println("-bujige********-"+contacts);
+        System.out.println("-********-"+contacts);
         try {
             JSONArray jsonArray=new JSONArray(contacts);
             JSONObject jsonObject=jsonArray.getJSONObject(0);
@@ -80,6 +81,7 @@ public class CheckLogFragment extends Fragment implements View.OnClickListener,R
             e.printStackTrace();
         }
     }
+
 
     private void findall_yes_no(){
         try {
@@ -110,23 +112,24 @@ public class CheckLogFragment extends Fragment implements View.OnClickListener,R
         address=(TextView)view.findViewById(R.id.address);
         legal=(TextView)view.findViewById(R.id.legal);
         inspect_company=(TextView)view.findViewById(R.id.inspect_company);
-        getBujige();
+
 
         inspect_date.setOnClickListener(this);// 当然也可以使用匿名内部类实现
 
         findall_yes_no();
         findRadioButton();
 
-
-//        yes.setOnCheckedChangeListener(this);
-//        no.setOnCheckedChangeListener(this);
         String tempString=activity.getTempString();
         if(tempString!=null) {
+            //编辑
             Object object = ValueUtils.getValue("CheckLog", view, tempString);
 
             System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxx-"+((CheckLog)object).getYb()+ ((CheckLog)object).getZd());
         }
-
+        else{
+            getBujige();
+        }
+getInfo();
         return view;
     }
 
@@ -161,7 +164,9 @@ private void  findRadioButton() {
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         if(!buttonView.isPressed())return;
                         textView.setTextColor(Color.BLACK);
-                        selectmap.remove(strSHAreap);
+                        Map<Boolean,String> map = new HashMap<Boolean, String>();
+                        map.put(true,textView.getText().toString());
+                        selectmap.put(strSHAreap,map);
                         TextPaint tp = textView.getPaint();
                         tp.setFakeBoldText(false);
                         try {
@@ -183,7 +188,9 @@ private void  findRadioButton() {
 
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         if(!buttonView.isPressed())return;
-                        selectmap.put(strSHAreap,textView.getText().toString());
+                        Map<Boolean,String> map = new HashMap<Boolean, String>();
+                        map.put(false,textView.getText().toString());
+                        selectmap.put(strSHAreap,map);
                         textView.setTextColor(Color.RED);
                         if(finalIszd){
                             TextPaint tp = textView.getPaint();
@@ -212,51 +219,6 @@ private void  findRadioButton() {
         e.printStackTrace();
     }
 
-
-
-//    String[] strSHArea = AppController.getInstance().getResources().getStringArray(R.array.all_yes_no0);
-//
-//        try {
-//            for (int i = 0; i < strSHArea.length; i++) {
-//            final int id = R.id.class.getField(strSHArea[i]).getInt(null);
-//            if (view.findViewById(id) instanceof RadioGroup) {
-//                 final RadioButton  radioButtonyes= (RadioButton)  view.findViewById( R.id.class.getField(strSHArea[i]+"_yes").getInt(null));
-//                RadioButton  radioButtonno= (RadioButton)  view.findViewById( R.id.class.getField(strSHArea[i]+"_no").getInt(null));
-//                final TextView   textView= (TextView)  view.findViewById( R.id.class.getField(strSHArea[i]+"_text").getInt(null));
-//                radioButtonyes.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//
-//                    @Override
-//
-//                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                        if(!buttonView.isPressed())return;
-//                        textView.setTextColor(Color.BLACK);
-//
-//                        ((RadioGroup) view.findViewById(R.id.all_yes_no0)).clearCheck();
-//                    }
-//
-//                });
-//                radioButtonno.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//
-//                    @Override
-//
-//                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                        if(!buttonView.isPressed())return;
-//                        textView.setTextColor(Color.RED);
-//                        ((RadioGroup) view.findViewById(R.id.all_yes_no0)).clearCheck();
-//
-//                    }
-//
-//                });
-//
-//            }
-//        }
-//        } catch (IllegalAccessException e) {
-//            e.printStackTrace();
-//        } catch (NoSuchFieldException e) {
-//            e.printStackTrace();
-//        }
-
-
 }
     @Override
     public void onClick(View view) {
@@ -271,25 +233,11 @@ private void  findRadioButton() {
     private void clearGroup(int x){
         if(x!=0){
             RadioGroup radioGroup=  ((RadioGroup) view.findViewById(R.id.all_yes_no0));
-//            if(str.contains("no")){
-//                System.out.println("走上1");
-//                if(!radioGroup.getChildAt(1).isPressed())return;
-//            }else{
-//                System.out.println("走上2");
-//                if(!radioGroup.getChildAt(0).isPressed())return;
-//            }
             radioGroup.clearCheck();
         }else{
             for(int i=1;i<10;i++){
                 try {
                     RadioGroup radioGroup =((RadioGroup) view.findViewById(R.id.class.getField("all_yes_no"+i).getInt(null)));
-//                    if(str.contains("no")){
-//                        System.out.println("走上3");
-//                        if(!radioGroup.getChildAt(1).isPressed())return;
-//                    }else{
-//                        System.out.println("走上4");
-//                        if(!radioGroup.getChildAt(0).isPressed())return;
-//                    }
                     radioGroup.clearCheck();
 
                 } catch (IllegalAccessException e) {
@@ -301,7 +249,8 @@ private void  findRadioButton() {
         }
 
     }
-public Map<String,String> getSelcetMap(){
+public Map<String,Map<Boolean,String>> getSelcetMap(){
+
     return selectmap;
 }
 
@@ -326,7 +275,9 @@ private void selectGroup(int checkedId,int x){
                 if(checkedId==butY&&((RadioButton)view.findViewById(butY)).isChecked()){
                     radioButton.setChecked(true);
                     TextView    textView=  (TextView)  view.findViewById( R.id.class.getField(strSHAreaI+"_text").getInt(null));
-                    selectmap.remove(strSHAreap);
+                    Map<Boolean,String> map = new HashMap<Boolean, String>();
+                    map.put(true,textView.getText().toString());
+                    selectmap.put(strSHAreap,map);
                     textView.setTextColor(Color.BLACK);
                     TextPaint tp = textView.getPaint();
                     tp.setFakeBoldText(false);
@@ -337,7 +288,9 @@ private void selectGroup(int checkedId,int x){
                 }else  if(checkedId==butN&&((RadioButton)view.findViewById(butN)).isChecked()){
                     radioButton.setChecked(true);
                     TextView    textView=  (TextView)  view.findViewById( R.id.class.getField(strSHAreaI+"_text").getInt(null));
-                    selectmap.put(strSHAreap,textView.getText().toString());
+                    Map<Boolean,String> map = new HashMap<Boolean, String>();
+                    map.put(false,textView.getText().toString());
+                    selectmap.put(strSHAreap,map);
                     textView.setTextColor(Color.RED);
                     if(iszd){
                         TextPaint tp = textView.getPaint();
@@ -358,13 +311,8 @@ private void selectGroup(int checkedId,int x){
                     tp.setFakeBoldText(false);
                     RadioGroup radioGroup=  ((RadioGroup) view.findViewById(R.id.class.getField(strSHAreaI).getInt(null)));
                     radioGroup.clearCheck();
-                  //  radioButtons= (RadioButton)  view.findViewById( R.id.class.getField(strSHArea[i]+"_no").getInt(null));
-                   // radioButtons.setChecked(true);
                     clearGroup(x);
                 }
-
-
-               //
 
 
         }
